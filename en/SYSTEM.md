@@ -1,17 +1,17 @@
 # 系统控制
 
-## 概述
+## Overview
 
 系统控制模块提供对操作系统的配置功能。
 
-## 功能描述
+## Features
 
 系统控制模块具有以下功能：
 
 - 设置 CPU 频率
 - 安装自定义驱动
 
-## API 参考
+## API
 
 对应的头文件 `hal.h`
 
@@ -22,57 +22,57 @@
 
 ### system\_set\_cpu\_frequency
 
-#### 描述
+#### Description
 
 设置 CPU 频率。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 uint32_t system_set_cpu_frequency(uint32_t frequency);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称     |   描述           |  输入输出  |
+| Parameter name     |   Description           |  Input or output  |
 | ----------- | ---------------- | --------- |
 | frequency   | 要设置的频率（Hz） | 输入      |
 
-#### 返回值
+#### Return value
 
 设置后的实际频率（Hz）。
 
 ### system\_install\_custom\_driver
 
-#### 描述
+#### Description
 
 安装自定义驱动。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void system_install_custom_driver(const char *name, const custom_driver_t *driver);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称     |   描述             |  输入输出  |
+| Parameter name     |   Description             |  Input or output  |
 | ----------- | ------------------ | --------- |
 | name        | 指定访问该设备的路径 | 输入      |
 | driver      | 自定义驱动实现      | 输入      |
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
-### 举例
+### Example
 
 ```c
 /* 设置 CPU 频率为 400MHz */
 system_set_cpu_frequency(400000000);
 ```
 
-## 数据类型
+## Data type
 
 相关数据类型、数据结构定义如下：
 
@@ -81,11 +81,11 @@ system_set_cpu_frequency(400000000);
 
 ### driver\_base\_t
 
-#### 描述
+#### Description
 
 驱动实现基类。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef struct _driver_base
@@ -97,9 +97,9 @@ typedef struct _driver_base
 } driver_base_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称   | 描述        |
+| 成员名称   | Description        |
 | --------- | ----------- |
 | userdata  | 用户数据     |
 | install   | 安装时被调用 |
@@ -108,11 +108,11 @@ typedef struct _driver_base
 
 ### custom\_driver\_t
 
-#### 描述
+#### Description
 
 自定义驱动实现。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef struct _custom_driver
@@ -122,9 +122,9 @@ typedef struct _custom_driver
 } custom_driver_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称     | 描述               |
+| 成员名称     | Description               |
 | ----------- | ------------------ |
 | base        | 驱动实现基类        |
 | io\_control | 收到控制信息时被调用 |

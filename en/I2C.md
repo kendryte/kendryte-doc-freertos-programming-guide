@@ -1,10 +1,10 @@
 # 集成电路内置总线 (I2C)
 
-## 概述
+## Overview
 
 I2C 总线用于和多个外部设备进行通信。多个外部设备可以共用一个 I2C 总线。
 
-## 功能描述
+## Features
 
 I2C 模块具有以下功能：
 
@@ -12,7 +12,7 @@ I2C 模块具有以下功能：
 - 自动处理多设备总线争用
 - 支持从模式
 
-## API 参考
+## API
 
 对应的头文件 `devices.h`
 
@@ -26,67 +26,67 @@ I2C 模块具有以下功能：
 
 ### i2c\_get\_device
 
-#### 描述
+#### Description
 
 注册并打开一个 I2C 设备。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 handle_t i2c_get_device(handle_t file, const char *name, uint32_t slave_address, uint32_t address_width);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称          |   描述             |  输入输出  |
+| Parameter name          |   Description             |  Input or output  |
 | ---------------- | ------------------ | --------- |
 | file             | I2C 控制器句柄      | 输入      |
 | name             | 指定访问该设备的路径 | 输入      |
 | slave\_address   | 从设备地址          | 输入      |
 | address\_width   | 从设备地址宽度      | 输入      |
 
-#### 返回值
+#### Return value
 
 I2C 设备句柄。
 
 ### i2c\_dev\_set\_clock\_rate
 
-#### 描述
+#### Description
 
 配置 I2C 设备的时钟速率。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 double i2c_dev_set_clock_rate(handle_t file, double clock_rate);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称          |   描述        |  输入输出  |
+| Parameter name          |   Description        |  Input or output  |
 | ---------------- | ------------- | --------- |
 | file             | I2C 设备句柄   | 输入       |
 | clock\_rate      | 期望的时钟速率 | 输入       |
 
-#### 返回值
+#### Return value
 
 设置后的实际速率。
 
 ### i2c\_dev\_transfer\_sequential
 
-#### 描述
+#### Description
 
 对 I2C 设备先读后写。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 int i2c_dev_transfer_sequential(handle_t file, const uint8_t *write_buffer, size_t write_len, uint8_t *read_buffer, size_t read_len);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称       |   描述         |  输入输出  |
+| Parameter name       |   Description         |  Input or output  |
 | ------------- | -------------- | --------- |
 | file          | I2C 设备句柄    | 输入      |
 | write\_buffer | 源缓冲区        | 输入      |
@@ -94,59 +94,59 @@ int i2c_dev_transfer_sequential(handle_t file, const uint8_t *write_buffer, size
 | read\_buffer  | 目标缓冲区      | 输出      |
 | read\_len     | 最多读取的字节数 | 输入      |
 
-#### 返回值
+#### Return value
 
 实际读取的字节数。
 
 ### i2c\_config\_as\_slave
 
-#### 描述
+#### Description
 
 配置 I2C 控制器为从模式。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void i2c_config_as_slave(handle_t file, uint32_t slave_address, uint32_t address_width, i2c_slave_handler_t *handler);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称          |   描述        |  输入输出  |
+| Parameter name          |   Description        |  Input or output  |
 | ---------------- | ------------- | --------- |
 | file             | I2C 控制器句柄 | 输入       |
 | slave\_address   | 从设备地址     | 输入       |
 | address\_width   | 从设备地址宽度 | 输入       |
 | handler          | 从设备处理程序 | 输入       |
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
 ### spi\_dev\_set\_clock\_rate
 
-#### 描述
+#### Description
 
 配置 I2C 从模式的时钟速率。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 double i2c_slave_set_clock_rate(handle_t file, double clock_rate);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称          |   描述        |  输入输出  |
+| Parameter name          |   Description        |  Input or output  |
 | ---------------- | ------------- | --------- |
 | file             | I2C 控制器句柄 | 输入       |
 | clock\_rate      | 期望的时钟速率 | 输入       |
 
-#### 返回值
+#### Return value
 
 设置后的实际速率。
 
-### 举例
+### Example
 
 ```c
 handle_t i2c = io_open("/dev/i2c0");
@@ -163,7 +163,7 @@ io_write(dev0, data_buf, 2);
 i2c_dev_transfer_sequential(dev0, &reg, 1, data_buf, 1);
 ```
 
-## 数据类型
+## Data type
 
 相关数据类型、数据结构定义如下：
 
@@ -172,11 +172,11 @@ i2c_dev_transfer_sequential(dev0, &reg, 1, data_buf, 1);
 
 ### i2c\_event\_t
 
-#### 描述
+#### Description
 
 I2C 事件。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef enum _i2c_event
@@ -187,9 +187,9 @@ typedef enum _i2c_event
 } i2c_event_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称            | 描述             |
+| 成员名称            | Description             |
 | ------------------ | ---------------- |
 | I2C\_EV\_START     | 收到 Start 信号   |
 | I2C\_EV\_RESTART   | 收到 Restart 信号 |
@@ -197,11 +197,11 @@ typedef enum _i2c_event
 
 ### i2c\_slave\_handler\_t
 
-#### 描述
+#### Description
 
 I2C 从设备处理程序。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef struct _i2c_slave_handler
@@ -212,9 +212,9 @@ typedef struct _i2c_slave_handler
 } i2c_slave_handler_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称          | 描述               |
+| 成员名称          | Description               |
 | ---------------- | ------------------ |
 | on\_receive      | 收到数据时被调用     |
 | on\_transmit     | 需要发送数据时被调用 |

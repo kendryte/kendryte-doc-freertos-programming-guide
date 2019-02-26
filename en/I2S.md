@@ -1,10 +1,10 @@
 # 集成电路内置音频总线 (I2S)
 
-## 概述
+## Overview
 
 I2S 标准总线定义了三种信号：时钟信号 BCK、声道选择信号 WS 和串行数据信号 SD。一个基本的I2S 数据总线有一个主机和一个从机。主机和从机的角色在通信过程中保持不变。I2S 模块包含独立的发送和接收声道，能够保证优良的通信性能。
 
-## 功能描述
+## Features
 
 I2S 模块具有以下功能：
 
@@ -12,7 +12,7 @@ I2S 模块具有以下功能：
 - 可配置为播放或录音模式
 - 自动管理音频缓冲区
 
-## API 参考
+## API
 
 对应的头文件 `devices.h`
 
@@ -27,19 +27,19 @@ I2S 模块具有以下功能：
 
 ### i2s\_config\_as\_render
 
-#### 描述
+#### Description
 
 配置 I2S 控制器为输出模式。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void i2s_config_as_render(handle_t file, const audio_format_t *format, size_t delay_ms, i2s_align_mode_t align_mode, size_t channels_mask);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称          |   描述             |  输入输出  |
+| Parameter name          |   Description             |  Input or output  |
 | ---------------- | ------------------ | --------- |
 | file             | I2S 控制器句柄      | 输入      |
 | format           | 音频格式            | 输入      |
@@ -47,25 +47,25 @@ void i2s_config_as_render(handle_t file, const audio_format_t *format, size_t de
 | align\_mode      | 对齐模式            | 输入      |
 | channels\_mask   | 通道掩码            | 输入      |
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
 ### i2s\_config\_as\_capture
 
-#### 描述
+#### Description
 
 配置 I2S 控制器为捕获模式。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void i2s_config_as_capture(handle_t file, const audio_format_t *format, size_t delay_ms, i2s_align_mode_t align_mode, size_t channels_mask);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称          |   描述             |  输入输出  |
+| Parameter name          |   Description             |  Input or output  |
 | ---------------- | ------------------ | --------- |
 | file             | I2S 控制器句柄      | 输入      |
 | format           | 音频格式            | 输入      |
@@ -73,102 +73,102 @@ void i2s_config_as_capture(handle_t file, const audio_format_t *format, size_t d
 | align\_mode      | 对齐模式            | 输入      |
 | channels\_mask   | 通道掩码            | 输入      |
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
 ### i2s\_get\_buffer
 
-#### 描述
+#### Description
 
 获取音频缓冲区。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void i2s_get_buffer(handle_t file, uint8_t **buffer, size_t *frames);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称    |   描述        |  输入输出  |
+| Parameter name    |   Description        |  Input or output  |
 | ---------- | ------------- | --------- |
 | file       | I2S 控制器句柄 | 输入       |
 | buffer     | 缓冲区         | 输出       |
 | frames     | 缓冲区帧数     | 输出       |
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
 ### i2s\_release\_buffer
 
-#### 描述
+#### Description
 
 释放音频缓冲区。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void i2s_release_buffer(handle_t file, size_t frames);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称    |   描述               |  输入输出  |
+| Parameter name    |   Description               |  Input or output  |
 | ---------- | -------------------- | --------- |
 | file       | I2S 控制器句柄        | 输入       |
 | frames     | 确认已读取或写入的帧数 | 输入       |
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
 ### i2s\_start
 
-#### 描述
+#### Description
 
 开始播放或录音。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void i2s_start(handle_t file);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称    |   描述               |  输入输出  |
+| Parameter name    |   Description               |  Input or output  |
 | ---------- | -------------------- | --------- |
 | file       | I2S 控制器句柄        | 输入       |
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
 ### i2s\_stop
 
-#### 描述
+#### Description
 
 停止播放或录音。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void i2s_stop(handle_t file);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称    |   描述               |  输入输出  |
+| Parameter name    |   Description               |  Input or output  |
 | ---------- | -------------------- | --------- |
 | file       | I2S 控制器句柄        | 输入       |
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
-### 举例
+### Example
 
 ```c
 /* 循环播放 PCM 音频 */
@@ -190,7 +190,7 @@ while (1)
 }
 ```
 
-## 数据类型
+## Data type
 
 相关数据类型、数据结构定义如下：
 
@@ -200,11 +200,11 @@ while (1)
 
 ### audio\_format\_type\_t
 
-#### 描述
+#### Description
 
 音频格式类型。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef enum _audio_format_type
@@ -213,19 +213,19 @@ typedef enum _audio_format_type
 } audio_format_type_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称            | 描述        |
+| 成员名称            | Description        |
 | ------------------ | ----------- |
 | AUDIO\_FMT\_PCM    | PCM         |
 
 ### audio\_format\_t
 
-#### 描述
+#### Description
 
 音频格式。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef struct _audio_format
@@ -237,9 +237,9 @@ typedef struct _audio_format
 } audio_format_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称           | 描述          |
+| 成员名称           | Description          |
 | ----------------- | ------------- |
 | type              | 音频格式类型   |
 | bits\_per\_sample | 采样深度       |
@@ -248,11 +248,11 @@ typedef struct _audio_format
 
 ### i2s\_align\_mode\_t
 
-#### 描述
+#### Description
 
 I2S 对齐模式。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef enum _i2s_align_mode
@@ -263,9 +263,9 @@ typedef enum _i2s_align_mode
 } i2s_align_mode_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称           | 描述        |
+| 成员名称           | Description        |
 | ----------------- | ----------- |
 | I2S\_AM\_STANDARD | 标准模式     |
 | I2S\_AM\_RIGHT    | 右对齐       |

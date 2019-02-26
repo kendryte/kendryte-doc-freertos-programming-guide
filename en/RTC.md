@@ -1,17 +1,17 @@
 # 实时时钟 (RTC)
 
-## 概述
+## Overview
 
 RTC 是用来计时的单元，在设置时间后具备计时功能。
 
-## 功能描述
+## Features
 
 RTC 模块具有以下功能：
 
 - 获取当前日期时刻
 - 设置当前日期时刻
 
-## API 参考
+## API
 
 对应的头文件 `devices.h`
 
@@ -22,51 +22,51 @@ RTC 模块具有以下功能：
 
 ### rtc\_get\_datetime
 
-#### 描述
+#### Description
 
 获取 RTC 日期时刻。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void rtc_get_datetime(handle_t file, struct tm *datetime);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称     |   描述         |  输入输出  |
+| Parameter name     |   Description         |  Input or output  |
 | ----------- | -------------- | --------- |
 | file        | RTC 设备句柄    | 输入      |
 | datetime    | 日期时刻        | 输出      |
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
 ### rtc\_set\_datetime
 
-#### 描述
+#### Description
 
 设置 RTC 日期时刻。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void rtc_set_datetime(handle_t file, const struct tm *datetime);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称     |   描述           |  输入输出  |
+| Parameter name     |   Description           |  Input or output  |
 | ----------- | ---------------- | --------- |
 | file        | RTC 设备句柄      | 输入      |
 | datetime    | 日期时刻          | 输入      |
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
-### 举例
+### Example
 
 ```c
 /* 设置日期时间，然后读取日期时间 */

@@ -1,15 +1,15 @@
 # 管脚配置
 
-## 概述
+## Overview
 
 管脚配置包含 FPIOA 和电源域配置等。
 
-## 功能描述
+## Features
 
 - 支持 IO 的可编程功能选择
 - 配置电源域
 
-## 数据类型
+## Data type
 
 对应的头文件 `pin_cfg.h`
 
@@ -26,11 +26,11 @@
 
 ### fpioa\_function\_t
 
-#### 描述
+#### Description
 
 管脚的功能编号。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef enum _fpioa_function
@@ -295,9 +295,9 @@ typedef enum _fpioa_function
 } fpioa_function_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称             |      描述             |
+| 成员名称             |      Description             |
 | :------------------ | :-------------------- |
 |FUNC\_JTAG\_TCLK     |JTAG时钟接口           |
 |FUNC\_JTAG\_TDI      |JTAG数据输入接口       |
@@ -558,11 +558,11 @@ typedef enum _fpioa_function
 
 ### fpioa\_cfg\_item\_t
 
-#### 描述
+#### Description
 
 FPIOA 管脚配置。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef struct _fpioa_cfg_item
@@ -572,20 +572,20 @@ typedef struct _fpioa_cfg_item
 } fpioa_cfg_item_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称          |      描述        |
+| 成员名称          |      Description        |
 | :--------------- | :--------------- |
 | number           | 管脚编号          |
 | function         | 功能编号          |
 
 ### fpioa\_cfg\_t
 
-#### 描述
+#### Description
 
 FPIOA 配置。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef struct _fpioa_cfg
@@ -596,9 +596,9 @@ typedef struct _fpioa_cfg
 } fpioa_cfg_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称          |      描述        |
+| 成员名称          |      Description        |
 | :--------------- | :--------------- |
 | version          | 配置版本，必须设为 FPIOA\_CFG\_VERSION   |
 | functions_count  | 功能配置数量      |
@@ -606,11 +606,11 @@ typedef struct _fpioa_cfg
 
 ### sysctl\_power\_bank\_t
 
-#### 描述
+#### Description
 
 电源域编号。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef enum _sysctl_power_bank
@@ -627,9 +627,9 @@ typedef enum _sysctl_power_bank
 } sysctl_power_bank_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称                              |      描述             |
+| 成员名称                              |      Description             |
 | :----------------------------------- | :-------------------- |
 |SYSCTL\_POWER\_BANK0                  | 电源域0，控制IO0-IO5   |
 |SYSCTL\_POWER\_BANK1                  | 电源域0，控制IO6-IO11  |
@@ -642,11 +642,11 @@ typedef enum _sysctl_power_bank
 
 ### sysctl\_io\_power\_mode\_t
 
-#### 描述
+#### Description
 
 IO 输出电压值。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef enum _sysctl_io_power_mode
@@ -656,20 +656,20 @@ typedef enum _sysctl_io_power_mode
 } sysctl_io_power_mode_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称                            |      描述             |
+| 成员名称                            |      Description             |
 | :--------------------------------- | :-------------------- |
 |SYSCTL\_POWER\_V33                  | 设置为3.3V             |
 |SYSCTL\_POWER\_V18                  | 设置为1.8V             |
 
 ### power\_bank\_item\_t
 
-#### 描述
+#### Description
 
 单个电源域配置。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef struct _power_bank_item
@@ -679,20 +679,20 @@ typedef struct _power_bank_item
 } power_bank_item_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称                     |      描述             |
+| 成员名称                     |      Description             |
 | :-------------------------- | :-------------------- |
 | power_bank                  | 电源域编号             |
 | io_power_mode               | IO 输出电压值          |
 
 ### power\_bank\_cfg\_t
 
-#### 描述
+#### Description
 
 电源域配置。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef struct _power_bank_cfg
@@ -703,9 +703,9 @@ typedef struct _power_bank_cfg
 } power_bank_cfg_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称            |      描述        |
+| 成员名称            |      Description        |
 | :----------------- | :--------------- |
 | version            | 配置版本，必须设为 FPIOA\_CFG\_VERSION   |
 | power_banks_count  | 电源域配置数量      |
@@ -713,11 +713,11 @@ typedef struct _power_bank_cfg
 
 ### pin\_cfg\_t
 
-#### 描述
+#### Description
 
 管脚配置。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef struct _pin_cfg
@@ -727,14 +727,14 @@ typedef struct _pin_cfg
 } pin_cfg_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称            |      描述        |
+| 成员名称            |      Description        |
 | :----------------- | :--------------- |
 | version            | 配置版本，必须设为 FPIOA\_CFG\_VERSION   |
 | set_spi0_dvp_data  | 是否设置 SPI0_D0-D7 DVP_D0-D7 为 SPI0 或 DVP 数据输入 |
 
-### 举例
+### Example
 
 ```c
 /* 配置 IO6、IO7 的功能分别为 GPIOHS0 和 GPIOHS1 */

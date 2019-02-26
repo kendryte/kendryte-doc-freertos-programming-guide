@@ -1,10 +1,10 @@
 # FreeRTOS 扩展
 
-## 概述
+## Overview
 
 FreeRTOS 是一个轻量级的实时操作系统。本 SDK 在其基础上新增了一些适用于 K210 的功能。
 
-## 功能描述
+## Features
 
 FreeRTOS 扩展模块具有以下功能：
 
@@ -13,7 +13,7 @@ FreeRTOS 扩展模块具有以下功能：
 
 K210 包含 2 个逻辑处理器，Id 分别为 0 和 1。
 
-## API 参考
+## API
 
 对应的头文件 `task.h`
 
@@ -24,35 +24,35 @@ K210 包含 2 个逻辑处理器，Id 分别为 0 和 1。
 
 ### uxTaskGetProcessorId
 
-#### 描述
+#### Description
 
 获取当前逻辑处理器 Id。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 UBaseType_t uxTaskGetProcessorId(void);
 ```
 
-#### 返回值
+#### Return value
 
 当前逻辑处理器 Id。
 
 ### xTaskCreateAtProcessor
 
-#### 描述
+#### Description
 
 在指定逻辑处理器创建任务。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 BaseType_t xTaskCreateAtProcessor(UBaseType_t uxProcessor, TaskFunction_t pxTaskCode, const char * const pcName, const configSTACK_DEPTH_TYPE usStackDepth, void * const pvParameters, UBaseType_t uxPriority, TaskHandle_t * const pxCreatedTask);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称       |   描述       |  输入输出  |
+| Parameter name       |   Description       |  Input or output  |
 | ------------- | ------------ | --------- |
 | uxProcessor   | 逻辑处理器 Id | 输入      |
 | pxTaskCode    | 任务入口点    | 输入      |
@@ -62,9 +62,9 @@ BaseType_t xTaskCreateAtProcessor(UBaseType_t uxProcessor, TaskFunction_t pxTask
 | uxPriority    | 优先级        | 输入      |
 | pxCreatedTask | 创建的任务句柄 | 输入      |
 
-#### 返回值
+#### Return value
 
-| 返回值  |  描述   |
+| 返回值  |  Description   |
 | ------ | ------- |
 | pdPASS | 成功 |
 | 其他   | 失败 |

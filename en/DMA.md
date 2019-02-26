@@ -1,10 +1,10 @@
 # 直接存储访问 (DMA)
 
-## 概述
+## Overview
 
 直接存储访问 (Direct Memory Access, DMA) 用于在外设与存储器之间以及存储器与存储器之间提供高速数据传输。可以在无需任何 CPU 操作的情况下通过 DMA 快速移动数据，从而提高了CPU 的效率。
 
-## 功能描述
+## Features
 
 DMA 模块具有以下功能：
 
@@ -14,7 +14,7 @@ DMA 模块具有以下功能：
 - 异步或同步传输功能
 - 循环传输功能，常用于刷新屏幕或音频录放等场景
 
-## API 参考
+## API
 
 对应的头文件 `hal.h`
 
@@ -29,80 +29,80 @@ DMA 模块具有以下功能：
 
 ### dma\_open\_free
 
-#### 描述
+#### Description
 
 打开一个可用的 DMA 设备。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 handle_t dma_open_free();
 ```
 
-#### 返回值
+#### Return value
 
 DMA 设备句柄。
 
 ### dma\_close
 
-#### 描述
+#### Description
 
 关闭 DMA 设备。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void dma_close(handle_t file);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称     |   描述         |  输入输出  |
+| Parameter name     |   Description         |  Input or output  |
 | ----------- | -------------- | --------- |
 | file        | DMA 设备句柄    | 输入      |
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
 ### dma\_set\_request\_source
 
-#### 描述
+#### Description
 
 设置 DMA 请求源。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void dma_set_request_source(handle_t file, uint32_t request);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称  |   描述         |  输入输出  |
+| Parameter name  |   Description         |  Input or output  |
 | -------- | -------------- | --------- |
 | file     | DMA 设备句柄    | 输入      |
 | request  | 请求源编号      | 输入      |
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
 ### dma\_transmit\_async
 
-#### 描述
+#### Description
 
 进行 DMA 异步传输。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void dma_transmit_async(handle_t file, const volatile void *src, volatile void *dest, int src_inc, int dest_inc, size_t element_size, size_t count, size_t burst_size, SemaphoreHandle_t completion_event);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称           |   描述         |  输入输出  |
+| Parameter name           |   Description         |  Input or output  |
 | ----------------- | -------------- | --------- |
 | file              | DMA 设备句柄    | 输入      |
 | src               | 源地址          | 输入      |
@@ -114,25 +114,25 @@ void dma_transmit_async(handle_t file, const volatile void *src, volatile void *
 | burst\_size       | 突发传输数量    | 输入      |
 | completion\_event | 传输完成事件    | 输入      |
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
 ### dma\_transmit
 
-#### 描述
+#### Description
 
 进行 DMA 同步传输。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void dma_transmit(handle_t file, const volatile void *src, volatile void *dest, int src_inc, int dest_inc, size_t element_size, size_t count, size_t burst_size);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称          |   描述         |  输入输出  |
+| Parameter name          |   Description         |  Input or output  |
 | ---------------- | -------------- | --------- |
 | file             | DMA 设备句柄    | 输入      |
 | src              | 源地址          | 输入      |
@@ -143,25 +143,25 @@ void dma_transmit(handle_t file, const volatile void *src, volatile void *dest, 
 | count            | 元素数量        | 输入      |
 | burst\_size      | 突发传输数量    | 输入      |
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
 ### dma\_loop\_async
 
-#### 描述
+#### Description
 
 进行 DMA 异步循环传输。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void dma_loop_async(handle_t file, const volatile void **srcs, size_t src_num, volatile void **dests, size_t dest_num, int src_inc, int dest_inc, size_t element_size, size_t count, size_t burst_size, dma_stage_completion_handler_t stage_completion_handler, void *stage_completion_handler_data, SemaphoreHandle_t completion_event, int *stop_signal);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称                         |   描述                 |  输入输出  |
+| Parameter name                         |   Description                 |  Input or output  |
 | ------------------------------- | ---------------------- | --------- |
 | file                            | DMA 设备句柄            | 输入      |
 | srcs                            | 源地址列表              | 输入      |
@@ -180,11 +180,11 @@ void dma_loop_async(handle_t file, const volatile void **srcs, size_t src_num, v
 
 **注：** 阶段完成是指单次源到目标 count 个元素的传输完成。
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
-### 举例
+### Example
 
 ```c
 int src[256] = { [0 ... 255] = 1 };
@@ -195,7 +195,7 @@ assert(dest[0] == src[0]);
 dma_close(dma);
 ```
 
-## 数据类型
+## Data type
 
 相关数据类型、数据结构定义如下：
 
@@ -203,18 +203,18 @@ dma_close(dma);
 
 ### dma\_stage\_completion\_handler\_t
 
-#### 描述
+#### Description
 
 DMA 阶段完成处理程序。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef void (*dma_stage_completion_handler_t)(void *userdata);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称    |   描述         |  输入输出  |
+| Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
 | userdata   | 用户数据        | 输入      |

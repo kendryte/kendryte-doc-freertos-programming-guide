@@ -1,17 +1,17 @@
 # 通用异步收发传输器 (UART)
 
-## 概述
+## Overview
 
 嵌入式应用通常要求一个简单的并且占用系统资源少的方法来传输数据。通用异步收发传输器 (UART) 即可以满足这些要求，它能够灵活地与外部设备进行全双工数据交换。
 
-## 功能描述
+## Features
 
 UART 模块具有以下功能：
 
 - 配置 UART 参数
 - 自动收取数据到缓冲区
 
-## API 参考
+## API
 
 对应的头文件 `devices.h`
 
@@ -21,19 +21,19 @@ UART 模块具有以下功能：
 
 ### uart\_config
 
-#### 描述
+#### Description
 
 配置 UART 设备。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void uart_config(handle_t file, uint32_t baud_rate, uint32_t databits, uart_stopbits_t stopbits, uart_parity_t parity);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称    |   描述       |  输入输出  |
+| Parameter name    |   Description       |  Input or output  |
 | ---------- | ------------ | --------- |
 | file       | UART 设备句柄 | 输入      |
 | baud\_rate | 波特率        | 输入      |
@@ -41,11 +41,11 @@ void uart_config(handle_t file, uint32_t baud_rate, uint32_t databits, uart_stop
 | stopbits   | 停止位        | 输入      |
 | parity     | 校验位        | 输入      |
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
-### 举例
+### Example
 
 ```c
 handle_t uart = io_open("/dev/uart1");
@@ -57,7 +57,7 @@ io_write(uart, &b, 1);
 while (io_read(uart, &b, 1) != 1);
 ```
 
-## 数据类型
+## Data type
 
 相关数据类型、数据结构定义如下：
 
@@ -66,11 +66,11 @@ while (io_read(uart, &b, 1) != 1);
 
 ### uart\_stopbits\_t
 
-#### 描述
+#### Description
 
 UART 停止位。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef enum _uart_stopbits
@@ -81,9 +81,9 @@ typedef enum _uart_stopbits
 } uart_stopbits_t;  
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称          | 描述        |
+| 成员名称          | Description        |
 | ---------------- | ----------- |
 | UART\_STOP\_1    | 1 个停止位   |
 | UART\_STOP\_1\_5 | 1.5 个停止位 |
@@ -91,11 +91,11 @@ typedef enum _uart_stopbits
 
 ### uart\_parity\_t
 
-#### 描述
+#### Description
 
 UART 校验位。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef enum _uart_parity
@@ -106,9 +106,9 @@ typedef enum _uart_parity
 } uart_parity_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称            | 描述        |
+| 成员名称            | Description        |
 | ------------------ | ----------- |
 | UART\_PARITY\_NONE | 无校验位    |
 | UART\_PARITY\_ODD  | 奇校验      |

@@ -1,10 +1,10 @@
 # 串行外设接口 (SPI)
 
-## 概述
+## Overview
 
 SPI 是一种高速的，全双工，同步的通信总线。
 
-## 功能描述
+## Features
 
 SPI 模块具有以下功能：
 
@@ -14,7 +14,7 @@ SPI 模块具有以下功能：
 - 支持先写后读和全双工读写
 - 支持发送一串相同的数据帧，常用于清屏、填充存储扇区等场景
 
-## API 参考
+## API
 
 对应的头文件 `devices.h`
 
@@ -29,19 +29,19 @@ SPI 模块具有以下功能：
 
 ### spi\_get\_device
 
-#### 描述
+#### Description
 
 注册并打开一个 SPI 设备。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 handle_t spi_get_device(handle_t file, const char *name, spi_mode mode, spi_frame_format frame_format, uint32_t chip_select_mask, uint32_t data_bit_length);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称            |   描述             |  输入输出  |
+| Parameter name            |   Description             |  Input or output  |
 | ------------------ | ------------------ | --------- |
 | file               | SPI 控制器句柄      | 输入       |
 | name               | 指定访问该设备的路径 | 输入       |
@@ -50,25 +50,25 @@ handle_t spi_get_device(handle_t file, const char *name, spi_mode mode, spi_fram
 | chip\_select\_mask | 片选掩码            | 输入       |
 | data\_bit\_length  | 数据位长度          | 输入       |
 
-#### 返回值
+#### Return value
 
 SPI 设备句柄。
 
 ### spi\_dev\_config\_non\_standard
 
-#### 描述
+#### Description
 
 配置 SPI 设备的非标准帧格式参数。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void spi_dev_config_non_standard(handle_t file, uint32_t instruction_length, uint32_t address_length, uint32_t wait_cycles, spi_inst_addr_trans_mode_t trans_mode);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称             |   描述             |  输入输出  |
+| Parameter name             |   Description             |  Input or output  |
 | ------------------- | ------------------ | --------- |
 | file                | SPI 设备句柄        | 输入      |
 | instruction\_length | 指令长度            | 输入      |
@@ -76,50 +76,50 @@ void spi_dev_config_non_standard(handle_t file, uint32_t instruction_length, uin
 | wait\_cycles        | 等待周期数          | 输入      |
 | trans\_mode         | 指令和地址的传输模式 | 输入      |
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
 ### spi\_dev\_set\_clock\_rate
 
-#### 描述
+#### Description
 
 配置 SPI 设备的时钟速率。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 double spi_dev_set_clock_rate(handle_t file, double clock_rate);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称          |   描述        |  输入输出  |
+| Parameter name          |   Description        |  Input or output  |
 | ---------------- | ------------- | --------- |
 | file             | SPI 设备句柄   | 输入       |
 | clock\_rate      | 期望的时钟速率 | 输入       |
 
-#### 返回值
+#### Return value
 
 设置后的实际速率。
 
 ### spi\_dev\_transfer\_full\_duplex
 
-#### 描述
+#### Description
 
 对 SPI 设备进行全双工传输。
 
 **注：** 仅支持标准帧格式。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 int spi_dev_transfer_full_duplex(handle_t file, const uint8_t *write_buffer, size_t write_len, uint8_t *read_buffer, size_t read_len);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称          |   描述         |  输入输出  |
+| Parameter name          |   Description         |  Input or output  |
 | ---------------- | -------------- | --------- |
 | file             | SPI 设备句柄    | 输入      |
 | write\_buffer    | 源缓冲区        | 输入      |
@@ -127,27 +127,27 @@ int spi_dev_transfer_full_duplex(handle_t file, const uint8_t *write_buffer, siz
 | read\_buffer     | 目标缓冲区       | 输出      |
 | read\_len        | 最多读取的字节数 | 输入      |
 
-#### 返回值
+#### Return value
 
 实际读取的字节数。
 
 ### spi\_dev\_transfer\_sequential
 
-#### 描述
+#### Description
 
 对 SPI 设备进行先写后读。
 
 **注：** 仅支持标准帧格式。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 int spi_dev_transfer_sequential(handle_t file, const uint8_t *write_buffer, size_t write_len, uint8_t *read_buffer, size_t read_len);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称          |   描述         |  输入输出  |
+| Parameter name          |   Description         |  Input or output  |
 | ---------------- | -------------- | --------- |
 | file             | SPI 设备句柄    | 输入      |
 | write\_buffer    | 源缓冲区        | 输入      |
@@ -155,27 +155,27 @@ int spi_dev_transfer_sequential(handle_t file, const uint8_t *write_buffer, size
 | read\_buffer     | 目标缓冲区       | 输出      |
 | read\_len        | 最多读取的字节数 | 输入      |
 
-#### 返回值
+#### Return value
 
 实际读取的字节数。
 
 ### spi\_dev\_fill
 
-#### 描述
+#### Description
 
 对 SPI 设备填充一串相同的帧。
 
 **注：** 仅支持标准帧格式。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 void spi_dev_fill(handle_t file, uint32_t instruction, uint32_t address, uint32_t value, size_t count);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称          |   描述                 |  输入输出  |
+| Parameter name          |   Description                 |  Input or output  |
 | ---------------- | ---------------------- | --------- |
 | file             | SPI 设备句柄            | 输入      |
 | instruction      | 指令（标准帧格式下忽略） | 输入      |
@@ -183,11 +183,11 @@ void spi_dev_fill(handle_t file, uint32_t instruction, uint32_t address, uint32_
 | value            | 帧数据                 | 输出      |
 | count            | 帧数                   | 输入      |
 
-#### 返回值
+#### Return value
 
-无。
+None.
 
-### 举例
+### Example
 
 ```c
 handle_t spi = io_open("/dev/spi0");
@@ -200,7 +200,7 @@ io_write(dev0, data_buf, sizeof(data_buf));
 spi_dev_transfer_sequential(dev0, data_buf, 4, data_buf, 4);
 ```
 
-## 数据类型
+## Data type
 
 相关数据类型、数据结构定义如下：
 
@@ -210,11 +210,11 @@ spi_dev_transfer_sequential(dev0, data_buf, 4, data_buf, 4);
 
 ### spi\_mode\_t
 
-#### 描述
+#### Description
 
 SPI 模式。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef enum _spi_mode
@@ -226,9 +226,9 @@ typedef enum _spi_mode
 } spi_mode_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称       | 描述        |
+| 成员名称       | Description        |
 | ------------- | ----------- |
 | SPI\_MODE\_0  | SPI 模式 0  |
 | SPI\_MODE\_1  | SPI 模式 1  |
@@ -237,11 +237,11 @@ typedef enum _spi_mode
 
 ### spi\_frame\_format\_t
 
-#### 描述
+#### Description
 
 SPI 帧格式。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef enum _spi_frame_format
@@ -253,9 +253,9 @@ typedef enum _spi_frame_format
 } spi_frame_format_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称            | 描述                      |
+| 成员名称            | Description                      |
 | ------------------ | ------------------------- |
 | SPI\_FF\_STANDARD  | 标准                      |
 | SPI\_FF\_DUAL      | 双线                      |
@@ -264,11 +264,11 @@ typedef enum _spi_frame_format
 
 ### spi\_inst\_addr\_trans\_mode\_t
 
-#### 描述
+#### Description
 
 SPI 指令和地址的传输模式。
 
-#### 定义
+#### Type definition
 
 ```c
 typedef enum _spi_inst_addr_trans_mode
@@ -279,9 +279,9 @@ typedef enum _spi_inst_addr_trans_mode
 } spi_inst_addr_trans_mode_t;
 ```
 
-#### 成员
+#### Enumeration element
 
-| 成员名称                      | 描述               |
+| 成员名称                      | Description               |
 | ---------------------------- | ------------------ |
 | SPI\_AITM\_STANDARD          | 均使用标准帧格式     |
 | SPI\_AITM\_ADDR\_STANDARD    | 指令使用配置的值，地址使用标准帧格式 |

@@ -1,17 +1,17 @@
 # 标准 IO
 
-## 概述
+## Overview
 
 标准 IO 模块是访问外设的基本接口。
 
-## 功能描述
+## Features
 
 标准 IO 模块具有以下功能：
 
 - 根据路径寻找外设
 - 统一的读写和控制接口
 
-## API 参考
+## API
 
 对应的头文件 `devices.h`
 
@@ -25,120 +25,120 @@
 
 ### io\_open
 
-#### 描述
+#### Description
 
 打开一个设备。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 handle_t io_open(const char *name);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称   |   描述     |  输入输出  |
+| Parameter name   |   Description     |  Input or output  |
 | --------- | ---------- | --------- |
 | name      | 设备路径    | 输入      |
 
-#### 返回值
+#### Return value
 
-| 返回值 |  描述   |
+| 返回值 |  Description   |
 | ----- | ------- |
 | 0     | 失败    |
 | 其他  | 设备句柄 |
 
 ### io\_close
 
-#### 描述
+#### Description
 
 关闭一个设备。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 int io_close(handle_t file);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称   |   描述     |  输入输出  |
+| Parameter name   |   Description     |  Input or output  |
 | --------- | ---------- | --------- |
 | file      | 设备句柄    | 输入      |
 
-#### 返回值
+#### Return value
 
-| 返回值 |  描述   |
+| 返回值 |  Description   |
 | ----- | ------- |
 | 0     | 成功    |
 | 其他  | 失败    |
 
 ### io\_read
 
-#### 描述
+#### Description
 
 从设备读取。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 int io_read(handle_t file, uint8_t *buffer, size_t len);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称   |   描述         |  输入输出  |
+| Parameter name   |   Description         |  Input or output  |
 | --------- | -------------- | --------- |
 | file      | 设备句柄        | 输入      |
 | buffer    | 目标缓冲区      | 输出      |
 | len       | 最多读取的字节数 | 输入      |
 
-#### 返回值
+#### Return value
 
 实际读取的字节数。
 
 ### io\_write
 
-#### 描述
+#### Description
 
 向设备写入。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 int io_write(handle_t file, const uint8_t *buffer, size_t len);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称   |   描述       |  输入输出  |
+| Parameter name   |   Description       |  Input or output  |
 | --------- | ------------ | --------- |
 | file      | 设备句柄      | 输入      |
 | buffer    | 源缓冲区      | 输入      |
 | len       | 要写入的字节数 | 输入      |
 
-#### 返回值
+#### Return value
 
-| 返回值 |  描述   |
+| 返回值 |  Description   |
 | ----- | ------- |
 | len   | 成功    |
 | 其他  | 失败    |
 
 ### io\_control
 
-#### 描述
+#### Description
 
 向设备发送控制信息。
 
-#### 函数原型
+#### Function prototype
 
 ```c
 int io_control(handle_t file, uint32_t control_code, const uint8_t *write_buffer, size_t write_len, uint8_t *read_buffer, size_t read_len);
 ```
 
-#### 参数
+#### Parameter
 
-| 参数名称       |   描述         |  输入输出  |
+| Parameter name       |   Description         |  Input or output  |
 | ------------- | -------------- | --------- |
 | file          | 设备句柄        | 输入      |
 | control\_code | 控制码          | 输入      |
@@ -147,11 +147,11 @@ int io_control(handle_t file, uint32_t control_code, const uint8_t *write_buffer
 | read\_buffer  | 目标缓冲区      | 输出      |
 | read\_len     | 最多读取的字节数 | 输入      |
 
-#### 返回值
+#### Return value
 
 实际读取的字节数。
 
-### 举例
+### Example
 
 ```c
 handle_t uart = io_open("/dev/uart1");
