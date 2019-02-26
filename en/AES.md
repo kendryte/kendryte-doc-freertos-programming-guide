@@ -72,7 +72,9 @@ void aes_ecb128_hard_encrypt(uint8_t *input_key, uint8_t *input_data, size_t inp
 |     input\_key | AES-ECB-128 encryption key                                                                                                                             | Input           |
 |    input\_data | AES-ECB-128 plaintext data to be encrypted                                                                                                             | Input           |
 |     input\_len | AES-ECB-128 length of plaintext data to be encrypted                                                                                                   | Input           |
-|   output\_data | The result of the AES-ECB-128 encryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes. | Output          |
+|   output\_data | The result of the AES-ECB-128 encryption operation is stored in this buffer[^multiple_of_16bytes]. | Output          |
+
+[^multiple_of_16bytes]: This buffer size needs to be at least an integer multiple of 16bytes.
 
 #### Return value
 
@@ -97,7 +99,7 @@ void aes_ecb128_hard_decrypt(uint8_t *input_key, uint8_t *input_data, size_t inp
 | input\_key     | AES-ECB-128 decryption key                                                                                                                             | Input           |
 | input\_data    | AES-ECB-128 ciphertext data to be decrypted                                                                                                            | Input           |
 | input\_len     | AES-ECB-128 length of ciphertext data to be decrypted                                                                                                  | Input           |
-| output\_data   | The result of the AES-ECB-128 decryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes. | Output          |
+| output\_data   | The result of the AES-ECB-128 decryption operation is stored in this buffer[^multiple_of_16bytes]. | Output          |
 
 #### Return value
 
@@ -122,7 +124,7 @@ void aes_ecb192_hard_encrypt(uint8_t *input_key, uint8_t *input_data, size_t inp
 | input\_key     | AES-ECB-192 encryption key                                                                                                                             | Input           |
 | input\_data    | AES-ECB-192 plaintext data to be encrypted                                                                                                             | Input           |
 | input\_len     | AES-ECB-192 length of plaintext data to be encrypted                                                                                                   | Input           |
-| output\_data   | The result of the AES-ECB-192 encryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes. | Output          |
+| output\_data   | The result of the AES-ECB-192 encryption operation is stored in this buffer[^multiple_of_16bytes]. | Output          |
 
 #### Return value
 
@@ -147,7 +149,7 @@ void aes_ecb192_hard_decrypt(uint8_t *input_key, uint8_t *input_data, size_t inp
 | input\_key     | AES-ECB-192 decryption key                                                                                                                             | Input           |
 | input\_data    | AES-ECB-192 ciphertext data to be decrypted                                                                                                            | Input           |
 | input\_len     | AES-ECB-192 length of ciphertext data to be decrypted                                                                                                  | Input           |
-| output\_data   | The result of the AES-ECB-192 decryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes. | Output          |
+| output\_data   | The result of the AES-ECB-192 decryption operation is stored in this buffer[^multiple_of_16bytes]. | Output          |
 
 #### Return value
 
@@ -172,7 +174,7 @@ void aes_ecb256_hard_encrypt(uint8_t *input_key, uint8_t *input_data, size_t inp
 | input\_key     | AES-ECB-256 encryption key                                                                                                                             | Input           |
 | input\_data    | AES-ECB-256 plaintext data to be encrypted                                                                                                             | Input           |
 | input\_len     | AES-ECB-256 length of plaintext data to be encrypted                                                                                                   | Input           |
-| output\_data   | The result of the AES-ECB-256 encryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes. | Output          |
+| output\_data   | The result of the AES-ECB-256 encryption operation is stored in this buffer[^multiple_of_16bytes]. | Output          |
 
 #### Return value
 
@@ -197,7 +199,7 @@ void aes_ecb256_hard_decrypt(uint8_t *input_key, uint8_t *input_data, size_t inp
 | input\_key     | AES-ECB-256 decryption key                                                                                                                             | Input           |
 | input\_data    | AES-ECB-256 ciphertext data to be decrypted                                                                                                            | Input           |
 | input\_len     | AES-ECB-256 length of ciphertext data to be decrypted                                                                                                  | Input           |
-| output\_data   | The result of the AES-ECB-256 decryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes. | Output          |
+| output\_data   | The result of the AES-ECB-256 decryption operation is stored in this buffer[^multiple_of_16bytes]. | Output          |
 
 #### Return value
 
@@ -222,7 +224,7 @@ void aes_cbc128_hard_encrypt(cbc_context_t *context, uint8_t *input_data, size_t
 | context        | AES-CBC-128 encryption operation structure containing encryption key and offset vector                                                                 | Input           |
 | input\_data    | AES-CBC-128 plaintext data to be encrypted                                                                                                             | Input           |
 | input\_len     | AES-CBC-128 length of plaintext data to be encrypted                                                                                                   | Input           |
-| output\_data   | The result of the AES-CBC-128 encryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes. | Output          |
+| output\_data   | The result of the AES-CBC-128 encryption operation is stored in this buffer[^multiple_of_16bytes]. | Output          |
 
 #### Return value
 
@@ -247,7 +249,7 @@ void aes_cbc128_hard_decrypt(cbc_context_t *context, uint8_t *input_data, size_t
 | context        | AES-CBC-128 decryption operation structure, including decryption key and offset vector                                                                 | Input           |
 | input\_data    | AES-CBC-128 ciphertext data to be decrypted                                                                                                            | Input           |
 | input\_len     | AES-CBC-128 length of ciphertext data to be decrypted                                                                                                  | Input           |
-| output\_data   | The result of the AES-CBC-128 decryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes. | Output          |
+| output\_data   | The result of the AES-CBC-128 decryption operation is stored in this buffer[^multiple_of_16bytes]. | Output          |
 
 #### Return value
 
@@ -272,7 +274,7 @@ void aes_cbc192_hard_encrypt(cbc_context_t *context, uint8_t *input_data, size_t
 | context        | AES-CBC-192 encryption operation structure containing encryption key and offset vector                                                                 | Input           |
 | input\_data    | AES-CBC-192 plaintext data to be encrypted                                                                                                             | Input           |
 | input\_len     | AES-CBC-192 length of plaintext data to be encrypted                                                                                                   | Input           |
-| output\_data   | The result of the AES-CBC-192 encryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes. | Output          |
+| output\_data   | The result of the AES-CBC-192 encryption operation is stored in this buffer[^multiple_of_16bytes]. | Output          |
 
 #### Return value
 
@@ -297,7 +299,7 @@ void aes_cbc192_hard_decrypt(cbc_context_t *context, uint8_t *input_data, size_t
 | context        | AES-CBC-192 decryption operation structure, including decryption key and offset vector                                                                 | Input           |
 | input\_data    | AES-CBC-192 ciphertext data to be decrypted                                                                                                            | Input           |
 | input\_len     | AES-CBC-192 length of ciphertext data to be decrypted                                                                                                  | Input           |
-| output\_data   | The result of the AES-CBC-192 decryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes. | Output          |
+| output\_data   | The result of the AES-CBC-192 decryption operation is stored in this buffer[^multiple_of_16bytes]. | Output          |
 
 #### Return value
 
@@ -322,7 +324,7 @@ void aes_cbc256_hard_encrypt(cbc_context_t *context, uint8_t *input_data, size_t
 | context        | AES-CBC-256 encryption operation structure containing encryption key and offset vector                                                                 | Input           |
 | input\_data    | AES-CBC-256 plaintext data to be encrypted                                                                                                             | Input           |
 | input\_len     | AES-CBC-256 length of plaintext data to be encrypted                                                                                                   | Input           |
-| output\_data   | The result of the AES-CBC-256 encryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes. | Output          |
+| output\_data   | The result of the AES-CBC-256 encryption operation is stored in this buffer[^multiple_of_16bytes]. | Output          |
 
 #### Return value
 
@@ -347,7 +349,7 @@ void aes_cbc256_hard_decrypt(uint8_t *input_key, uint8_t *input_data, size_t inp
 | context        | AES-CBC-256 decryption operation structure, including decryption key and offset vector                                                                 | Input           |
 | input\_data    | AES-CBC-256 ciphertext data to be decrypted                                                                                                            | Input           |
 | input\_len     | AES-CBC-256 length of ciphertext data to be decrypted                                                                                                  | Input           |
-| output\_data   | The result of the AES-CBC-256 decryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes. | Output          |
+| output\_data   | The result of the AES-CBC-256 decryption operation is stored in this buffer[^multiple_of_16bytes]. | Output          |
 
 #### Return value
 
