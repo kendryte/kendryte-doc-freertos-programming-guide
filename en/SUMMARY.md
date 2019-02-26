@@ -41,7 +41,7 @@
   - [API参考](UART.md#API参考)
   - [数据类型](UART.md#数据类型)
 
-- [通用输入/输出 (GPIO)](GPIO.md)
+- [通用输入/Output (GPIO)](GPIO.md)
   - [概述](GPIO.md#概述)
   - [功能Description](GPIO.md#功能Description)
   - [API参考](GPIO.md#API参考)

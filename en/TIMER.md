@@ -38,8 +38,8 @@ size_t timer_set_interval(handle_t file, size_t nanoseconds);
 
 | Parameter name     |   Description         |  Input or output  |
 | ----------- | -------------- | --------- |
-| file        | TIMER 设备句柄  | 输入      |
-| nanoseconds | 间隔（纳秒）    | 输入       |
+| file        | TIMER 设备句柄  | Input      |
+| nanoseconds | 间隔（纳秒）    | Input       |
 
 #### Return value
 
@@ -61,9 +61,9 @@ void timer_set_on_tick(handle_t file, timer_on_tick_t on_tick, void *userdata);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | TIMER 设备句柄  | 输入      |
-| on_tick    | 处理程序        | 输入      |
-| userdata   | 处理程序用户数据 | 输入      |
+| file       | TIMER 设备句柄  | Input      |
+| on_tick    | 处理程序        | Input      |
+| userdata   | 处理程序用户数据 | Input      |
 
 #### Return value
 
@@ -85,8 +85,8 @@ void timer_set_enable(handle_t file, bool enable);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | TIMER 设备句柄 | 输入      |
-| enable     | 是否启用        | 输入      |
+| file       | TIMER 设备句柄 | Input      |
+| enable     | 是否启用        | Input      |
 
 #### Return value
 
@@ -110,7 +110,7 @@ timer_set_enable(timer, true);
 
 ## Data type
 
-相关数据类型、数据结构定义如下：
+The relevant data types and data structures are defined as follows:
 
 - [timer\_on\_tick\_t](#timerontickt)：TIMER 触发时的处理程序。
 
@@ -130,4 +130,4 @@ typedef void (*timer_on_tick_t)(void *userdata);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| userdata   | 用户数据        | 输入      |
+| userdata   | 用户数据        | Input      |

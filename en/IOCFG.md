@@ -13,7 +13,7 @@
 
 对应的头文件 `pin_cfg.h`
 
-相关数据类型、数据结构定义如下：
+The relevant data types and data structures are defined as follows:
 
 - [fpioa\_function\_t](#fpioafunctiont)：管脚的功能编号。
 - [fpioa\_cfg\_item\_t](#fpioacfgitemt)：FPIOA 管脚配置。
@@ -297,12 +297,12 @@ typedef enum _fpioa_function
 
 #### Enumeration element
 
-| 成员名称             |      Description             |
+| Element name             |      Description             |
 | :------------------ | :-------------------- |
 |FUNC\_JTAG\_TCLK     |JTAG时钟接口           |
 |FUNC\_JTAG\_TDI      |JTAG数据输入接口       |
 |FUNC\_JTAG\_TMS      |JTAG控制TAP状态机的转换 |
-|FUNC\_JTAG\_TDO      |JTAG数据输出接口       |
+|FUNC\_JTAG\_TDO      |JTAG数据Output接口       |
 |FUNC\_SPI0\_D0       |SPI0数据线0            |
 |FUNC\_SPI0\_D1       |SPI0数据线1            |
 |FUNC\_SPI0\_D2       |SPI0数据线2            |
@@ -389,36 +389,36 @@ typedef enum _fpioa_function
 |FUNC\_I2S0\_MCLK     |I2S0主时钟（系统时钟） |
 |FUNC\_I2S0\_SCLK     |I2S0串行时钟（位时钟） |
 |FUNC\_I2S0\_WS       |I2S0帧时钟             |
-|FUNC\_I2S0\_IN\_D0    |I2S0串行输入数据接口0  |
-|FUNC\_I2S0\_IN\_D1    |I2S0串行输入数据接口1  |
-|FUNC\_I2S0\_IN\_D2    |I2S0串行输入数据接口2  |
-|FUNC\_I2S0\_IN\_D3    |I2S0串行输入数据接口3  |
-|FUNC\_I2S0\_OUT\_D0   |I2S0串行输出数据接口0  |
-|FUNC\_I2S0\_OUT\_D1   |I2S0串行输出数据接口1  |
-|FUNC\_I2S0\_OUT\_D2   |I2S0串行输出数据接口2  |
-|FUNC\_I2S0\_OUT\_D3   |I2S0串行输出数据接口3  |
+|FUNC\_I2S0\_IN\_D0    |I2S0串行Input数据接口0  |
+|FUNC\_I2S0\_IN\_D1    |I2S0串行Input数据接口1  |
+|FUNC\_I2S0\_IN\_D2    |I2S0串行Input数据接口2  |
+|FUNC\_I2S0\_IN\_D3    |I2S0串行Input数据接口3  |
+|FUNC\_I2S0\_OUT\_D0   |I2S0串行Output数据接口0  |
+|FUNC\_I2S0\_OUT\_D1   |I2S0串行Output数据接口1  |
+|FUNC\_I2S0\_OUT\_D2   |I2S0串行Output数据接口2  |
+|FUNC\_I2S0\_OUT\_D3   |I2S0串行Output数据接口3  |
 |FUNC\_I2S1\_MCLK     |I2S1主时钟（系统时钟） |
 |FUNC\_I2S1\_SCLK     |I2S1串行时钟（位时钟） |
 |FUNC\_I2S1\_WS       |I2S1帧时钟             |
-|FUNC\_I2S1\_IN\_D0    |I2S1串行输入数据接口0  |
-|FUNC\_I2S1\_IN\_D1    |I2S1串行输入数据接口1  |
-|FUNC\_I2S1\_IN\_D2    |I2S1串行输入数据接口2  |
-|FUNC\_I2S1\_IN\_D3    |I2S1串行输入数据接口3  |
-|FUNC\_I2S1\_OUT\_D0   |I2S1串行输出数据接口0  |
-|FUNC\_I2S1\_OUT\_D1   |I2S1串行输出数据接口1  |
-|FUNC\_I2S1\_OUT\_D2   |I2S1串行输出数据接口2  |
-|FUNC\_I2S1\_OUT\_D3   |I2S1串行输出数据接口3  |
+|FUNC\_I2S1\_IN\_D0    |I2S1串行Input数据接口0  |
+|FUNC\_I2S1\_IN\_D1    |I2S1串行Input数据接口1  |
+|FUNC\_I2S1\_IN\_D2    |I2S1串行Input数据接口2  |
+|FUNC\_I2S1\_IN\_D3    |I2S1串行Input数据接口3  |
+|FUNC\_I2S1\_OUT\_D0   |I2S1串行Output数据接口0  |
+|FUNC\_I2S1\_OUT\_D1   |I2S1串行Output数据接口1  |
+|FUNC\_I2S1\_OUT\_D2   |I2S1串行Output数据接口2  |
+|FUNC\_I2S1\_OUT\_D3   |I2S1串行Output数据接口3  |
 |FUNC\_I2S2\_MCLK     |I2S2主时钟（系统时钟） |
 |FUNC\_I2S2\_SCLK     |I2S2串行时钟（位时钟） |
 |FUNC\_I2S2\_WS       |I2S2帧时钟             |
-|FUNC\_I2S2\_IN\_D0    |I2S2串行输入数据接口0  |
-|FUNC\_I2S2\_IN\_D1    |I2S2串行输入数据接口1  |
-|FUNC\_I2S2\_IN\_D2    |I2S2串行输入数据接口2  |
-|FUNC\_I2S2\_IN\_D3    |I2S2串行输入数据接口3  |
-|FUNC\_I2S2\_OUT\_D0   |I2S2串行输出数据接口0  |
-|FUNC\_I2S2\_OUT\_D1   |I2S2串行输出数据接口1  |
-|FUNC\_I2S2\_OUT\_D2   |I2S2串行输出数据接口2  |
-|FUNC\_I2S2\_OUT\_D3   |I2S2串行输出数据接口3  |
+|FUNC\_I2S2\_IN\_D0    |I2S2串行Input数据接口0  |
+|FUNC\_I2S2\_IN\_D1    |I2S2串行Input数据接口1  |
+|FUNC\_I2S2\_IN\_D2    |I2S2串行Input数据接口2  |
+|FUNC\_I2S2\_IN\_D3    |I2S2串行Input数据接口3  |
+|FUNC\_I2S2\_OUT\_D0   |I2S2串行Output数据接口0  |
+|FUNC\_I2S2\_OUT\_D1   |I2S2串行Output数据接口1  |
+|FUNC\_I2S2\_OUT\_D2   |I2S2串行Output数据接口2  |
+|FUNC\_I2S2\_OUT\_D3   |I2S2串行Output数据接口3  |
 |FUNC\_RESV0         |保留功能               |
 |FUNC\_RESV1         |保留功能               |
 |FUNC\_RESV2         |保留功能               |
@@ -451,12 +451,12 @@ typedef enum _fpioa_function
 |FUNC\_UART1\_DSR     |UART1数据设备准备信号  |
 |FUNC\_UART1\_DCD     |UART1数据载波检测      |
 |FUNC\_UART1\_RI      |UART1振铃指示          |
-|FUNC\_UART1\_SIR\_IN  |UART1串行红外输入信号  |
+|FUNC\_UART1\_SIR\_IN  |UART1串行红外Input信号  |
 |FUNC\_UART1\_DTR     |UART1数据终端准备信号  |
 |FUNC\_UART1\_RTS     |UART1发送请求信号      |
-|FUNC\_UART1\_OUT2    |UART1用户指定输出信号2 |
-|FUNC\_UART1\_OUT1    |UART1用户指定输出信号1 |
-|FUNC\_UART1\_SIR\_OUT |UART1串行红外输出信号  |
+|FUNC\_UART1\_OUT2    |UART1用户指定Output信号2 |
+|FUNC\_UART1\_OUT1    |UART1用户指定Output信号1 |
+|FUNC\_UART1\_SIR\_OUT |UART1串行红外Output信号  |
 |FUNC\_UART1\_BAUD    |UART1时钟              |
 |FUNC\_UART1\_RE      |UART1接收使能          |
 |FUNC\_UART1\_DE      |UART1发送使能          |
@@ -465,12 +465,12 @@ typedef enum _fpioa_function
 |FUNC\_UART2\_DSR     |UART2数据设备准备信号  |
 |FUNC\_UART2\_DCD     |UART2数据载波检测      |
 |FUNC\_UART2\_RI      |UART2振铃指示          |
-|FUNC\_UART2\_SIR\_IN  |UART2串行红外输入信号  |
+|FUNC\_UART2\_SIR\_IN  |UART2串行红外Input信号  |
 |FUNC\_UART2\_DTR     |UART2数据终端准备信号  |
 |FUNC\_UART2\_RTS     |UART2发送请求信号      |
-|FUNC\_UART2\_OUT2    |UART2用户指定输出信号2 |
-|FUNC\_UART2\_OUT1    |UART2用户指定输出信号1 |
-|FUNC\_UART2\_SIR\_OUT |UART2串行红外输出信号  |
+|FUNC\_UART2\_OUT2    |UART2用户指定Output信号2 |
+|FUNC\_UART2\_OUT1    |UART2用户指定Output信号1 |
+|FUNC\_UART2\_SIR\_OUT |UART2串行红外Output信号  |
 |FUNC\_UART2\_BAUD    |UART2时钟              |
 |FUNC\_UART2\_RE      |UART2接收使能          |
 |FUNC\_UART2\_DE      |UART2发送使能          |
@@ -479,28 +479,28 @@ typedef enum _fpioa_function
 |FUNC\_UART3\_DSR     |数据设备准备信号       |
 |FUNC\_UART3\_DCD     |UART3数据载波检测      |
 |FUNC\_UART3\_RI      |UART3振铃指示          |
-|FUNC\_UART3\_SIR\_IN  |UART3串行红外输入信号  |
+|FUNC\_UART3\_SIR\_IN  |UART3串行红外Input信号  |
 |FUNC\_UART3\_DTR     |UART3数据终端准备信号  |
 |FUNC\_UART3\_RTS     |UART3发送请求信号      |
-|FUNC\_UART3\_OUT2    |UART3用户指定输出信号2 |
-|FUNC\_UART3\_OUT1    |UART3用户指定输出信号1 |
-|FUNC\_UART3\_SIR\_OUT |UART3串行红外输出信号  |
+|FUNC\_UART3\_OUT2    |UART3用户指定Output信号2 |
+|FUNC\_UART3\_OUT1    |UART3用户指定Output信号1 |
+|FUNC\_UART3\_SIR\_OUT |UART3串行红外Output信号  |
 |FUNC\_UART3\_BAUD    |UART3时钟              |
 |FUNC\_UART3\_RE      |UART3接收使能          |
 |FUNC\_UART3\_DE      |UART3发送使能          |
 |FUNC\_UART3\_RS485\_EN|UART3使能RS485         |
-|FUNC\_TIMER0\_TOGGLE1|TIMER0输出信号1        |
-|FUNC\_TIMER0\_TOGGLE2|TIMER0输出信号2        |
-|FUNC\_TIMER0\_TOGGLE3|TIMER0输出信号3        |
-|FUNC\_TIMER0\_TOGGLE4|TIMER0输出信号4        |
-|FUNC\_TIMER1\_TOGGLE1|TIMER1输出信号1        |
-|FUNC\_TIMER1\_TOGGLE2|TIMER1输出信号2        |
-|FUNC\_TIMER1\_TOGGLE3|TIMER1输出信号3        |
-|FUNC\_TIMER1\_TOGGLE4|TIMER1输出信号4        |
-|FUNC\_TIMER2\_TOGGLE1|TIMER2输出信号1        |
-|FUNC\_TIMER2\_TOGGLE2|TIMER2输出信号2        |
-|FUNC\_TIMER2\_TOGGLE3|TIMER2输出信号3        |
-|FUNC\_TIMER2\_TOGGLE4|TIMER2输出信号4        |
+|FUNC\_TIMER0\_TOGGLE1|TIMER0Output信号1        |
+|FUNC\_TIMER0\_TOGGLE2|TIMER0Output信号2        |
+|FUNC\_TIMER0\_TOGGLE3|TIMER0Output信号3        |
+|FUNC\_TIMER0\_TOGGLE4|TIMER0Output信号4        |
+|FUNC\_TIMER1\_TOGGLE1|TIMER1Output信号1        |
+|FUNC\_TIMER1\_TOGGLE2|TIMER1Output信号2        |
+|FUNC\_TIMER1\_TOGGLE3|TIMER1Output信号3        |
+|FUNC\_TIMER1\_TOGGLE4|TIMER1Output信号4        |
+|FUNC\_TIMER2\_TOGGLE1|TIMER2Output信号1        |
+|FUNC\_TIMER2\_TOGGLE2|TIMER2Output信号2        |
+|FUNC\_TIMER2\_TOGGLE3|TIMER2Output信号3        |
+|FUNC\_TIMER2\_TOGGLE4|TIMER2Output信号4        |
 |FUNC\_CLK\_SPI2      |SPI2时钟               |
 |FUNC\_CLK\_I2C2      |I2C2时钟               |
 |FUNC\_INTERNAL0     |内部功能0              |
@@ -574,7 +574,7 @@ typedef struct _fpioa_cfg_item
 
 #### Enumeration element
 
-| 成员名称          |      Description        |
+| Element name          |      Description        |
 | :--------------- | :--------------- |
 | number           | 管脚编号          |
 | function         | 功能编号          |
@@ -598,7 +598,7 @@ typedef struct _fpioa_cfg
 
 #### Enumeration element
 
-| 成员名称          |      Description        |
+| Element name          |      Description        |
 | :--------------- | :--------------- |
 | version          | 配置版本，必须设为 FPIOA\_CFG\_VERSION   |
 | functions_count  | 功能配置数量      |
@@ -629,7 +629,7 @@ typedef enum _sysctl_power_bank
 
 #### Enumeration element
 
-| 成员名称                              |      Description             |
+| Element name                              |      Description             |
 | :----------------------------------- | :-------------------- |
 |SYSCTL\_POWER\_BANK0                  | 电源域0，控制IO0-IO5   |
 |SYSCTL\_POWER\_BANK1                  | 电源域0，控制IO6-IO11  |
@@ -644,7 +644,7 @@ typedef enum _sysctl_power_bank
 
 #### Description
 
-IO 输出电压值。
+IO Output电压值。
 
 #### Type definition
 
@@ -658,7 +658,7 @@ typedef enum _sysctl_io_power_mode
 
 #### Enumeration element
 
-| 成员名称                            |      Description             |
+| Element name                            |      Description             |
 | :--------------------------------- | :-------------------- |
 |SYSCTL\_POWER\_V33                  | 设置为3.3V             |
 |SYSCTL\_POWER\_V18                  | 设置为1.8V             |
@@ -681,10 +681,10 @@ typedef struct _power_bank_item
 
 #### Enumeration element
 
-| 成员名称                     |      Description             |
+| Element name                     |      Description             |
 | :-------------------------- | :-------------------- |
 | power_bank                  | 电源域编号             |
-| io_power_mode               | IO 输出电压值          |
+| io_power_mode               | IO Output电压值          |
 
 ### power\_bank\_cfg\_t
 
@@ -705,7 +705,7 @@ typedef struct _power_bank_cfg
 
 #### Enumeration element
 
-| 成员名称            |      Description        |
+| Element name            |      Description        |
 | :----------------- | :--------------- |
 | version            | 配置版本，必须设为 FPIOA\_CFG\_VERSION   |
 | power_banks_count  | 电源域配置数量      |
@@ -729,10 +729,10 @@ typedef struct _pin_cfg
 
 #### Enumeration element
 
-| 成员名称            |      Description        |
+| Element name            |      Description        |
 | :----------------- | :--------------- |
 | version            | 配置版本，必须设为 FPIOA\_CFG\_VERSION   |
-| set_spi0_dvp_data  | 是否设置 SPI0_D0-D7 DVP_D0-D7 为 SPI0 或 DVP 数据输入 |
+| set_spi0_dvp_data  | 是否设置 SPI0_D0-D7 DVP_D0-D7 为 SPI0 或 DVP 数据Input |
 
 ### Example
 

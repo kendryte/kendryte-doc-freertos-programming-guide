@@ -38,8 +38,8 @@ void pic_set_irq_enable(uint32_t irq, bool enable);
 
 | Parameter name     |   Description         |  Input or output  |
 | ----------- | -------------- | --------- |
-| irq         | IRQ 编号       | 输入      |
-| enable      | 是否启用        | 输入      |
+| irq         | IRQ 编号       | Input      |
+| enable      | 是否启用        | Input      |
 
 #### Return value
 
@@ -61,9 +61,9 @@ void pic_set_irq_handler(uint32_t irq, pic_irq_handler_t handler, void *userdata
 
 | Parameter name     |   Description         |  Input or output  |
 | ----------- | -------------- | --------- |
-| irq         | IRQ 编号       | 输入      |
-| handler     | 处理程序        | 输入      |
-| userdata    | 处理程序用户数据 | 输入      |
+| irq         | IRQ 编号       | Input      |
+| handler     | 处理程序        | Input      |
+| userdata    | 处理程序用户数据 | Input      |
 
 #### Return value
 
@@ -85,8 +85,8 @@ void pic_set_irq_priority(uint32_t irq, uint32_t priority);
 
 | Parameter name  |   Description         |  Input or output  |
 | -------- | -------------- | --------- |
-| irq      | IRQ 编号       | 输入      |
-| priority | 优先级         | 输入      |
+| irq      | IRQ 编号       | Input      |
+| priority | 优先级         | Input      |
 
 #### Return value
 
@@ -94,7 +94,7 @@ None.
 
 ## Data type
 
-相关数据类型、数据结构定义如下：
+The relevant data types and data structures are defined as follows:
 
 - [pic\_irq\_handler\_t](#picirqhandlert)：IRQ 处理程序。
 
@@ -114,4 +114,4 @@ typedef void (*pic_irq_handler_t)(void *userdata);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| userdata   | 用户数据        | 输入      |
+| userdata   | 用户数据        | Input      |

@@ -37,10 +37,10 @@ handle_t sccb_get_device(handle_t file, const char *name, size_t slave_address, 
 
 | Parameter name            |   Description             |  Input or output  |
 | ------------------ | ------------------ | --------- |
-| file               | SCCB 控制器句柄      | 输入      |
-| name               | 指定访问该设备的路径 | 输入      |
-| slave\_address     | 从设备地址          | 输入      |
-| reg_address\_width | 寄存器地址宽度      | 输入      |
+| file               | SCCB 控制器句柄      | Input      |
+| name               | 指定访问该设备的路径 | Input      |
+| slave\_address     | 从设备地址          | Input      |
+| reg_address\_width | 寄存器地址宽度      | Input      |
 
 #### Return value
 
@@ -62,8 +62,8 @@ uint8_t sccb_dev_read_byte(handle_t file, uint16_t reg_address);
 
 | Parameter name       |   Description         |  Input or output  |
 | ------------- | -------------- | --------- |
-| file          | SCCB 设备句柄   | 输入      |
-| reg\_address  | 寄存器地址      | 输入      |
+| file          | SCCB 设备句柄   | Input      |
+| reg\_address  | 寄存器地址      | Input      |
 
 #### Return value
 
@@ -85,9 +85,9 @@ void sccb_dev_write_byte(handle_t file, uint16_t reg_address, uint8_t value);
 
 | Parameter name          |   Description         |  Input or output  |
 | ---------------- | -------------- | --------- |
-| file             | SCCB 设备句柄   | 输入       |
-| reg\_address     | 寄存器地址      | 输入       |
-| value            | 要写入的字节    | 输入       |
+| file             | SCCB 设备句柄   | Input       |
+| reg\_address     | 寄存器地址      | Input       |
+| value            | 要写入的字节    | Input       |
 
 #### Return value
 

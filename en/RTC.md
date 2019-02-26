@@ -36,8 +36,8 @@ void rtc_get_datetime(handle_t file, struct tm *datetime);
 
 | Parameter name     |   Description         |  Input or output  |
 | ----------- | -------------- | --------- |
-| file        | RTC 设备句柄    | 输入      |
-| datetime    | 日期时刻        | 输出      |
+| file        | RTC 设备句柄    | Input      |
+| datetime    | 日期时刻        | Output      |
 
 #### Return value
 
@@ -59,8 +59,8 @@ void rtc_set_datetime(handle_t file, const struct tm *datetime);
 
 | Parameter name     |   Description           |  Input or output  |
 | ----------- | ---------------- | --------- |
-| file        | RTC 设备句柄      | 输入      |
-| datetime    | 日期时刻          | 输入      |
+| file        | RTC 设备句柄      | Input      |
+| datetime    | 日期时刻          | Input      |
 
 #### Return value
 

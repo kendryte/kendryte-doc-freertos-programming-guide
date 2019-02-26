@@ -32,11 +32,11 @@ void fft_complex_uint16(uint16_t shift, fft_direction_t direction, const uint64_
 
 | Parameter name     |   Description                     |  Input or output  |
 | --------   | ---------------             | ----     |
-| shift    | FFT模块16位寄存器导致数据溢出(-32768~32767)，FFT变换有9层，shift决定哪一层需要移位操作(如0x1ff表示9层都做移位操作；0x03表示第第一层与第二层做移位操作)，防止溢出。如果移位了，则变换后的幅值不是正常FFT变换的幅值，对应关系可以参考fft_test测试demo程序。包含了求解频率点、相位、幅值的示例| 输入 |
-| direction | FFT 正变换或是逆变换              | 输入 |
-| input | 输入的数据序列，格式为 RIRI.., 实部与虚部的精度都为 16 bit | 输入|
-| point_num | 待运算的数据点数，只能为 512/256/128/64 | 输入 |
-| output | 运算后结果。格式为 RIRI.. ,实部与虚部的精度都为 16 bit | 输出 |
+| shift    | FFT模块16位寄存器导致数据溢出(-32768~32767)，FFT变换有9层，shift决定哪一层需要移位操作(如0x1ff表示9层都做移位操作；0x03表示第第一层与第二层做移位操作)，防止溢出。如果移位了，则变换后的幅值不是正常FFT变换的幅值，对应关系可以参考fft_test测试demo程序。包含了求解频率点、相位、幅值的示例| Input |
+| direction | FFT 正变换或是逆变换              | Input |
+| input | Input的数据序列，格式为 RIRI.., 实部与虚部的精度都为 16 bit | Input|
+| point_num | 待运算的数据点数，只能为 512/256/128/64 | Input |
+| output | 运算后结果。格式为 RIRI.. ,实部与虚部的精度都为 16 bit | Output |
 
 ### Example
 
@@ -91,7 +91,7 @@ for (i = 0; i < FFT_N / 2; i++)
 
 ## Data type
 
-相关数据类型、数据结构定义如下：
+The relevant data types and data structures are defined as follows:
 
 - [fft\_data\_t](#fftdatat)：FFT 运算传入的数据格式。
 - [fft\_direction\_t](#fftdirectiont)：FFT 运算模式。
@@ -116,7 +116,7 @@ typedef struct tag_fft_data
 
 #### Enumeration element
 
-| 成员名称 | Description |
+| Element name | Description |
 | ----- | --- |
 | I1 | 第一个数据的虚部  |
 | R1 | 第一个数据的实部  |
@@ -142,7 +142,7 @@ typedef enum tag_fft_direction
 
 #### Enumeration element
 
-| 成员名称 | Description |
+| Element name | Description |
 | ----- | --- |
 | FFT\_DIR\_BACKWARD | FFT 逆变换 |
 | FFT\_DIR\_FORWARD  | FFT 正变换 |

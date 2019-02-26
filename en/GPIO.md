@@ -1,4 +1,4 @@
-# 通用输入/输出 (GPIO)
+# 通用输入/Output (GPIO)
 
 ## Overview
 
@@ -40,7 +40,7 @@ uint32_t gpio_get_pin_count(handle_t file);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | GPIO 控制器句柄 | 输入      |
+| file       | GPIO 控制器句柄 | Input      |
 
 #### Return value
 
@@ -62,9 +62,9 @@ void gpio_set_drive_mode(handle_t file, uint32_t pin, gpio_drive_mode_t mode);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | GPIO 控制器句柄 | 输入      |
-| pin        | 管脚编号        | 输入      |
-| mode       | 驱动模式        | 输入      |
+| file       | GPIO 控制器句柄 | Input      |
+| pin        | 管脚编号        | Input      |
+| mode       | 驱动模式        | Input      |
 
 #### Return value
 
@@ -88,9 +88,9 @@ void gpio_set_pin_edge(handle_t file, uint32_t pin, gpio_pin_edge_t edge);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | GPIO 控制器句柄 | 输入      |
-| pin        | 管脚编号        | 输入      |
-| edge       | 边沿触发模式    | 输入      |
+| file       | GPIO 控制器句柄 | Input      |
+| pin        | 管脚编号        | Input      |
+| edge       | 边沿触发模式    | Input      |
 
 #### Return value
 
@@ -114,10 +114,10 @@ void gpio_set_on_changed(handle_t file, uint32_t pin, gpio_on_changed_t callback
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | GPIO 控制器句柄 | 输入      |
-| pin        | 管脚编号        | 输入      |
-| callback   | 处理程序        | 输入      |
-| userdata   | 处理程序用户数据 | 输入      |
+| file       | GPIO 控制器句柄 | Input      |
+| pin        | 管脚编号        | Input      |
+| callback   | 处理程序        | Input      |
+| userdata   | 处理程序用户数据 | Input      |
 
 #### Return value
 
@@ -139,8 +139,8 @@ gpio_pin_value_t gpio_get_pin_value(handle_t file, uint32_t pin);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | GPIO 控制器句柄 | 输入      |
-| pin        | 管脚编号        | 输入      |
+| file       | GPIO 控制器句柄 | Input      |
+| pin        | 管脚编号        | Input      |
 
 #### Return value
 
@@ -162,9 +162,9 @@ void gpio_set_pin_value(handle_t file, uint32_t pin, gpio_pin_value_t value);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | GPIO 控制器句柄 | 输入      |
-| pin        | 管脚编号        | 输入      |
-| value      | 要设置的值      | 输入      |
+| file       | GPIO 控制器句柄 | Input      |
+| pin        | 管脚编号        | Input      |
+| value      | 要设置的值      | Input      |
 
 #### Return value
 
@@ -181,7 +181,7 @@ gpio_set_pin_value(gpio, 0, GPIO_PV_LOW);
 
 ## Data type
 
-相关数据类型、数据结构定义如下：
+The relevant data types and data structures are defined as follows:
 
 - [gpio\_drive\_mode\_t](#gpiodrivemodet)：GPIO 驱动模式。
 - [gpio\_pin\_edge\_t](#gpiopinedget)：GPIO 边沿触发模式。
@@ -208,12 +208,12 @@ typedef enum _gpio_drive_mode
 
 #### Enumeration element
 
-| 成员名称                     | Description        |
+| Element name                     | Description        |
 | --------------------------- | ----------- |
-| GPIO\_DM\_INPUT             | 输入        |
-| GPIO\_DM\_INPUT\_PULL\_DOWN | 输入下拉     |
-| GPIO\_DM\_INPUT\_PULL\_UP   | 输入上拉     |
-| GPIO\_DM\_OUTPUT            | 输出         |
+| GPIO\_DM\_INPUT             | Input        |
+| GPIO\_DM\_INPUT\_PULL\_DOWN | Input下拉     |
+| GPIO\_DM\_INPUT\_PULL\_UP   | Input上拉     |
+| GPIO\_DM\_OUTPUT            | Output         |
 
 ### gpio\_pin\_edge\_t
 
@@ -235,7 +235,7 @@ typedef enum _gpio_pin_edge
 
 #### Enumeration element
 
-| 成员名称            | Description        |
+| Element name            | Description        |
 | ------------------ | ----------- |
 | GPIO\_PE\_NONE     | 不触发      |
 | GPIO\_PE\_FALLING  | 下降沿触发  |
@@ -260,7 +260,7 @@ typedef enum _gpio_pin_value
 
 #### Enumeration element
 
-| 成员名称            | Description        |
+| Element name            | Description        |
 | ------------------ | ----------- |
 | GPIO\_PV\_LOW      | 低          |
 | GPIO\_PV\_HIGH     | 高          |
@@ -281,5 +281,5 @@ typedef void (*gpio_on_changed_t)(uint32_t pin, void *userdata);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| pin        | 管脚编号        | 输入      |
-| userdata   | 用户数据        | 输入      |
+| pin        | 管脚编号        | Input      |
+| userdata   | 用户数据        | Input      |

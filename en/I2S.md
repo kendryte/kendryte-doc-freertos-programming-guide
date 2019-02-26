@@ -41,11 +41,11 @@ void i2s_config_as_render(handle_t file, const audio_format_t *format, size_t de
 
 | Parameter name          |   Description             |  Input or output  |
 | ---------------- | ------------------ | --------- |
-| file             | I2S 控制器句柄      | 输入      |
-| format           | 音频格式            | 输入      |
-| delay\_ms        | 缓冲区长度          | 输入      |
-| align\_mode      | 对齐模式            | 输入      |
-| channels\_mask   | 通道掩码            | 输入      |
+| file             | I2S 控制器句柄      | Input      |
+| format           | 音频格式            | Input      |
+| delay\_ms        | 缓冲区长度          | Input      |
+| align\_mode      | 对齐模式            | Input      |
+| channels\_mask   | 通道掩码            | Input      |
 
 #### Return value
 
@@ -67,11 +67,11 @@ void i2s_config_as_capture(handle_t file, const audio_format_t *format, size_t d
 
 | Parameter name          |   Description             |  Input or output  |
 | ---------------- | ------------------ | --------- |
-| file             | I2S 控制器句柄      | 输入      |
-| format           | 音频格式            | 输入      |
-| delay\_ms        | 缓冲区长度          | 输入      |
-| align\_mode      | 对齐模式            | 输入      |
-| channels\_mask   | 通道掩码            | 输入      |
+| file             | I2S 控制器句柄      | Input      |
+| format           | 音频格式            | Input      |
+| delay\_ms        | 缓冲区长度          | Input      |
+| align\_mode      | 对齐模式            | Input      |
+| channels\_mask   | 通道掩码            | Input      |
 
 #### Return value
 
@@ -93,9 +93,9 @@ void i2s_get_buffer(handle_t file, uint8_t **buffer, size_t *frames);
 
 | Parameter name    |   Description        |  Input or output  |
 | ---------- | ------------- | --------- |
-| file       | I2S 控制器句柄 | 输入       |
-| buffer     | 缓冲区         | 输出       |
-| frames     | 缓冲区帧数     | 输出       |
+| file       | I2S 控制器句柄 | Input       |
+| buffer     | 缓冲区         | Output       |
+| frames     | 缓冲区帧数     | Output       |
 
 #### Return value
 
@@ -117,8 +117,8 @@ void i2s_release_buffer(handle_t file, size_t frames);
 
 | Parameter name    |   Description               |  Input or output  |
 | ---------- | -------------------- | --------- |
-| file       | I2S 控制器句柄        | 输入       |
-| frames     | 确认已读取或写入的帧数 | 输入       |
+| file       | I2S 控制器句柄        | Input       |
+| frames     | 确认已读取或写入的帧数 | Input       |
 
 #### Return value
 
@@ -140,7 +140,7 @@ void i2s_start(handle_t file);
 
 | Parameter name    |   Description               |  Input or output  |
 | ---------- | -------------------- | --------- |
-| file       | I2S 控制器句柄        | 输入       |
+| file       | I2S 控制器句柄        | Input       |
 
 #### Return value
 
@@ -162,7 +162,7 @@ void i2s_stop(handle_t file);
 
 | Parameter name    |   Description               |  Input or output  |
 | ---------- | -------------------- | --------- |
-| file       | I2S 控制器句柄        | 输入       |
+| file       | I2S 控制器句柄        | Input       |
 
 #### Return value
 
@@ -192,7 +192,7 @@ while (1)
 
 ## Data type
 
-相关数据类型、数据结构定义如下：
+The relevant data types and data structures are defined as follows:
 
 - [audio\_format\_type\_t](#audioformattypet)：音频格式类型。
 - [audio\_format\_t](#[audioformatt)：音频格式。
@@ -215,7 +215,7 @@ typedef enum _audio_format_type
 
 #### Enumeration element
 
-| 成员名称            | Description        |
+| Element name            | Description        |
 | ------------------ | ----------- |
 | AUDIO\_FMT\_PCM    | PCM         |
 
@@ -239,7 +239,7 @@ typedef struct _audio_format
 
 #### Enumeration element
 
-| 成员名称           | Description          |
+| Element name           | Description          |
 | ----------------- | ------------- |
 | type              | 音频格式类型   |
 | bits\_per\_sample | 采样深度       |
@@ -265,7 +265,7 @@ typedef enum _i2s_align_mode
 
 #### Enumeration element
 
-| 成员名称           | Description        |
+| Element name           | Description        |
 | ----------------- | ----------- |
 | I2S\_AM\_STANDARD | 标准模式     |
 | I2S\_AM\_RIGHT    | 右对齐       |

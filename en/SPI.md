@@ -43,12 +43,12 @@ handle_t spi_get_device(handle_t file, const char *name, spi_mode mode, spi_fram
 
 | Parameter name            |   Description             |  Input or output  |
 | ------------------ | ------------------ | --------- |
-| file               | SPI 控制器句柄      | 输入       |
-| name               | 指定访问该设备的路径 | 输入       |
-| mode               | SPI 模式            | 输入       |
-| frame\_format      | 帧格式              | 输入       |
-| chip\_select\_mask | 片选掩码            | 输入       |
-| data\_bit\_length  | 数据位长度          | 输入       |
+| file               | SPI 控制器句柄      | Input       |
+| name               | 指定访问该设备的路径 | Input       |
+| mode               | SPI 模式            | Input       |
+| frame\_format      | 帧格式              | Input       |
+| chip\_select\_mask | 片选掩码            | Input       |
+| data\_bit\_length  | 数据位长度          | Input       |
 
 #### Return value
 
@@ -70,11 +70,11 @@ void spi_dev_config_non_standard(handle_t file, uint32_t instruction_length, uin
 
 | Parameter name             |   Description             |  Input or output  |
 | ------------------- | ------------------ | --------- |
-| file                | SPI 设备句柄        | 输入      |
-| instruction\_length | 指令长度            | 输入      |
-| address\_length     | 地址长度            | 输入      |
-| wait\_cycles        | 等待周期数          | 输入      |
-| trans\_mode         | 指令和地址的传输模式 | 输入      |
+| file                | SPI 设备句柄        | Input      |
+| instruction\_length | 指令长度            | Input      |
+| address\_length     | 地址长度            | Input      |
+| wait\_cycles        | 等待周期数          | Input      |
+| trans\_mode         | 指令和地址的传输模式 | Input      |
 
 #### Return value
 
@@ -96,8 +96,8 @@ double spi_dev_set_clock_rate(handle_t file, double clock_rate);
 
 | Parameter name          |   Description        |  Input or output  |
 | ---------------- | ------------- | --------- |
-| file             | SPI 设备句柄   | 输入       |
-| clock\_rate      | 期望的时钟速率 | 输入       |
+| file             | SPI 设备句柄   | Input       |
+| clock\_rate      | 期望的时钟速率 | Input       |
 
 #### Return value
 
@@ -121,11 +121,11 @@ int spi_dev_transfer_full_duplex(handle_t file, const uint8_t *write_buffer, siz
 
 | Parameter name          |   Description         |  Input or output  |
 | ---------------- | -------------- | --------- |
-| file             | SPI 设备句柄    | 输入      |
-| write\_buffer    | 源缓冲区        | 输入      |
-| write\_len       | 要写入的字节数   | 输入      |
-| read\_buffer     | 目标缓冲区       | 输出      |
-| read\_len        | 最多读取的字节数 | 输入      |
+| file             | SPI 设备句柄    | Input      |
+| write\_buffer    | 源缓冲区        | Input      |
+| write\_len       | 要写入的字节数   | Input      |
+| read\_buffer     | 目标缓冲区       | Output      |
+| read\_len        | 最多读取的字节数 | Input      |
 
 #### Return value
 
@@ -149,11 +149,11 @@ int spi_dev_transfer_sequential(handle_t file, const uint8_t *write_buffer, size
 
 | Parameter name          |   Description         |  Input or output  |
 | ---------------- | -------------- | --------- |
-| file             | SPI 设备句柄    | 输入      |
-| write\_buffer    | 源缓冲区        | 输入      |
-| write\_len       | 要写入的字节数   | 输入      |
-| read\_buffer     | 目标缓冲区       | 输出      |
-| read\_len        | 最多读取的字节数 | 输入      |
+| file             | SPI 设备句柄    | Input      |
+| write\_buffer    | 源缓冲区        | Input      |
+| write\_len       | 要写入的字节数   | Input      |
+| read\_buffer     | 目标缓冲区       | Output      |
+| read\_len        | 最多读取的字节数 | Input      |
 
 #### Return value
 
@@ -177,11 +177,11 @@ void spi_dev_fill(handle_t file, uint32_t instruction, uint32_t address, uint32_
 
 | Parameter name          |   Description                 |  Input or output  |
 | ---------------- | ---------------------- | --------- |
-| file             | SPI 设备句柄            | 输入      |
-| instruction      | 指令（标准帧格式下忽略） | 输入      |
-| address          | 地址（标准帧格式下忽略） | 输入      |
-| value            | 帧数据                 | 输出      |
-| count            | 帧数                   | 输入      |
+| file             | SPI 设备句柄            | Input      |
+| instruction      | 指令（标准帧格式下忽略） | Input      |
+| address          | 地址（标准帧格式下忽略） | Input      |
+| value            | 帧数据                 | Output      |
+| count            | 帧数                   | Input      |
 
 #### Return value
 
@@ -202,7 +202,7 @@ spi_dev_transfer_sequential(dev0, data_buf, 4, data_buf, 4);
 
 ## Data type
 
-相关数据类型、数据结构定义如下：
+The relevant data types and data structures are defined as follows:
 
 - [spi\_mode\_t](#spimodet)：SPI 模式。
 - [spi\_frame\_format\_t](#spiframeformatt)：SPI 帧格式。
@@ -228,7 +228,7 @@ typedef enum _spi_mode
 
 #### Enumeration element
 
-| 成员名称       | Description        |
+| Element name       | Description        |
 | ------------- | ----------- |
 | SPI\_MODE\_0  | SPI 模式 0  |
 | SPI\_MODE\_1  | SPI 模式 1  |
@@ -255,7 +255,7 @@ typedef enum _spi_frame_format
 
 #### Enumeration element
 
-| 成员名称            | Description                      |
+| Element name            | Description                      |
 | ------------------ | ------------------------- |
 | SPI\_FF\_STANDARD  | 标准                      |
 | SPI\_FF\_DUAL      | 双线                      |
@@ -281,7 +281,7 @@ typedef enum _spi_inst_addr_trans_mode
 
 #### Enumeration element
 
-| 成员名称                      | Description               |
+| Element name                      | Description               |
 | ---------------------------- | ------------------ |
 | SPI\_AITM\_STANDARD          | 均使用标准帧格式     |
 | SPI\_AITM\_ADDR\_STANDARD    | 指令使用配置的值，地址使用标准帧格式 |

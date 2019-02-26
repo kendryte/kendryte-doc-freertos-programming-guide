@@ -8,8 +8,8 @@ PWM 用于控制脉冲输出的占空比。
 
 PWM 模块具有以下功能：
 
-- 配置 PWM 输出频率
-- 配置 PWM 每个管脚的输出占空比
+- 配置 PWM Output频率
+- 配置 PWM 每个管脚的Output占空比
 
 ## API
 
@@ -38,7 +38,7 @@ uint32_t pwm_get_pin_count(handle_t file);
 
 | Parameter name     |   Description         |  Input or output  |
 | ----------- | -------------- | --------- |
-| file        | PWM 设备句柄    | 输入      |
+| file        | PWM 设备句柄    | Input      |
 
 #### Return value
 
@@ -60,8 +60,8 @@ double pwm_set_frequency(handle_t file, double frequency);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | PWM 设备句柄    | 输入      |
-| frequency  | 期望的频率（Hz） | 输入      |
+| file       | PWM 设备句柄    | Input      |
+| frequency  | 期望的频率（Hz） | Input      |
 
 #### Return value
 
@@ -83,9 +83,9 @@ double pwm_set_active_duty_cycle_percentage(handle_t file, uint32_t pin, double 
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | PWM 设备句柄    | 输入      |
-| pin        | 管脚编号        | 输入      |
-| duty\_cycle\_percentage  | 期望的占空比 | 输入      |
+| file       | PWM 设备句柄    | Input      |
+| pin        | 管脚编号        | Input      |
+| duty\_cycle\_percentage  | 期望的占空比 | Input      |
 
 #### Return value
 
@@ -107,9 +107,9 @@ void pwm_set_enable(handle_t file, uint32_t pin, bool enable);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | PWM 设备句柄    | 输入      |
-| pin        | 管脚编号        | 输入      |
-| enable     | 是否启用        | 输入      |
+| file       | PWM 设备句柄    | Input      |
+| pin        | 管脚编号        | Input      |
+| enable     | 是否启用        | Input      |
 
 #### Return value
 
@@ -118,7 +118,7 @@ void pwm_set_enable(handle_t file, uint32_t pin, bool enable);
 ### Example
 
 ```c
-/* pwm0 pin0 输出 200KHZ 占空比为 0.5 的方波 */
+/* pwm0 pin0 Output 200KHZ 占空比为 0.5 的方波 */
 handle_t pwm = io_open("/dev/pwm0");
 pwm_set_frequency(pwm, 200000);
 pwm_set_active_duty_cycle_percentage(pwm, 0, 0.5);

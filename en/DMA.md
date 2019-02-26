@@ -59,7 +59,7 @@ void dma_close(handle_t file);
 
 | Parameter name     |   Description         |  Input or output  |
 | ----------- | -------------- | --------- |
-| file        | DMA 设备句柄    | 输入      |
+| file        | DMA 设备句柄    | Input      |
 
 #### Return value
 
@@ -81,8 +81,8 @@ void dma_set_request_source(handle_t file, uint32_t request);
 
 | Parameter name  |   Description         |  Input or output  |
 | -------- | -------------- | --------- |
-| file     | DMA 设备句柄    | 输入      |
-| request  | 请求源编号      | 输入      |
+| file     | DMA 设备句柄    | Input      |
+| request  | 请求源编号      | Input      |
 
 #### Return value
 
@@ -104,15 +104,15 @@ void dma_transmit_async(handle_t file, const volatile void *src, volatile void *
 
 | Parameter name           |   Description         |  Input or output  |
 | ----------------- | -------------- | --------- |
-| file              | DMA 设备句柄    | 输入      |
-| src               | 源地址          | 输入      |
-| dest              | 目标地址        | 输出      |
-| src\_inc          | 源地址是否自增   | 输入      |
-| dest\_inc         | 目标地址是否自增 | 输入      |
-| element\_size     | 元素大小（字节） | 输入      |
-| count             | 元素数量        | 输入      |
-| burst\_size       | 突发传输数量    | 输入      |
-| completion\_event | 传输完成事件    | 输入      |
+| file              | DMA 设备句柄    | Input      |
+| src               | 源地址          | Input      |
+| dest              | 目标地址        | Output      |
+| src\_inc          | 源地址是否自增   | Input      |
+| dest\_inc         | 目标地址是否自增 | Input      |
+| element\_size     | 元素大小（字节） | Input      |
+| count             | 元素数量        | Input      |
+| burst\_size       | 突发传输数量    | Input      |
+| completion\_event | 传输完成事件    | Input      |
 
 #### Return value
 
@@ -134,14 +134,14 @@ void dma_transmit(handle_t file, const volatile void *src, volatile void *dest, 
 
 | Parameter name          |   Description         |  Input or output  |
 | ---------------- | -------------- | --------- |
-| file             | DMA 设备句柄    | 输入      |
-| src              | 源地址          | 输入      |
-| dest             | 目标地址        | 输出      |
-| src\_inc         | 源地址是否自增   | 输入      |
-| dest\_inc        | 目标地址是否自增 | 输入      |
-| element\_size    | 元素大小（字节） | 输入      |
-| count            | 元素数量        | 输入      |
-| burst\_size      | 突发传输数量    | 输入      |
+| file             | DMA 设备句柄    | Input      |
+| src              | 源地址          | Input      |
+| dest             | 目标地址        | Output      |
+| src\_inc         | 源地址是否自增   | Input      |
+| dest\_inc        | 目标地址是否自增 | Input      |
+| element\_size    | 元素大小（字节） | Input      |
+| count            | 元素数量        | Input      |
+| burst\_size      | 突发传输数量    | Input      |
 
 #### Return value
 
@@ -163,20 +163,20 @@ void dma_loop_async(handle_t file, const volatile void **srcs, size_t src_num, v
 
 | Parameter name                         |   Description                 |  Input or output  |
 | ------------------------------- | ---------------------- | --------- |
-| file                            | DMA 设备句柄            | 输入      |
-| srcs                            | 源地址列表              | 输入      |
-| src\_num                        | 源地址数量              | 输入      |
-| dests                           | 目标地址列表            | 输出      |
-| dest\_num                       | 目标地址数量            | 输入      |
-| src\_inc                        | 源地址是否自增          | 输入      |
-| dest\_inc                       | 目标地址是否自增        | 输入      |
-| element\_size                   | 元素大小（字节）        | 输入      |
-| count                           | 元素数量                | 输入      |
-| burst\_size                     | 突发传输数量            | 输入      |
-| stage\_completion\_handler      | 阶段完成处理程序        | 输入      |
-| stage\_completion\_handler_data | 阶段完成处理程序用户数据 | 输入      |
-| completion\_event               | 传输完成事件            | 输入      |
-| stop\_signal                    | 停止信号                | 输入      |
+| file                            | DMA 设备句柄            | Input      |
+| srcs                            | 源地址列表              | Input      |
+| src\_num                        | 源地址数量              | Input      |
+| dests                           | 目标地址列表            | Output      |
+| dest\_num                       | 目标地址数量            | Input      |
+| src\_inc                        | 源地址是否自增          | Input      |
+| dest\_inc                       | 目标地址是否自增        | Input      |
+| element\_size                   | 元素大小（字节）        | Input      |
+| count                           | 元素数量                | Input      |
+| burst\_size                     | 突发传输数量            | Input      |
+| stage\_completion\_handler      | 阶段完成处理程序        | Input      |
+| stage\_completion\_handler_data | 阶段完成处理程序用户数据 | Input      |
+| completion\_event               | 传输完成事件            | Input      |
+| stop\_signal                    | 停止信号                | Input      |
 
 **注：** 阶段完成是指单次源到目标 count 个元素的传输完成。
 
@@ -197,7 +197,7 @@ dma_close(dma);
 
 ## Data type
 
-相关数据类型、数据结构定义如下：
+The relevant data types and data structures are defined as follows:
 
 - [dma\_stage\_completion\_handler\_t](#dmastagecompletionhandlert)：DMA 阶段完成处理程序。
 
@@ -217,4 +217,4 @@ typedef void (*dma_stage_completion_handler_t)(void *userdata);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| userdata   | 用户数据        | 输入      |
+| userdata   | 用户数据        | Input      |

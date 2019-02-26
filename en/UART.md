@@ -35,11 +35,11 @@ void uart_config(handle_t file, uint32_t baud_rate, uint32_t databits, uart_stop
 
 | Parameter name    |   Description       |  Input or output  |
 | ---------- | ------------ | --------- |
-| file       | UART 设备句柄 | 输入      |
-| baud\_rate | 波特率        | 输入      |
-| databits   | 数据位 (5-8)  | 输入      |
-| stopbits   | 停止位        | 输入      |
-| parity     | 校验位        | 输入      |
+| file       | UART 设备句柄 | Input      |
+| baud\_rate | 波特率        | Input      |
+| databits   | 数据位 (5-8)  | Input      |
+| stopbits   | 停止位        | Input      |
+| parity     | 校验位        | Input      |
 
 #### Return value
 
@@ -59,7 +59,7 @@ while (io_read(uart, &b, 1) != 1);
 
 ## Data type
 
-相关数据类型、数据结构定义如下：
+The relevant data types and data structures are defined as follows:
 
 - [uart\_stopbits\_t](#uartstopbitst)：UART 停止位。
 - [uart\_parity\_t](#uartparityt)：UART 校验位。
@@ -83,7 +83,7 @@ typedef enum _uart_stopbits
 
 #### Enumeration element
 
-| 成员名称          | Description        |
+| Element name          | Description        |
 | ---------------- | ----------- |
 | UART\_STOP\_1    | 1 个停止位   |
 | UART\_STOP\_1\_5 | 1.5 个停止位 |
@@ -108,7 +108,7 @@ typedef enum _uart_parity
 
 #### Enumeration element
 
-| 成员名称            | Description        |
+| Element name            | Description        |
 | ------------------ | ----------- |
 | UART\_PARITY\_NONE | 无校验位    |
 | UART\_PARITY\_ODD  | 奇校验      |

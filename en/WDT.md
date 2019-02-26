@@ -41,8 +41,8 @@ void wdt_set_response_mode(handle_t file, wdt_response_mode_t mode);
 
 | Parameter name     |   Description         |  Input or output  |
 | ----------- | -------------- | --------- |
-| file        | WDT 设备句柄    | 输入      |
-| mode        | 响应模式        | 输入      |
+| file        | WDT 设备句柄    | Input      |
+| mode        | 响应模式        | Input      |
 
 #### Return value
 
@@ -64,8 +64,8 @@ size_t wdt_set_timeout(handle_t file, size_t nanoseconds);
 
 | Parameter name     |   Description               |  Input or output  |
 | ----------- | -------------------- | --------- |
-| file        | WDT 设备句柄          | 输入      |
-| nanoseconds | 期望的超时时间（纳秒） | 输入      |
+| file        | WDT 设备句柄          | Input      |
+| nanoseconds | 期望的超时时间（纳秒） | Input      |
 
 #### Return value
 
@@ -87,9 +87,9 @@ void wdt_set_on_timeout(handle_t file, wdt_on_timeout_t handler, void *userdata)
 
 | Parameter name  |   Description         |  Input or output  |
 | -------- | -------------- | --------- |
-| file     | WDT 设备句柄    | 输入      |
-| handler  | 处理程序        | 输入      |
-| userdata | 处理程序用户数据 | 输入      |
+| file     | WDT 设备句柄    | Input      |
+| handler  | 处理程序        | Input      |
+| userdata | 处理程序用户数据 | Input      |
 
 #### Return value
 
@@ -111,7 +111,7 @@ void wdt_restart_counter(handle_t file);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | WDT 设备句柄    | 输入      |
+| file       | WDT 设备句柄    | Input      |
 
 #### Return value
 
@@ -133,8 +133,8 @@ void wdt_set_enable(handle_t file, bool enable);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | WDT 设备句柄    | 输入      |
-| enable     | 是否启用        | 输入      |
+| file       | WDT 设备句柄    | Input      |
+| enable     | 是否启用        | Input      |
 
 #### Return value
 
@@ -159,7 +159,7 @@ wdt_set_enable(wdt, true);
 
 ## Data type
 
-相关数据类型、数据结构定义如下：
+The relevant data types and data structures are defined as follows:
 
 - [wdt\_response\_mode\_t](#wdtresponsemodet)：WDT 响应模式。
 - [wdt\_on\_timeout\_t](#wdtontimeoutt)：WDT 超时处理程序。
@@ -182,7 +182,7 @@ typedef enum _wdt_response_mode
 
 #### Enumeration element
 
-| 成员名称             | Description           |
+| Element name             | Description           |
 | -------------------- | ------------- |
 | WDT\_RESP\_RESET     | 超时后复位系统 |
 | WDT\_RESP\_INTERRUPT | 超时后进入中断，再次超时复位系统 |
@@ -203,7 +203,7 @@ typedef int (*wdt_on_timeout_t)(void *userdata);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| userdata   | 用户数据        | 输入      |
+| userdata   | 用户数据        | Input      |
 
 #### Return value
 

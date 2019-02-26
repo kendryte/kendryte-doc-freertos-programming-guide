@@ -57,7 +57,7 @@ Provide the following interfaces
 
 #### Description
 
-AES-ECB-128加密运算，当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-ECB-128 encryption operation, when the amount of encrypted data is less than or equal to 896 bytes, it will use the CPU to transmit data. When it is greater than 896 bytes, it will use DMA to transmit data, thus improving the calculation efficiency.
 
 #### Function prototype
 
@@ -69,10 +69,10 @@ void aes_ecb128_hard_encrypt(uint8_t *input_key, uint8_t *input_data, size_t inp
 
 | Parameter name      |  Description                          |Input or output|
 | ------:      |:-----                         | ----  |
-|input\_key    |AES-ECB-128加密的密钥                | 输入 |
-|input\_data   |AES-ECB-128待加密的明文数据           | 输入 |
-|input\_len   |AES-ECB-128待加密明文数据的长度        | 输入 |
-|output\_data  |AES-ECB-128加密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为16bytes的整数倍| 输出 |
+|input\_key    |AES-ECB-128 encryption key                | Input |
+|input\_data   |AES-ECB-128 plaintext data to be encrypted           | Input |
+|input\_len   |AES-ECB-128 length of plaintext data to be encrypted        | Input |
+|output\_data  |The result of the AES-ECB-128 encryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes.| Output |
 
 #### Return value
 
@@ -82,7 +82,7 @@ None.
 
 #### Description
 
-AES-ECB-128解密运算。当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-ECB-128 decryption operation. When the amount of encrypted data is less than or equal to 896 bytes, cpu is used to transmit data. When it is greater than 896 bytes, dma is used to transmit data, thereby improving the efficiency of calculation.
 
 #### Function prototype
 
@@ -94,10 +94,10 @@ void aes_ecb128_hard_decrypt(uint8_t *input_key, uint8_t *input_data, size_t inp
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|input\_key    |AES-ECB-128解密的密钥                | 输入 |
-|input\_data   |AES-ECB-128待解密的密文数据           | 输入 |
-|input\_len   |AES-ECB-128待解密密文数据的长度        | 输入 |
-|output\_data  |AES-ECB-128解密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为16bytes的整数倍| 输出 |
+|input\_key    |AES-ECB-128 decryption key                | Input |
+|input\_data   |AES-ECB-128 ciphertext data to be decrypted           | Input |
+|input\_len   |AES-ECB-128 length of ciphertext data to be decrypted        | Input |
+|output\_data  |The result of the AES-ECB-128 decryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes.| Output |
 
 #### Return value
 
@@ -107,7 +107,7 @@ None.
 
 #### Description
 
-AES-ECB-192加密运算。当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-ECB-192 encryption operation. When the amount of encrypted data is less than or equal to 896 bytes, cpu is used to transmit data. When it is greater than 896 bytes, dma is used to transmit data, thereby improving the efficiency of calculation.
 
 #### Function prototype
 
@@ -119,10 +119,10 @@ void aes_ecb192_hard_encrypt(uint8_t *input_key, uint8_t *input_data, size_t inp
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|input\_key    |AES-ECB-192加密的密钥                | 输入 |
-|input\_data   |AES-ECB-192待加密的明文数据           | 输入 |
-|input\_len   |AES-ECB-192待加密明文数据的长度        | 输入 |
-|output\_data  |AES-ECB-192加密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为16bytes的整数倍| 输出 |
+|input\_key    |AES-ECB-192 encryption key                | Input |
+|input\_data   |AES-ECB-192 plaintext data to be encrypted           | Input |
+|input\_len   |AES-ECB-192 length of plaintext data to be encrypted        | Input |
+|output\_data  |The result of the AES-ECB-192 encryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes.| Output |
 
 #### Return value
 
@@ -132,7 +132,7 @@ None.
 
 #### Description
 
-AES-ECB-192解密运算。当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-ECB-192 decryption operation. When the amount of encrypted data is less than or equal to 896 bytes, cpu is used to transmit data. When it is greater than 896 bytes, dma is used to transmit data, thereby improving the efficiency of calculation.
 
 #### Function prototype
 
@@ -144,10 +144,10 @@ void aes_ecb192_hard_decrypt(uint8_t *input_key, uint8_t *input_data, size_t inp
 
 | Parameter name      |  Description                          |Input or output|
 |  -----       | -----                         |  ----  |
-|input\_key    |AES-ECB-192解密的密钥                | 输入 |
-|input\_data   |AES-ECB-192待解密的密文数据           | 输入 |
-|input\_len   |AES-ECB-192待解密密文数据的长度        | 输入 |
-|output\_data  |AES-ECB-192解密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为16bytes的整数倍| 输出 |
+|input\_key    |AES-ECB-192 decryption key                | Input |
+|input\_data   |AES-ECB-192 ciphertext data to be decrypted           | Input |
+|input\_len   |AES-ECB-192 length of ciphertext data to be decrypted        | Input |
+|output\_data  |The result of the AES-ECB-192 decryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes.| Output |
 
 #### Return value
 
@@ -157,7 +157,7 @@ None.
 
 #### Description
 
-AES-ECB-256加密运算。当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-ECB-256 encryption operation. When the amount of encrypted data is less than or equal to 896 bytes, cpu is used to transmit data. When it is greater than 896 bytes, dma is used to transmit data, thereby improving the efficiency of calculation.
 
 #### Function prototype
 
@@ -169,10 +169,10 @@ void aes_ecb256_hard_encrypt(uint8_t *input_key, uint8_t *input_data, size_t inp
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|input\_key    |AES-ECB-256加密的密钥                | 输入 |
-|input\_data   |AES-ECB-256待加密的明文数据           | 输入 |
-|input\_len   |AES-ECB-256待加密明文数据的长度        | 输入 |
-|output\_data  |AES-ECB-256加密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为16bytes的整数倍| 输出 |
+|input\_key    |AES-ECB-256 encryption key                | Input |
+|input\_data   |AES-ECB-256 plaintext data to be encrypted           | Input |
+|input\_len   |AES-ECB-256 length of plaintext data to be encrypted        | Input |
+|output\_data  |The result of the AES-ECB-256 encryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes.| Output |
 
 #### Return value
 
@@ -182,7 +182,7 @@ None.
 
 #### Description
 
-AES-ECB-256解密运算。当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-ECB-256 decryption operation. When the amount of encrypted data is less than or equal to 896 bytes, cpu is used to transmit data. When it is greater than 896 bytes, dma is used to transmit data, thereby improving the efficiency of calculation.
 
 #### Function prototype
 
@@ -194,10 +194,10 @@ void aes_ecb256_hard_decrypt(uint8_t *input_key, uint8_t *input_data, size_t inp
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|input\_key    |AES-ECB-256解密的密钥                | 输入 |
-|input\_data   |AES-ECB-256待解密的密文数据           | 输入 |
-|input\_len   |AES-ECB-256待解密密文数据的长度        | 输入 |
-|output\_data  |AES-ECB-256解密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为16bytes的整数倍| 输出 |
+|input\_key    |AES-ECB-256 decryption key                | Input |
+|input\_data   |AES-ECB-256 ciphertext data to be decrypted           | Input |
+|input\_len   |AES-ECB-256 length of ciphertext data to be decrypted        | Input |
+|output\_data  |The result of the AES-ECB-256 decryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes.| Output |
 
 #### Return value
 
@@ -207,7 +207,7 @@ None.
 
 #### Description
 
-AES-CBC-128加密运算。当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-CBC-128 encryption operation. When the amount of encrypted data is less than or equal to 896 bytes, cpu is used to transmit data. When it is greater than 896 bytes, dma is used to transmit data, thereby improving the efficiency of calculation.
 
 #### Function prototype
 
@@ -219,10 +219,10 @@ void aes_cbc128_hard_encrypt(cbc_context_t *context, uint8_t *input_data, size_t
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|context      |AES-CBC-128加密计算的结构体，包含加密密钥与偏移向量| 输入 |
-|input\_data   |AES-CBC-128待加密的明文数据           | 输入 |
-|input\_len   |AES-CBC-128待加密明文数据的长度        | 输入 |
-|output\_data  |AES-CBC-128加密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为16bytes的整数倍| 输出 |
+|context      |AES-CBC-128 encryption operation structure containing encryption key and offset vector| Input |
+|input\_data   |AES-CBC-128 plaintext data to be encrypted           | Input |
+|input\_len   |AES-CBC-128 length of plaintext data to be encrypted        | Input |
+|output\_data  |The result of the AES-CBC-128 encryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes.| Output |
 
 #### Return value
 
@@ -232,7 +232,7 @@ None.
 
 #### Description
 
-AES-CBC-128解密运算。当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-CBC-128 decryption operation. When the amount of encrypted data is less than or equal to 896 bytes, cpu is used to transmit data. When it is greater than 896 bytes, dma is used to transmit data, thereby improving the efficiency of calculation.
 
 #### Function prototype
 
@@ -244,10 +244,10 @@ void aes_cbc128_hard_decrypt(cbc_context_t *context, uint8_t *input_data, size_t
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|context    |AES-CBC-128解密计算的结构体，包含解密密钥与偏移向量| 输入 |
-|input\_data   |AES-CBC-128待解密的密文数据           | 输入 |
-|input\_len   |AES-CBC-128待解密密文数据的长度        | 输入 |
-|output\_data  |AES-CBC-128解密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为16bytes的整数倍| 输出 |
+|context    |AES-CBC-128 decryption operation structure, including decryption key and offset vector| Input |
+|input\_data   |AES-CBC-128 ciphertext data to be decrypted           | Input |
+|input\_len   |AES-CBC-128 length of ciphertext data to be decrypted        | Input |
+|output\_data  |The result of the AES-CBC-128 decryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes.| Output |
 
 #### Return value
 
@@ -257,7 +257,7 @@ None.
 
 #### Description
 
-AES-CBC-192加密运算。当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-CBC-192 encryption operation. When the amount of encrypted data is less than or equal to 896 bytes, cpu is used to transmit data. When it is greater than 896 bytes, dma is used to transmit data, thereby improving the efficiency of calculation.
 
 #### Function prototype
 
@@ -269,10 +269,10 @@ void aes_cbc192_hard_encrypt(cbc_context_t *context, uint8_t *input_data, size_t
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|context      |AES-CBC-192加密计算的结构体，包含加密密钥与偏移向量| 输入 |
-|input\_data   |AES-CBC-192待加密的明文数据           | 输入 |
-|input\_len   |AES-CBC-192待加密明文数据的长度        | 输入 |
-|output\_data  |AES-CBC-192加密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为16bytes的整数倍| 输出 |
+|context      |AES-CBC-192 encryption operation structure containing encryption key and offset vector| Input |
+|input\_data   |AES-CBC-192 plaintext data to be encrypted           | Input |
+|input\_len   |AES-CBC-192 length of plaintext data to be encrypted        | Input |
+|output\_data  |The result of the AES-CBC-192 encryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes.| Output |
 
 #### Return value
 
@@ -282,7 +282,7 @@ None.
 
 #### Description
 
-AES-CBC-192解密运算。当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-CBC-192 decryption operation. When the amount of encrypted data is less than or equal to 896 bytes, cpu is used to transmit data. When it is greater than 896 bytes, dma is used to transmit data, thereby improving the efficiency of calculation.
 
 #### Function prototype
 
@@ -294,10 +294,10 @@ void aes_cbc192_hard_decrypt(cbc_context_t *context, uint8_t *input_data, size_t
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|context      |AES-CBC-192解密计算的结构体，包含解密密钥与偏移向量| 输入 |
-|input\_data   |AES-CBC-192待解密的密文数据           | 输入 |
-|input\_len   |AES-CBC-192待解密密文数据的长度        | 输入 |
-|output\_data  |AES-CBC-192解密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为16bytes的整数倍| 输出 |
+|context      |AES-CBC-192 decryption operation structure, including decryption key and offset vector| Input |
+|input\_data   |AES-CBC-192 ciphertext data to be decrypted           | Input |
+|input\_len   |AES-CBC-192 length of ciphertext data to be decrypted        | Input |
+|output\_data  |The result of the AES-CBC-192 decryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes.| Output |
 
 #### Return value
 
@@ -307,7 +307,7 @@ None.
 
 #### Description
 
-AES-CBC-256加密运算。当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-CBC-256 encryption operation. When the amount of encrypted data is less than or equal to 896 bytes, cpu is used to transmit data. When it is greater than 896 bytes, dma is used to transmit data, thereby improving the efficiency of calculation.
 
 #### Function prototype
 
@@ -319,10 +319,10 @@ void aes_cbc256_hard_encrypt(cbc_context_t *context, uint8_t *input_data, size_t
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|context      |AES-CBC-256加密计算的结构体，包含加密密钥与偏移向量| 输入 |
-|input\_data   |AES-CBC-256待加密的明文数据           | 输入 |
-|input\_len   |AES-CBC-256待加密明文数据的长度        | 输入 |
-|output\_data  |AES-CBC-256加密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为16bytes的整数倍| 输出 |
+|context      |AES-CBC-256 encryption operation structure containing encryption key and offset vector| Input |
+|input\_data   |AES-CBC-256 plaintext data to be encrypted           | Input |
+|input\_len   |AES-CBC-256 length of plaintext data to be encrypted        | Input |
+|output\_data  |The result of the AES-CBC-256 encryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes.| Output |
 
 #### Return value
 
@@ -332,7 +332,7 @@ None.
 
 #### Description
 
-AES-CBC-256解密运算。当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-CBC-256 decryption operation. When the amount of encrypted data is less than or equal to 896 bytes, cpu is used to transmit data. When it is greater than 896 bytes, dma is used to transmit data, thereby improving the efficiency of calculation.
 
 #### Function prototype
 
@@ -344,10 +344,10 @@ void aes_cbc256_hard_decrypt(uint8_t *input_key, uint8_t *input_data, size_t inp
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|context      |AES-CBC-256解密计算的结构体，包含解密密钥与偏移向量| 输入 |
-|input\_data   |AES-CBC-256待解密的密文数据           | 输入 |
-|input\_len   |AES-CBC-256待解密密文数据的长度        | 输入 |
-|output\_data  |AES-CBC-256解密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为16bytes的整数倍| 输出 |
+|context      |AES-CBC-256 decryption operation structure, including decryption key and offset vector| Input |
+|input\_data   |AES-CBC-256 ciphertext data to be decrypted           | Input |
+|input\_len   |AES-CBC-256 length of ciphertext data to be decrypted        | Input |
+|output\_data  |The result of the AES-CBC-256 decryption operation is stored in this buffer.<br/>This buffer size needs to be at least an integer multiple of 16bytes.| Output |
 
 #### Return value
 
@@ -357,7 +357,7 @@ None.
 
 #### Description
 
-AES-GCM-128加密运算。当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-GCM-128 encryption operation. When the amount of encrypted data is less than or equal to 896 bytes, cpu is used to transmit data. When it is greater than 896 bytes, dma is used to transmit data, thereby improving the efficiency of calculation.
 
 #### Function prototype
 
@@ -369,11 +369,11 @@ void aes_gcm128_hard_encrypt(gcm_context_t *context, uint8_t *input_data, size_t
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|context      |AES-GCM-128加密计算的结构体，包含加密密钥/偏移向量/aad/aad长度| 输入 |
-|input\_data   |AES-GCM-128待加密的明文数据           | 输入 |
-|input\_len   |AES-GCM-128待加密明文数据的长度      | 输入 |
-|output\_data  |AES-GCM-128加密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| 输出 |
-|gcm\_tag  |AES-GCM-128加密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| 输出 |
+|context      |AES-GCM-128加密计算的结构体，包含加密密钥/偏移向量/aad/aad长度| Input |
+|input\_data   |AES-GCM-128 plaintext data to be encrypted           | Input |
+|input\_len   |AES-GCM-128 length of plaintext data to be encrypted      | Input |
+|output\_data  |The result of the AES-GCM-128 encryption operation is stored in this buffer.<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| Output |
+|gcm\_tag  |AES-GCM-128加密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| Output |
 
 #### Return value
 
@@ -383,7 +383,7 @@ None.
 
 #### Description
 
-AES-GCM-128解密运算。当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-GCM-128 decryption operation. When the amount of encrypted data is less than or equal to 896 bytes, cpu is used to transmit data. When it is greater than 896 bytes, dma is used to transmit data, thereby improving the efficiency of calculation.
 
 #### Function prototype
 
@@ -395,11 +395,11 @@ void aes_gcm128_hard_decrypt(gcm_context_t *context, uint8_t *input_data, size_t
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|context    |AES-GCM-128解密计算的结构体，包含解密密钥/偏移向量/aad/aad长度| 输入 |
-|input\_data   |AES-GCM-128待解密的密文数据           | 输入 |
-|input\_len   |AES-GCM-128待解密密文数据的长度。    | 输入 |
-|output\_data  |AES-GCM-128解密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| 输出 |
-|gcm\_tag  |AES-GCM-128解密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| 输出 |
+|context    |AES-GCM-128解密计算的结构体，包含解密密钥/偏移向量/aad/aad长度| Input |
+|input\_data   |AES-GCM-128 ciphertext data to be decrypted           | Input |
+|input\_len   |AES-GCM-128 length of ciphertext data to be decrypted。    | Input |
+|output\_data  |The result of the AES-GCM-128 decryption operation is stored in this buffer.<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| Output |
+|gcm\_tag  |AES-GCM-128解密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| Output |
 
 #### Return value
 
@@ -409,7 +409,7 @@ None.
 
 #### Description
 
-AES-GCM-192加密运算。当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-GCM-192 encryption operation. When the amount of encrypted data is less than or equal to 896 bytes, cpu is used to transmit data. When it is greater than 896 bytes, dma is used to transmit data, thereby improving the efficiency of calculation.
 
 #### Function prototype
 
@@ -421,11 +421,11 @@ void aes_gcm192_hard_encrypt(gcm_context_t *context, uint8_t *input_data, size_t
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|context      |AES-GCM-192加密计算的结构体，包含加密密钥/偏移向量/aad/aad长度| 输入 |
-|input\_data   |AES-GCM-192待加密的明文数据           | 输入 |
-|input\_len   |AES-GCM-192待加密明文数据的长度。| 输入 |
-|output\_data  |AES-GCM-192加密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| 输出 |
-|gcm\_tag  |AES-GCM-192加密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| 输出 |
+|context      |AES-GCM-192加密计算的结构体，包含加密密钥/偏移向量/aad/aad长度| Input |
+|input\_data   |AES-GCM-192 plaintext data to be encrypted           | Input |
+|input\_len   |AES-GCM-192 length of plaintext data to be encrypted。| Input |
+|output\_data  |The result of the AES-GCM-192 encryption operation is stored in this buffer.<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| Output |
+|gcm\_tag  |AES-GCM-192加密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| Output |
 
 #### Return value
 
@@ -435,7 +435,7 @@ None.
 
 #### Description
 
-AES-GCM-192解密运算。当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-GCM-192 decryption operation. When the amount of encrypted data is less than or equal to 896 bytes, cpu is used to transmit data. When it is greater than 896 bytes, dma is used to transmit data, thereby improving the efficiency of calculation.
 
 #### Function prototype
 
@@ -447,11 +447,11 @@ void aes_gcm192_hard_decrypt(gcm_context_t *context, uint8_t *input_data, size_t
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|context      |AES-GCM-192解密计算的结构体，包含解密密钥/偏移向量/aad/aad长度| 输入 |
-|input\_data   |AES-GCM-192待解密的密文数据           | 输入 |
-|input\_len   |AES-GCM-192待解密密文数据的长度。| 输入 |
-|output\_data  |AES-GCM-192解密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| 输出 |
-|gcm\_tag  |AES-GCM-192解密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| 输出 |
+|context      |AES-GCM-192解密计算的结构体，包含解密密钥/偏移向量/aad/aad长度| Input |
+|input\_data   |AES-GCM-192 ciphertext data to be decrypted           | Input |
+|input\_len   |AES-GCM-192 length of ciphertext data to be decrypted。| Input |
+|output\_data  |The result of the AES-GCM-192 decryption operation is stored in this buffer.<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| Output |
+|gcm\_tag  |AES-GCM-192解密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| Output |
 
 #### Return value
 
@@ -461,7 +461,7 @@ None.
 
 #### Description
 
-AES-GCM-256加密运算。当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-GCM-256 encryption operation. When the amount of encrypted data is less than or equal to 896 bytes, cpu is used to transmit data. When it is greater than 896 bytes, dma is used to transmit data, thereby improving the efficiency of calculation.
 
 #### Function prototype
 
@@ -473,11 +473,11 @@ void aes_gcm256_hard_encrypt(gcm_context_t *context, uint8_t *input_data, size_t
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|context      |AES-GCM-256加密计算的结构体，包含加密密钥/偏移向量/aad/aad长度| 输入 |
-|input\_data   |AES-GCM-256待加密的明文数据           | 输入 |
-|input\_len   |AES-GCM-256待加密明文数据的长度。| 输入 |
-|output\_data  |AES-GCM-256加密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| 输出 |
-|gcm\_tag  |AES-GCM-256加密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| 输出 |
+|context      |AES-GCM-256加密计算的结构体，包含加密密钥/偏移向量/aad/aad长度| Input |
+|input\_data   |AES-GCM-256 plaintext data to be encrypted           | Input |
+|input\_len   |AES-GCM-256 length of plaintext data to be encrypted。| Input |
+|output\_data  |The result of the AES-GCM-256 encryption operation is stored in this buffer.<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| Output |
+|gcm\_tag  |AES-GCM-256加密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| Output |
 
 #### Return value
 
@@ -487,7 +487,7 @@ None.
 
 #### Description
 
-AES-GCM-256解密运算。当加密数据量小于等于896bytes时会使用cpu来传输数据，大于896bytes时，会使用dma来传输数据，从而提高计算的效率。
+AES-GCM-256 decryption operation. When the amount of encrypted data is less than or equal to 896 bytes, cpu is used to transmit data. When it is greater than 896 bytes, dma is used to transmit data, thereby improving the efficiency of calculation.
 
 #### Function prototype
 
@@ -499,11 +499,11 @@ void aes_gcm256_hard_decrypt(gcm_context_t *context, uint8_t *input_data, size_t
 
 | Parameter name    |  Description                          |Input or output|
 |  ------   | -----                         |  ----  |
-|context |AES-GCM-256解密计算的结构体，包含解密密钥/偏移向量/aad/aad长度| 输入 |
-|input\_data   |AES-GCM-256待解密的密文数据           | 输入 |
-|input\_len   |AES-GCM-256待解密密文数据的长度。| 输入 |
-|output\_data  |AES-GCM-256解密运算后的结果存放在这个buffer。<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| 输出 |
-|gcm\_tag  |AES-GCM-256解密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| 输出 |
+|context |AES-GCM-256解密计算的结构体，包含解密密钥/偏移向量/aad/aad长度| Input |
+|input\_data   |AES-GCM-256 ciphertext data to be decrypted           | Input |
+|input\_len   |AES-GCM-256 length of ciphertext data to be decrypted。| Input |
+|output\_data  |The result of the AES-GCM-256 decryption operation is stored in this buffer.<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| Output |
+|gcm\_tag  |AES-GCM-256解密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| Output |
 
 #### Return value
 
@@ -522,15 +522,15 @@ aes_cbc128_hard_decrypt(&cbc_context, aes_input_data, 16L, aes_output_data);
 
 ## Data type
 
-相关数据类型、数据结构定义如下：
+The relevant data types and data structures are defined as follows:
 
-- [aes\_cipher\_mode\_t](#aesciphermodet)：AES 加密/解密的方式。
+- [aes\_cipher\_mode\_t](#aesciphermodet)：AES encryption and decryption mode
 
 ### aes\_cipher\_mode\_t
 
 #### Description
 
-AES加密/解密的方式。
+AES encryption and decryption mode
 
 #### Type definition
 
@@ -546,8 +546,8 @@ typedef enum _aes_cipher_mode
 
 #### Enumeration element
 
-| 成员名称 | Description |
-| :----- | :--- |
-| AES\_ECB | ECB 加密/解密 |
-| AES\_CBC | CBC 加密/解密 |
-| AES\_GCM | GCM 加密/解密 |
+| Element name |          Description          |
+| :----------- | :---------------------------- |
+| AES\_ECB     | ECB encryption and decryption |
+| AES\_CBC     | CBC encryption and decryption |
+| AES\_GCM     | GCM encryption and decryption |

@@ -39,7 +39,7 @@ handle_t io_open(const char *name);
 
 | Parameter name   |   Description     |  Input or output  |
 | --------- | ---------- | --------- |
-| name      | 设备路径    | 输入      |
+| name      | 设备路径    | Input      |
 
 #### Return value
 
@@ -64,7 +64,7 @@ int io_close(handle_t file);
 
 | Parameter name   |   Description     |  Input or output  |
 | --------- | ---------- | --------- |
-| file      | 设备句柄    | 输入      |
+| file      | 设备句柄    | Input      |
 
 #### Return value
 
@@ -89,9 +89,9 @@ int io_read(handle_t file, uint8_t *buffer, size_t len);
 
 | Parameter name   |   Description         |  Input or output  |
 | --------- | -------------- | --------- |
-| file      | 设备句柄        | 输入      |
-| buffer    | 目标缓冲区      | 输出      |
-| len       | 最多读取的字节数 | 输入      |
+| file      | 设备句柄        | Input      |
+| buffer    | 目标缓冲区      | Output      |
+| len       | 最多读取的字节数 | Input      |
 
 #### Return value
 
@@ -113,9 +113,9 @@ int io_write(handle_t file, const uint8_t *buffer, size_t len);
 
 | Parameter name   |   Description       |  Input or output  |
 | --------- | ------------ | --------- |
-| file      | 设备句柄      | 输入      |
-| buffer    | 源缓冲区      | 输入      |
-| len       | 要写入的字节数 | 输入      |
+| file      | 设备句柄      | Input      |
+| buffer    | 源缓冲区      | Input      |
+| len       | 要写入的字节数 | Input      |
 
 #### Return value
 
@@ -140,12 +140,12 @@ int io_control(handle_t file, uint32_t control_code, const uint8_t *write_buffer
 
 | Parameter name       |   Description         |  Input or output  |
 | ------------- | -------------- | --------- |
-| file          | 设备句柄        | 输入      |
-| control\_code | 控制码          | 输入      |
-| write\_buffer | 源缓冲区        | 输入      |
-| write\_len    | 要写入的字节数   | 输入      |
-| read\_buffer  | 目标缓冲区      | 输出      |
-| read\_len     | 最多读取的字节数 | 输入      |
+| file          | 设备句柄        | Input      |
+| control\_code | 控制码          | Input      |
+| write\_buffer | 源缓冲区        | Input      |
+| write\_len    | 要写入的字节数   | Input      |
+| read\_buffer  | 目标缓冲区      | Output      |
+| read\_len     | 最多读取的字节数 | Input      |
 
 #### Return value
 

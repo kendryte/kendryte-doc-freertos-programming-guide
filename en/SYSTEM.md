@@ -36,7 +36,7 @@ uint32_t system_set_cpu_frequency(uint32_t frequency);
 
 | Parameter name     |   Description           |  Input or output  |
 | ----------- | ---------------- | --------- |
-| frequency   | 要设置的频率（Hz） | 输入      |
+| frequency   | 要设置的频率（Hz） | Input      |
 
 #### Return value
 
@@ -58,8 +58,8 @@ void system_install_custom_driver(const char *name, const custom_driver_t *drive
 
 | Parameter name     |   Description             |  Input or output  |
 | ----------- | ------------------ | --------- |
-| name        | 指定访问该设备的路径 | 输入      |
-| driver      | 自定义驱动实现      | 输入      |
+| name        | 指定访问该设备的路径 | Input      |
+| driver      | 自定义驱动实现      | Input      |
 
 #### Return value
 
@@ -74,7 +74,7 @@ system_set_cpu_frequency(400000000);
 
 ## Data type
 
-相关数据类型、数据结构定义如下：
+The relevant data types and data structures are defined as follows:
 
 - [driver\_base\_t](#driverbaset)：驱动实现基类。
 - [custom\_driver\_t](#customdrivert)：自定义驱动实现。
@@ -99,7 +99,7 @@ typedef struct _driver_base
 
 #### Enumeration element
 
-| 成员名称   | Description        |
+| Element name   | Description        |
 | --------- | ----------- |
 | userdata  | 用户数据     |
 | install   | 安装时被调用 |
@@ -124,7 +124,7 @@ typedef struct _custom_driver
 
 #### Enumeration element
 
-| 成员名称     | Description               |
+| Element name     | Description               |
 | ----------- | ------------------ |
 | base        | 驱动实现基类        |
 | io\_control | 收到控制信息时被调用 |

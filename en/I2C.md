@@ -40,10 +40,10 @@ handle_t i2c_get_device(handle_t file, const char *name, uint32_t slave_address,
 
 | Parameter name          |   Description             |  Input or output  |
 | ---------------- | ------------------ | --------- |
-| file             | I2C 控制器句柄      | 输入      |
-| name             | 指定访问该设备的路径 | 输入      |
-| slave\_address   | 从设备地址          | 输入      |
-| address\_width   | 从设备地址宽度      | 输入      |
+| file             | I2C 控制器句柄      | Input      |
+| name             | 指定访问该设备的路径 | Input      |
+| slave\_address   | 从设备地址          | Input      |
+| address\_width   | 从设备地址宽度      | Input      |
 
 #### Return value
 
@@ -65,8 +65,8 @@ double i2c_dev_set_clock_rate(handle_t file, double clock_rate);
 
 | Parameter name          |   Description        |  Input or output  |
 | ---------------- | ------------- | --------- |
-| file             | I2C 设备句柄   | 输入       |
-| clock\_rate      | 期望的时钟速率 | 输入       |
+| file             | I2C 设备句柄   | Input       |
+| clock\_rate      | 期望的时钟速率 | Input       |
 
 #### Return value
 
@@ -88,11 +88,11 @@ int i2c_dev_transfer_sequential(handle_t file, const uint8_t *write_buffer, size
 
 | Parameter name       |   Description         |  Input or output  |
 | ------------- | -------------- | --------- |
-| file          | I2C 设备句柄    | 输入      |
-| write\_buffer | 源缓冲区        | 输入      |
-| write\_len    | 要写入的字节数   | 输入      |
-| read\_buffer  | 目标缓冲区      | 输出      |
-| read\_len     | 最多读取的字节数 | 输入      |
+| file          | I2C 设备句柄    | Input      |
+| write\_buffer | 源缓冲区        | Input      |
+| write\_len    | 要写入的字节数   | Input      |
+| read\_buffer  | 目标缓冲区      | Output      |
+| read\_len     | 最多读取的字节数 | Input      |
 
 #### Return value
 
@@ -114,10 +114,10 @@ void i2c_config_as_slave(handle_t file, uint32_t slave_address, uint32_t address
 
 | Parameter name          |   Description        |  Input or output  |
 | ---------------- | ------------- | --------- |
-| file             | I2C 控制器句柄 | 输入       |
-| slave\_address   | 从设备地址     | 输入       |
-| address\_width   | 从设备地址宽度 | 输入       |
-| handler          | 从设备处理程序 | 输入       |
+| file             | I2C 控制器句柄 | Input       |
+| slave\_address   | 从设备地址     | Input       |
+| address\_width   | 从设备地址宽度 | Input       |
+| handler          | 从设备处理程序 | Input       |
 
 #### Return value
 
@@ -139,8 +139,8 @@ double i2c_slave_set_clock_rate(handle_t file, double clock_rate);
 
 | Parameter name          |   Description        |  Input or output  |
 | ---------------- | ------------- | --------- |
-| file             | I2C 控制器句柄 | 输入       |
-| clock\_rate      | 期望的时钟速率 | 输入       |
+| file             | I2C 控制器句柄 | Input       |
+| clock\_rate      | 期望的时钟速率 | Input       |
 
 #### Return value
 
@@ -165,7 +165,7 @@ i2c_dev_transfer_sequential(dev0, &reg, 1, data_buf, 1);
 
 ## Data type
 
-相关数据类型、数据结构定义如下：
+The relevant data types and data structures are defined as follows:
 
 - [i2c\_event\_t](#i2ceventt)：I2C 事件。
 - [i2c\_slave\_handler\_t](#i2cslavehandlert)：I2C 从设备处理程序。
@@ -189,7 +189,7 @@ typedef enum _i2c_event
 
 #### Enumeration element
 
-| 成员名称            | Description             |
+| Element name            | Description             |
 | ------------------ | ---------------- |
 | I2C\_EV\_START     | 收到 Start 信号   |
 | I2C\_EV\_RESTART   | 收到 Restart 信号 |
@@ -214,7 +214,7 @@ typedef struct _i2c_slave_handler
 
 #### Enumeration element
 
-| 成员名称          | Description               |
+| Element name          | Description               |
 | ---------------- | ------------------ |
 | on\_receive      | 收到数据时被调用     |
 | on\_transmit     | 需要发送数据时被调用 |

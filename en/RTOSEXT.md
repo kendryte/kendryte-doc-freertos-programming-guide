@@ -54,13 +54,13 @@ BaseType_t xTaskCreateAtProcessor(UBaseType_t uxProcessor, TaskFunction_t pxTask
 
 | Parameter name       |   Description       |  Input or output  |
 | ------------- | ------------ | --------- |
-| uxProcessor   | 逻辑处理器 Id | 输入      |
-| pxTaskCode    | 任务入口点    | 输入      |
-| pcName        | 任务名称      | 输入      |
-| usStackDepth  | 栈空间        | 输入      |
-| pvParameters  | 参数          | 输入      |
-| uxPriority    | 优先级        | 输入      |
-| pxCreatedTask | 创建的任务句柄 | 输入      |
+| uxProcessor   | 逻辑处理器 Id | Input      |
+| pxTaskCode    | 任务入口点    | Input      |
+| pcName        | 任务名称      | Input      |
+| usStackDepth  | 栈空间        | Input      |
+| pvParameters  | 参数          | Input      |
+| uxPriority    | 优先级        | Input      |
+| pxCreatedTask | 创建的任务句柄 | Input      |
 
 #### Return value
 

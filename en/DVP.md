@@ -43,8 +43,8 @@ double dvp_xclk_set_clock_rate(handle_t file, double clock_rate);
 
 | Parameter name            |   Description       |  Input or output  |
 | ------------------ | ------------ | --------- |
-| file               | DVP 设备句柄  | 输入      |
-| clock_rate         | 配置XCLK的频率，如OV5640配置为20MHz| 输入      |
+| file               | DVP 设备句柄  | Input      |
+| clock_rate         | 配置XCLK的频率，如OV5640配置为20MHz| Input      |
 
 #### Return value
 
@@ -66,10 +66,10 @@ void dvp_config(handle_t file, uint32_t width, uint32_t height, bool auto_enable
 
 | Parameter name            |   Description       |  Input or output  |
 | ------------------ | ------------ | --------- |
-| file               | DVP 设备句柄  | 输入      |
-| width              | 帧宽度        | 输入      |
-| height             | 帧高度        | 输入      |
-| auto_enable        | 自动启用帧处理 | 输入      |
+| file               | DVP 设备句柄  | Input      |
+| width              | 帧宽度        | Input      |
+| height             | 帧高度        | Input      |
+| auto_enable        | 自动启用帧处理 | Input      |
 
 #### Return value
 
@@ -91,7 +91,7 @@ void dvp_enable_frame(handle_t file);
 
 | Parameter name             |   Description             |  Input or output  |
 | ------------------- | ------------------ | --------- |
-| file                | DVP 设备句柄        | 输入      |
+| file                | DVP 设备句柄        | Input      |
 
 #### Return value
 
@@ -101,7 +101,7 @@ None.
 
 #### Description
 
-获取 DVP 设备的输出数目。
+获取 DVP 设备的Output数目。
 
 #### Function prototype
 
@@ -113,11 +113,11 @@ uint32_t dvp_get_output_num(handle_t file);
 
 | Parameter name          |   Description        |  Input or output  |
 | ---------------- | ------------- | --------- |
-| file             | DVP 设备句柄   | 输入       |
+| file             | DVP 设备句柄   | Input       |
 
 #### Return value
 
-输出数目。
+Output数目。
 
 ### dvp\_set\_signal
 
@@ -135,9 +135,9 @@ void dvp_set_signal(handle_t file, dvp_signal_type_t type, bool value);
 
 | Parameter name |   Description         |  Input or output  |
 | ------- | -------------- | --------- |
-| file    | DVP 设备句柄    | 输入      |
-| type    | 信号类型        | 输入      |
-| value   | 状态值          | 输入      |
+| file    | DVP 设备句柄    | Input      |
+| type    | 信号类型        | Input      |
+| value   | 状态值          | Input      |
 
 #### Return value
 
@@ -147,7 +147,7 @@ None.
 
 #### Description
 
-设置 DVP 输出是否启用。
+设置 DVP Output是否启用。
 
 #### Function prototype
 
@@ -159,9 +159,9 @@ void dvp_set_output_enable(handle_t file, uint32_t index, bool enable);
 
 | Parameter name |   Description         |  Input or output  |
 | ------- | -------------- | --------- |
-| file    | DVP 设备句柄    | 输入      |
-| index   | 输出索引        | 输入      |
-| enable  | 是否启用        | 输入      |
+| file    | DVP 设备句柄    | Input      |
+| index   | Output索引        | Input      |
+| enable  | 是否启用        | Input      |
 
 #### Return value
 
@@ -171,7 +171,7 @@ None.
 
 #### Description
 
-设置 DVP 输出特性。
+设置 DVP Output特性。
 
 #### Function prototype
 
@@ -183,10 +183,10 @@ void dvp_set_output_attributes(handle_t file, uint32_t index, video_format_t for
 
 | Parameter name          |   Description      |  Input or output  |
 | ---------------- | ----------- | --------- |
-| file             | DVP 设备句柄 | 输入      |
-| index            | 输出索引     | 输入      |
-| format           | 视频格式     | 输入      |
-| output\_buffer   | 输出缓冲     | 输出      |
+| file             | DVP 设备句柄 | Input      |
+| index            | Output索引     | Input      |
+| format           | 视频格式     | Input      |
+| output\_buffer   | Output缓冲     | Output      |
 
 #### Return value
 
@@ -208,9 +208,9 @@ void dvp_set_frame_event_enable(handle_t file, dvp_frame_event_t event, bool ena
 
 | Parameter name          |   Description      |  Input or output  |
 | ---------------- | ----------- | --------- |
-| file             | DVP 设备句柄 | 输入      |
-| event            | 帧事件       | 输入      |
-| enable           | 是否启用     | 输入      |
+| file             | DVP 设备句柄 | Input      |
+| event            | 帧事件       | Input      |
+| enable           | 是否启用     | Input      |
 
 #### Return value
 
@@ -232,9 +232,9 @@ void dvp_set_on_frame_event(handle_t file, dvp_on_frame_event_t handler, void *u
 
 | Parameter name          |   Description         |  Input or output  |
 | ---------------- | -------------- | --------- |
-| file             | DVP 设备句柄    | 输入      |
-| handler          | 处理程序        | 输入      |
-| userdata         | 处理程序用户数据 | 输入      |
+| file             | DVP 设备句柄    | Input      |
+| handler          | 处理程序        | Input      |
+| userdata         | 处理程序用户数据 | Input      |
 
 #### Return value
 
@@ -254,7 +254,7 @@ dvp_set_output_enable(dvp, 0, true);
 
 ## Data type
 
-相关数据类型、数据结构定义如下：
+The relevant data types and data structures are defined as follows:
 
 - [video\_format\_t](#videoformatt)：视频格式。
 - [dvp\_frame\_event_t](#dvpframeeventt)：DVP 帧事件。
@@ -279,7 +279,7 @@ typedef enum _video_format
 
 #### Enumeration element
 
-| 成员名称                   | Description         |
+| Element name                   | Description         |
 | ------------------------- | ------------ |
 | VIDEO\_FMT\_RGB565        | RGB565       |
 | VIDEO\_FMT\_RGB24\_PLANAR | RGB24 Planar |
@@ -302,7 +302,7 @@ typedef enum _video_frame_event
 
 #### Enumeration element
 
-| 成员名称           | Description  |
+| Element name           | Description  |
 | ----------------- | ----- |
 | VIDEO\_FE\_BEGIN  | 帧开始 |
 | VIDEO\_FE\_END    | 帧结束 |
@@ -325,7 +325,7 @@ typedef enum _dvp_signal_type
 
 #### Enumeration element
 
-| 成员名称                | Description     |
+| Element name                | Description     |
 | ---------------------- | -------- |
 | DVP\_SIG\_POWER\_DOWN  | 掉电     |
 | DVP\_SIG\_RESET        | 复位     |
@@ -346,4 +346,4 @@ typedef void (*dvp_on_frame_event_t)(dvp_frame_event_t event, void *userdata);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| userdata   | 用户数据        | 输入      |
+| userdata   | 用户数据        | Input      |
