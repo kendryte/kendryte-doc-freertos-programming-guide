@@ -1,25 +1,25 @@
 # 关于本手册
 
-本文档为用户提供基于 FreeRTOS SDK 开发时的编程指南.
+This document provides the programming guide of Kendryte K210 FreeRTOS SDK.
 
-## 对应 SDK 版本
+## Corresponding SDK version
 
 Kendryte FreeRTOS SDK v0.4.0 (*9c7b0e0d23e46e87a2bfd4dd86d1a1f0d3c899e9*)
 
-## 发布说明
+## Revision History
 
-|    日期    |  版本  |         发布说明          |
-| ---------- | ------ | ------------------------- |
-| 2018-10-12 | V0.1.0 | 初始版本                  |
+|    Date    |  Ver.  | Revision History |
+| ---------- | ------ | ---------------- |
+| 2018-10-12 | V0.1.0 | Initial release  |
 
-## 免责声明
+## Disclaimer
 
-本文中的信息,包括参考的 URL 地址,如有变更,恕不另行通知。文档“按现状”提供,不负任何担保责任,包
-括对适销性、适用于特定用途或非侵权性的任何担保,和任何提案、规格或样品在他处提到的任何担保。
-本文档不负任何责任,包括使用本文档内信息产生的侵犯任何专利权行为的责任。本文档在此未以禁止反言或
-其他方式授予任何知识产权使用许可,不管是明示许可还是暗示许可。
-文中提到的所有商标名称、商标和注册商标均属其各自所有者的财产,特此声明。
+Information in this document, including URL references, is subject to change without notice. THIS DOCUMENT IS PROVIDED AS IS WITH NO WARRANTIES WHATSOEVER, INCLUDING ANY WARRANTY OF MERCHANTABILITY, NON-INFRINGEMENT, FITNESS FOR ANY PARTICULAR PURPOSE, OR ANY WARRANTY OTHERWISE ARISING OUT OF ANY PROPOSAL, SPECIFICATION OR SAMPLE.
 
-## 版权公告
+All liability, including liability for infringement of any proprietary rights, relating to use of information in this document is disclaimed. No licenses express or implied, by estoppel or otherwise, to any intellectual property rights are granted herein.
 
-版权归 © 2018 嘉楠科技所有。保留所有权利。
+All trade names, trademarks and registered trademarks mentioned in this document are property of their respective owners, and are hereby acknowledged.
+
+## Copyright Notice
+
+Copyright © 2018 Canaan Inc. All rights reserved.
