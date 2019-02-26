@@ -369,11 +369,11 @@ void aes_gcm128_hard_encrypt(gcm_context_t *context, uint8_t *input_data, size_t
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|context      |AES-GCM-128加密计算的结构体，包含加密密钥/偏移向量/aad/aad长度| Input |
+|context      |AES-GCM-128加密计算的结构体, including the encryption key / offset vector / aad / aad length| Input |
 |input\_data   |AES-GCM-128 plaintext data to be encrypted           | Input |
 |input\_len   |AES-GCM-128 length of plaintext data to be encrypted      | Input |
-|output\_data  |The result of the AES-GCM-128 encryption operation is stored in this buffer.<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| Output |
-|gcm\_tag  |AES-GCM-128加密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| Output |
+|output\_data  |The result of the AES-GCM-128 encryption operation is stored in this buffer.<br/>Since the minimum granularity of DMA handling data is 4bytes,<br/>Therefore, you need to ensure that the buffer size is at least an integer multiple of 4 bytes.| Output |
+|gcm\_tag  |The tag after the AES-GCM-128 encryption operation is stored in this buffer.<br/>This buffer size needs to be determined to be 16bytes| Output |
 
 #### Return value
 
@@ -395,11 +395,11 @@ void aes_gcm128_hard_decrypt(gcm_context_t *context, uint8_t *input_data, size_t
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|context    |AES-GCM-128解密计算的结构体，包含解密密钥/偏移向量/aad/aad长度| Input |
+|context    |The structure of the AES-GCM-128 decryption operation, including the decryption key/offset vector/aad/aad length| Input |
 |input\_data   |AES-GCM-128 ciphertext data to be decrypted           | Input |
 |input\_len   |AES-GCM-128 length of ciphertext data to be decrypted。    | Input |
-|output\_data  |The result of the AES-GCM-128 decryption operation is stored in this buffer.<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| Output |
-|gcm\_tag  |AES-GCM-128解密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| Output |
+|output\_data  |The result of the AES-GCM-128 decryption operation is stored in this buffer.<br/>Since the minimum granularity of DMA handling data is 4bytes,<br/>Therefore, you need to ensure that the buffer size is at least an integer multiple of 4 bytes.| Output |
+|gcm\_tag  |The tag after the AES-GCM-128 decryption operation is stored in this buffer.<br/>This buffer size needs to be determined to be 16bytes| Output |
 
 #### Return value
 
@@ -421,11 +421,11 @@ void aes_gcm192_hard_encrypt(gcm_context_t *context, uint8_t *input_data, size_t
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|context      |AES-GCM-192加密计算的结构体，包含加密密钥/偏移向量/aad/aad长度| Input |
+|context      |The structure of the AES-GCM-192 encryption operation, including the encryption key / offset vector / aad / aad length| Input |
 |input\_data   |AES-GCM-192 plaintext data to be encrypted           | Input |
 |input\_len   |AES-GCM-192 length of plaintext data to be encrypted。| Input |
-|output\_data  |The result of the AES-GCM-192 encryption operation is stored in this buffer.<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| Output |
-|gcm\_tag  |AES-GCM-192加密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| Output |
+|output\_data  |The result of the AES-GCM-192 encryption operation is stored in this buffer.<br/>Since the minimum granularity of DMA handling data is 4bytes,<br/>Therefore, you need to ensure that the buffer size is at least an integer multiple of 4 bytes.| Output |
+|gcm\_tag  |The tag after the AES-GCM-192 encryption operation is stored in this buffer.<br/>This buffer size needs to be determined to be 16bytes| Output |
 
 #### Return value
 
@@ -447,11 +447,11 @@ void aes_gcm192_hard_decrypt(gcm_context_t *context, uint8_t *input_data, size_t
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|context      |AES-GCM-192解密计算的结构体，包含解密密钥/偏移向量/aad/aad长度| Input |
+|context      |The structure of the AES-GCM-192 decryption operation, including the decryption key/offset vector/aad/aad length| Input |
 |input\_data   |AES-GCM-192 ciphertext data to be decrypted           | Input |
 |input\_len   |AES-GCM-192 length of ciphertext data to be decrypted。| Input |
-|output\_data  |The result of the AES-GCM-192 decryption operation is stored in this buffer.<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| Output |
-|gcm\_tag  |AES-GCM-192解密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| Output |
+|output\_data  |The result of the AES-GCM-192 decryption operation is stored in this buffer.<br/>Since the minimum granularity of DMA handling data is 4bytes,<br/>Therefore, you need to ensure that the buffer size is at least an integer multiple of 4 bytes.| Output |
+|gcm\_tag  |The tag after the AES-GCM-192 decryption operation is stored in this buffer.<br/>This buffer size needs to be determined to be 16bytes| Output |
 
 #### Return value
 
@@ -473,11 +473,11 @@ void aes_gcm256_hard_encrypt(gcm_context_t *context, uint8_t *input_data, size_t
 
 | Parameter name      |  Description                          |Input or output|
 |  ------       | -----                         |  ----  |
-|context      |AES-GCM-256加密计算的结构体，包含加密密钥/偏移向量/aad/aad长度| Input |
+|context      |The structure of the AES-GCM-256 encryption operation, including the encryption key / offset vector / aad / aad length| Input |
 |input\_data   |AES-GCM-256 plaintext data to be encrypted           | Input |
 |input\_len   |AES-GCM-256 length of plaintext data to be encrypted。| Input |
-|output\_data  |The result of the AES-GCM-256 encryption operation is stored in this buffer.<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| Output |
-|gcm\_tag  |AES-GCM-256加密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| Output |
+|output\_data  |The result of the AES-GCM-256 encryption operation is stored in this buffer.<br/>Since the minimum granularity of DMA handling data is 4bytes,<br/>Therefore, you need to ensure that the buffer size is at least an integer multiple of 4 bytes.| Output |
+|gcm\_tag  |The tag after the AES-GCM-256 encryption operation is stored in this buffer.<br/>This buffer size needs to be determined to be 16bytes| Output |
 
 #### Return value
 
@@ -499,11 +499,11 @@ void aes_gcm256_hard_decrypt(gcm_context_t *context, uint8_t *input_data, size_t
 
 | Parameter name    |  Description                          |Input or output|
 |  ------   | -----                         |  ----  |
-|context |AES-GCM-256解密计算的结构体，包含解密密钥/偏移向量/aad/aad长度| Input |
+|context |The structure of the AES-GCM-256 decryption operation, including the decryption key/offset vector/aad/aad length| Input |
 |input\_data   |AES-GCM-256 ciphertext data to be decrypted           | Input |
 |input\_len   |AES-GCM-256 length of ciphertext data to be decrypted。| Input |
-|output\_data  |The result of the AES-GCM-256 decryption operation is stored in this buffer.<br/>这个buffer大小需要至少为4bytes的整数倍，<br/>因为DMA的传输数据的最小粒度为4bytes。| Output |
-|gcm\_tag  |AES-GCM-256解密运算后的tag存放在这个buffer。<br/>这个buffer的大小需要保证为16bytes| Output |
+|output\_data  |The result of the AES-GCM-256 decryption operation is stored in this buffer.<br/>Since the minimum granularity of DMA handling data is 4bytes,<br/>Therefore, you need to ensure that the buffer size is at least an integer multiple of 4 bytes.| Output |
+|gcm\_tag  |The tag after the AES-GCM-256 decryption operation is stored in this buffer.<br/>This buffer size needs to be determined to be 16bytes| Output |
 
 #### Return value
 
