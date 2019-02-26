@@ -1,4 +1,4 @@
-# 关于本手册
+# About This Guide
 
 This document provides the programming guide of Kendryte K210 FreeRTOS SDK.
 
