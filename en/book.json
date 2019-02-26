@@ -22,6 +22,6 @@
         "readme": "README.md",
         "summary": "SUMMARY.md"
     },
-    "title": "Kendryte FreeRTOS 开发指南",
+    "title": "Kendryte FreeRTOS SDK Programming Guide",
     "language": "en"
 }
