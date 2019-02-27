@@ -1,15 +1,19 @@
-# 数字摄像头接口 (DVP)
+# DVP
 
 ## Overview
 
-DVP 是摄像头接口模块，支持把摄像头输入图像数据转发给 AI 模块或者内存。
+Digital Video Port (DVP) unit is a camera interface unit that supports
+forwarding camera input image data to KPU or memory.
 
 ## Features
 
-DVP 模块具有以下功能：
+The DVP unit has the following features:
 
-- RGB565 和 RGB24Planar 共 2 个视频数据输出端口
-- 支持丢弃不需要处理的帧
+- Support RGB565, RGB422 and single channel Y gray scale input mode
+- Support for setting frame interrupt
+- Support setting transfer address
+- Supports writing data to two addresses at the same time (output format is RGB888 and RGB565 respectively)
+- Support for discarding frames that do not need to be processed
 
 ## API
 
@@ -31,7 +35,7 @@ Provide the following interfaces
 
 #### Description
 
-配置 DVP XCLK的频率。
+Configure the frequency of DVP XCLK.
 
 #### Function prototype
 
@@ -41,20 +45,20 @@ double dvp_xclk_set_clock_rate(handle_t file, double clock_rate);
 
 #### Parameter
 
-| Parameter name            |   Description       |  Input or output  |
-| ------------------ | ------------ | --------- |
-| file               | DVP device handle  | Input      |
-| clock_rate         | 配置XCLK的频率，如OV5640配置为20MHz| Input      |
+| Parameter name |                             Description                             | Input or output |
+| -------------- | ------------------------------------------------------------------- | --------------- |
+| file           | DVP device handle                                                   | Input           |
+| clock_rate     | Configure the frequency of XCLK, such as OV5640 configured to 20MHz | Input           |
 
 #### Return value
 
-设置后的实际频率。
+The actual frequency after setting.
 
 ### dvp\_config
 
 #### Description
 
-配置 DVP 设备。
+Configure the DVP device.
 
 #### Function prototype
 
@@ -64,12 +68,12 @@ void dvp_config(handle_t file, uint32_t width, uint32_t height, bool auto_enable
 
 #### Parameter
 
-| Parameter name            |   Description       |  Input or output  |
-| ------------------ | ------------ | --------- |
-| file               | DVP device handle  | Input      |
-| width              | 帧宽度        | Input      |
-| height             | 帧高度        | Input      |
-| auto_enable        | 自动启用帧处理 | Input      |
+| Parameter name |              Description              | Input or output |
+| -------------- | ------------------------------------- | --------------- |
+| file           | DVP device handle                     | Input           |
+| width          | Frame width                           | Input           |
+| height         | Frame height                          | Input           |
+| auto_enable    | Automatically enable frame processing | Input           |
 
 #### Return value
 
@@ -79,7 +83,7 @@ None.
 
 #### Description
 
-启用对当前帧的处理。
+Enable processing of the current frame.
 
 #### Function prototype
 
@@ -89,9 +93,9 @@ void dvp_enable_frame(handle_t file);
 
 #### Parameter
 
-| Parameter name             |   Description             |  Input or output  |
-| ------------------- | ------------------ | --------- |
-| file                | DVP device handle        | Input      |
+| Parameter name |    Description    | Input or output |
+| -------------- | ----------------- | --------------- |
+| file           | DVP device handle | Input           |
 
 #### Return value
 
@@ -101,7 +105,7 @@ None.
 
 #### Description
 
-获取 DVP 设备的Output数目。
+Get the number of outputs of the DVP device.
 
 #### Function prototype
 
@@ -111,19 +115,19 @@ uint32_t dvp_get_output_num(handle_t file);
 
 #### Parameter
 
-| Parameter name          |   Description        |  Input or output  |
-| ---------------- | ------------- | --------- |
-| file             | DVP device handle   | Input       |
+| Parameter name |    Description    | Input or output |
+| -------------- | ----------------- | --------------- |
+| file           | DVP device handle | Input           |
 
 #### Return value
 
-Output数目。
+Output number.
 
 ### dvp\_set\_signal
 
 #### Description
 
-设置 DVP 信号状态。
+Set the DVP signal status.
 
 #### Function prototype
 
@@ -133,11 +137,11 @@ void dvp_set_signal(handle_t file, dvp_signal_type_t type, bool value);
 
 #### Parameter
 
-| Parameter name |   Description         |  Input or output  |
-| ------- | -------------- | --------- |
-| file    | DVP device handle    | Input      |
-| type    | 信号类型        | Input      |
-| value   | 状态值          | Input      |
+| Parameter name |    Description    | Input or output |
+| -------------- | ----------------- | --------------- |
+| file           | DVP device handle | Input           |
+| type           | Signal type       | Input           |
+| value          | Status value      | Input           |
 
 #### Return value
 
@@ -147,7 +151,7 @@ None.
 
 #### Description
 
-设置 DVP Output是否启用。
+Set whether DVP output is enabled.
 
 #### Function prototype
 
@@ -157,11 +161,11 @@ void dvp_set_output_enable(handle_t file, uint32_t index, bool enable);
 
 #### Parameter
 
-| Parameter name |   Description         |  Input or output  |
-| ------- | -------------- | --------- |
-| file    | DVP device handle    | Input      |
-| index   | Output索引        | Input      |
-| enable  | 是否启用        | Input      |
+| Parameter name |    Description    | Input or output |
+| -------------- | ----------------- | --------------- |
+| file           | DVP device handle | Input           |
+| index          | Output index      | Input           |
+| enable         | Whether to enable | Input           |
 
 #### Return value
 
@@ -171,7 +175,7 @@ None.
 
 #### Description
 
-设置 DVP Output特性。
+Set the DVP output attributes.
 
 #### Function prototype
 
@@ -181,12 +185,12 @@ void dvp_set_output_attributes(handle_t file, uint32_t index, video_format_t for
 
 #### Parameter
 
-| Parameter name          |   Description      |  Input or output  |
-| ---------------- | ----------- | --------- |
-| file             | DVP device handle | Input      |
-| index            | Output索引     | Input      |
-| format           | 视频格式     | Input      |
-| output\_buffer   | Output缓冲     | Output      |
+| Parameter name |    Description    | Input or output |
+| -------------- | ----------------- | --------------- |
+| file           | DVP device handle | Input           |
+| index          | Output index      | Input           |
+| format         | Video format      | Input           |
+| output\_buffer | Output buffer     | Output          |
 
 #### Return value
 
@@ -196,7 +200,7 @@ None.
 
 #### Description
 
-设置 DVP 帧事件是否启用。
+Set whether DVP frame events are enabled.
 
 #### Function prototype
 
@@ -206,11 +210,11 @@ void dvp_set_frame_event_enable(handle_t file, dvp_frame_event_t event, bool ena
 
 #### Parameter
 
-| Parameter name          |   Description      |  Input or output  |
-| ---------------- | ----------- | --------- |
-| file             | DVP device handle | Input      |
-| event            | 帧事件       | Input      |
-| enable           | 是否启用     | Input      |
+| Parameter name |    Description    | Input or output |
+| -------------- | ----------------- | --------------- |
+| file           | DVP device handle | Input           |
+| event          | Frame event       | Input           |
+| enable         | Whether to enable | Input           |
 
 #### Return value
 
@@ -220,7 +224,7 @@ None.
 
 #### Description
 
-设置 DVP 帧事件处理程序。
+Set up a DVP frame event handler.
 
 #### Function prototype
 
@@ -230,11 +234,11 @@ void dvp_set_on_frame_event(handle_t file, dvp_on_frame_event_t handler, void *u
 
 #### Parameter
 
-| Parameter name          |   Description         |  Input or output  |
-| ---------------- | -------------- | --------- |
-| file             | DVP device handle    | Input      |
-| handler          | 处理程序        | Input      |
-| userdata         | 处理程序用户数据 | Input      |
+| Parameter name |    Description    | Input or output |
+| -------------- | ----------------- | --------------- |
+| file           | DVP device handle | Input           |
+| handler        | Handler           | Input           |
+| userdata       | Handler user data | Input           |
 
 #### Return value
 
@@ -256,16 +260,16 @@ dvp_set_output_enable(dvp, 0, true);
 
 The relevant data types and data structures are defined as follows:
 
-- [video\_format\_t](#videoformatt)：视频格式。
-- [dvp\_frame\_event_t](#dvpframeeventt)：DVP 帧事件。
-- [dvp\_signal\_type\_t](#dvpsignaltypet)：DVP 信号类型。
-- [dvp\_on\_frame\_event\_t](#dvponframeeventt)：DVP 帧事件处理程序。
+- [video\_format\_t](#videoformatt)：Video format.
+- [dvp\_frame\_event_t](#dvpframeeventt)：DVP frame event.
+- [dvp\_signal\_type\_t](#dvpsignaltypet)：DVP signal type.
+- [dvp\_on\_frame\_event\_t](#dvponframeeventt)：The handler when the frame event is triggered.
 
 ### video\_format\_t
 
 #### Description
 
-视频格式。
+Video format.
 
 #### Type definition
 
@@ -279,7 +283,7 @@ typedef enum _video_format
 
 #### Enumeration element
 
-| Element name                   | Description         |
+|       Element name        | Description  |
 | ------------------------- | ------------ |
 | VIDEO\_FMT\_RGB565        | RGB565       |
 | VIDEO\_FMT\_RGB24\_PLANAR | RGB24 Planar |
@@ -288,7 +292,7 @@ typedef enum _video_format
 
 #### Description
 
-DVP 帧事件。
+DVP frame event.
 
 #### Type definition
 
@@ -302,16 +306,16 @@ typedef enum _video_frame_event
 
 #### Enumeration element
 
-| Element name           | Description  |
-| ----------------- | ----- |
-| VIDEO\_FE\_BEGIN  | 帧开始 |
-| VIDEO\_FE\_END    | 帧结束 |
+|   Element name   | Description  |
+| ---------------- | ------------ |
+| VIDEO\_FE\_BEGIN | Frame start  |
+| VIDEO\_FE\_END   | End of frame |
 
 ### dvp\_signal\_type\_t
 
 #### Description
 
-DVP 信号类型。
+DVP signal type.
 
 #### Type definition
 
@@ -325,16 +329,16 @@ typedef enum _dvp_signal_type
 
 #### Enumeration element
 
-| Element name                | Description     |
-| ---------------------- | -------- |
-| DVP\_SIG\_POWER\_DOWN  | 掉电     |
-| DVP\_SIG\_RESET        | 复位     |
+|     Element name      |    Description    |
+| --------------------- | ----------------- |
+| DVP\_SIG\_POWER\_DOWN | Power down signal |
+| DVP\_SIG\_RESET       | Reset signal      |
 
 ### dvp\_on\_frame\_event\_t
 
 #### Description
 
-TIMER 触发时的处理程序。
+The handler when the frame event is triggered.
 
 #### Type definition
 
@@ -344,6 +348,6 @@ typedef void (*dvp_on_frame_event_t)(dvp_frame_event_t event, void *userdata);
 
 #### Parameter
 
-| Parameter name    |   Description         |  Input or output  |
-| ---------- | -------------- | --------- |
-| userdata   | 用户数据        | Input      |
+| Parameter name | Description | Input or output |
+| -------------- | ----------- | --------------- |
+| userdata       | User data   | Input           |
