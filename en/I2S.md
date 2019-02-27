@@ -14,9 +14,9 @@ I2S 模块具有以下功能：
 
 ## API
 
-对应的头文件 `devices.h`
+Corresponding header file `devices.h`
 
-为用户提供以下接口：
+Provide the following interfaces
 
 - [i2s\_config\_as\_render](#i2sconfigasrender)
 - [i2s\_config\_as\_capture](#i2sconfigascapture)

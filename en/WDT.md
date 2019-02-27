@@ -15,9 +15,9 @@ WDT 模块具有以下功能：
 
 ## API
 
-对应的头文件 `devices.h`
+Corresponding header file `devices.h`
 
-为用户提供以下接口：
+Provide the following interfaces
 
 - [wdt\_set\_response\_mode](#wdtsetresponsemode)
 - [wdt\_set\_timeout](#wdtsettimeout)
@@ -41,7 +41,7 @@ void wdt_set_response_mode(handle_t file, wdt_response_mode_t mode);
 
 | Parameter name     |   Description         |  Input or output  |
 | ----------- | -------------- | --------- |
-| file        | WDT 设备句柄    | Input      |
+| file        | WDT device handle    | Input      |
 | mode        | 响应模式        | Input      |
 
 #### Return value
@@ -64,7 +64,7 @@ size_t wdt_set_timeout(handle_t file, size_t nanoseconds);
 
 | Parameter name     |   Description               |  Input or output  |
 | ----------- | -------------------- | --------- |
-| file        | WDT 设备句柄          | Input      |
+| file        | WDT device handle          | Input      |
 | nanoseconds | 期望的超时时间（纳秒） | Input      |
 
 #### Return value
@@ -87,7 +87,7 @@ void wdt_set_on_timeout(handle_t file, wdt_on_timeout_t handler, void *userdata)
 
 | Parameter name  |   Description         |  Input or output  |
 | -------- | -------------- | --------- |
-| file     | WDT 设备句柄    | Input      |
+| file     | WDT device handle    | Input      |
 | handler  | 处理程序        | Input      |
 | userdata | 处理程序用户数据 | Input      |
 
@@ -111,7 +111,7 @@ void wdt_restart_counter(handle_t file);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | WDT 设备句柄    | Input      |
+| file       | WDT device handle    | Input      |
 
 #### Return value
 
@@ -133,7 +133,7 @@ void wdt_set_enable(handle_t file, bool enable);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | WDT 设备句柄    | Input      |
+| file       | WDT device handle    | Input      |
 | enable     | 是否启用        | Input      |
 
 #### Return value

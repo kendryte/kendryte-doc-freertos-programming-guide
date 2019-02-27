@@ -16,9 +16,9 @@ SPI 模块具有以下功能：
 
 ## API
 
-对应的头文件 `devices.h`
+Corresponding header file `devices.h`
 
-为用户提供以下接口：
+Provide the following interfaces
 
 - [spi\_get\_device](#spigetdevice)
 - [spi\_dev\_config\_non\_standard](#spidevconfignonstandard)
@@ -70,7 +70,7 @@ void spi_dev_config_non_standard(handle_t file, uint32_t instruction_length, uin
 
 | Parameter name             |   Description             |  Input or output  |
 | ------------------- | ------------------ | --------- |
-| file                | SPI 设备句柄        | Input      |
+| file                | SPI device handle        | Input      |
 | instruction\_length | 指令长度            | Input      |
 | address\_length     | 地址长度            | Input      |
 | wait\_cycles        | 等待周期数          | Input      |
@@ -96,7 +96,7 @@ double spi_dev_set_clock_rate(handle_t file, double clock_rate);
 
 | Parameter name          |   Description        |  Input or output  |
 | ---------------- | ------------- | --------- |
-| file             | SPI 设备句柄   | Input       |
+| file             | SPI device handle   | Input       |
 | clock\_rate      | 期望的时钟速率 | Input       |
 
 #### Return value
@@ -121,7 +121,7 @@ int spi_dev_transfer_full_duplex(handle_t file, const uint8_t *write_buffer, siz
 
 | Parameter name          |   Description         |  Input or output  |
 | ---------------- | -------------- | --------- |
-| file             | SPI 设备句柄    | Input      |
+| file             | SPI device handle    | Input      |
 | write\_buffer    | 源缓冲区        | Input      |
 | write\_len       | 要写入的字节数   | Input      |
 | read\_buffer     | 目标缓冲区       | Output      |
@@ -149,7 +149,7 @@ int spi_dev_transfer_sequential(handle_t file, const uint8_t *write_buffer, size
 
 | Parameter name          |   Description         |  Input or output  |
 | ---------------- | -------------- | --------- |
-| file             | SPI 设备句柄    | Input      |
+| file             | SPI device handle    | Input      |
 | write\_buffer    | 源缓冲区        | Input      |
 | write\_len       | 要写入的字节数   | Input      |
 | read\_buffer     | 目标缓冲区       | Output      |
@@ -177,7 +177,7 @@ void spi_dev_fill(handle_t file, uint32_t instruction, uint32_t address, uint32_
 
 | Parameter name          |   Description                 |  Input or output  |
 | ---------------- | ---------------------- | --------- |
-| file             | SPI 设备句柄            | Input      |
+| file             | SPI device handle            | Input      |
 | instruction      | 指令（标准帧格式下忽略） | Input      |
 | address          | 地址（标准帧格式下忽略） | Input      |
 | value            | 帧数据                 | Output      |

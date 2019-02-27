@@ -14,9 +14,9 @@ TIMER 模块具有以下功能：
 
 ## API
 
-对应的头文件 `devices.h`
+Corresponding header file `devices.h`
 
-为用户提供以下接口：
+Provide the following interfaces
 
 - [timer\_set\_interval](#timersetinterval)
 - [timer\_set\_on\_tick](#timersetontick)
@@ -38,7 +38,7 @@ size_t timer_set_interval(handle_t file, size_t nanoseconds);
 
 | Parameter name     |   Description         |  Input or output  |
 | ----------- | -------------- | --------- |
-| file        | TIMER 设备句柄  | Input      |
+| file        | TIMER device handle  | Input      |
 | nanoseconds | 间隔（纳秒）    | Input       |
 
 #### Return value
@@ -61,7 +61,7 @@ void timer_set_on_tick(handle_t file, timer_on_tick_t on_tick, void *userdata);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | TIMER 设备句柄  | Input      |
+| file       | TIMER device handle  | Input      |
 | on_tick    | 处理程序        | Input      |
 | userdata   | 处理程序用户数据 | Input      |
 
@@ -85,7 +85,7 @@ void timer_set_enable(handle_t file, bool enable);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | TIMER 设备句柄 | Input      |
+| file       | TIMER device handle | Input      |
 | enable     | 是否启用        | Input      |
 
 #### Return value

@@ -15,9 +15,9 @@ K210 包含 2 个逻辑处理器，Id 分别为 0 和 1。
 
 ## API
 
-对应的头文件 `task.h`
+Corresponding header file `task.h`
 
-为用户提供以下接口：
+Provide the following interfaces
 
 - [uxTaskGetProcessorId](#uxtaskgetprocessorid)
 - [xTaskCreateAtProcessor](#xtaskcreateatprocessor)

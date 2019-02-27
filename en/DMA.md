@@ -1,24 +1,25 @@
-# 直接存储访问 (DMA)
+# DMA
 
 ## Overview
 
-直接存储访问 (Direct Memory Access, DMA) 用于在外设与存储器之间以及存储器与存储器之间提供高速数据传输。可以在无需任何 CPU 操作的情况下通过 DMA 快速移动数据，从而提高了CPU 的效率。
+Direct Memory Access (DMA) controller is used to provide high-speed data transfer between peripherals and memory and between memory and memory.
+This improves CPU efficiency by quickly moving data through DMA without any CPU operation.
 
 ## Features
 
-DMA 模块具有以下功能：
+The DMA controller has the following features:
 
-- 自动选择一路空闲的 DMA 通道用于传输
-- 根据源地址和目标地址自动选择软件或硬件握手协议
-- 支持 1、2、4、8 字节的元素大小，源和目标大小不必一致
-- 异步或同步传输功能
-- 循环传输功能，常用于刷新屏幕或音频录放等场景
+- Automatically select an idle DMA channel for transmission
+- Automatic selection of software or hardware handshake protocol based on source and destination addresses
+- Supports 1, 2, 4, and 8 byte element sizes, source and target sizes do not have to be consistent
+- Asynchronous or synchronous transfer function
+- Loop transmission function, often used to refresh scenes such as screen or audio recording and playback
 
 ## API
 
-对应的头文件 `hal.h`
+Corresponding header file `hal.h`
 
-为用户提供以下接口：
+Provide the following interfaces
 
 - [dma\_open\_free](#dmaopenfree)
 - [dma\_close](#dmaclose)
@@ -31,7 +32,7 @@ DMA 模块具有以下功能：
 
 #### Description
 
-打开一个可用的 DMA 设备。
+Open an available DMA device.
 
 #### Function prototype
 
@@ -41,13 +42,13 @@ handle_t dma_open_free();
 
 #### Return value
 
-DMA 设备句柄。
+DMA device handle.
 
 ### dma\_close
 
 #### Description
 
-关闭 DMA 设备。
+Close the DMA device.
 
 #### Function prototype
 
@@ -57,9 +58,9 @@ void dma_close(handle_t file);
 
 #### Parameter
 
-| Parameter name     |   Description         |  Input or output  |
-| ----------- | -------------- | --------- |
-| file        | DMA 设备句柄    | Input      |
+| Parameter name |    Description    | Input or output |
+| -------------- | ----------------- | --------------- |
+| file           | DMA device handle | Input           |
 
 #### Return value
 
@@ -69,7 +70,7 @@ None.
 
 #### Description
 
-设置 DMA 请求源。
+Set the DMA request source.
 
 #### Function prototype
 
@@ -79,10 +80,10 @@ void dma_set_request_source(handle_t file, uint32_t request);
 
 #### Parameter
 
-| Parameter name  |   Description         |  Input or output  |
-| -------- | -------------- | --------- |
-| file     | DMA 设备句柄    | Input      |
-| request  | 请求源编号      | Input      |
+| Parameter name |      Description      | Input or output |
+| -------------- | --------------------- | --------------- |
+| file           | DMA device handle     | Input           |
+| request        | Request source number | Input           |
 
 #### Return value
 
@@ -92,7 +93,7 @@ None.
 
 #### Description
 
-进行 DMA 异步传输。
+Perform DMA asynchronous transfer.
 
 #### Function prototype
 
@@ -102,17 +103,17 @@ void dma_transmit_async(handle_t file, const volatile void *src, volatile void *
 
 #### Parameter
 
-| Parameter name           |   Description         |  Input or output  |
-| ----------------- | -------------- | --------- |
-| file              | DMA 设备句柄    | Input      |
-| src               | 源地址          | Input      |
-| dest              | 目标地址        | Output      |
-| src\_inc          | 源地址是否自增   | Input      |
-| dest\_inc         | 目标地址是否自增 | Input      |
-| element\_size     | 元素大小（字节） | Input      |
-| count             | 元素数量        | Input      |
-| burst\_size       | 突发传输数量    | Input      |
-| completion\_event | 传输完成事件    | Input      |
+|  Parameter name   |                  Description                  | Input or output |
+| ----------------- | --------------------------------------------- | --------------- |
+| file              | DMA device handle                             | Input           |
+| src               | Source address                                | Input           |
+| dest              | Destination address                           | Output          |
+| src\_inc          | Whether the source address is increasing      | Input           |
+| dest\_inc         | Whether the destination address is increasing | Input           |
+| element\_size     | Element size (bytes)                          | Input           |
+| count             | Element count                                 | Input           |
+| burst\_size       | Burst transfer size                           | Input           |
+| completion\_event | Transfer completion event                     | Input           |
 
 #### Return value
 
@@ -122,7 +123,7 @@ None.
 
 #### Description
 
-进行 DMA 同步传输。
+Perform DMA synchronous transfer.
 
 #### Function prototype
 
@@ -132,16 +133,16 @@ void dma_transmit(handle_t file, const volatile void *src, volatile void *dest, 
 
 #### Parameter
 
-| Parameter name          |   Description         |  Input or output  |
-| ---------------- | -------------- | --------- |
-| file             | DMA 设备句柄    | Input      |
-| src              | 源地址          | Input      |
-| dest             | 目标地址        | Output      |
-| src\_inc         | 源地址是否自增   | Input      |
-| dest\_inc        | 目标地址是否自增 | Input      |
-| element\_size    | 元素大小（字节） | Input      |
-| count            | 元素数量        | Input      |
-| burst\_size      | 突发传输数量    | Input      |
+| Parameter name |                  Description                  | Input or output |
+| -------------- | --------------------------------------------- | --------------- |
+| file           | DMA device handle                             | Input           |
+| src            | Source address                                | Input           |
+| dest           | Destination address                           | Output          |
+| src\_inc       | Whether the source address is increasing      | Input           |
+| dest\_inc      | Whether the destination address is increasing | Input           |
+| element\_size  | Element size (bytes)                          | Input           |
+| count          | Element count                                 | Input           |
+| burst\_size    | Burst transfer size                           | Input           |
 
 #### Return value
 
@@ -151,7 +152,7 @@ None.
 
 #### Description
 
-进行 DMA 异步循环传输。
+Perform DMA asynchronous loop transfer.
 
 #### Function prototype
 
@@ -161,24 +162,24 @@ void dma_loop_async(handle_t file, const volatile void **srcs, size_t src_num, v
 
 #### Parameter
 
-| Parameter name                         |   Description                 |  Input or output  |
-| ------------------------------- | ---------------------- | --------- |
-| file                            | DMA 设备句柄            | Input      |
-| srcs                            | 源地址列表              | Input      |
-| src\_num                        | 源地址数量              | Input      |
-| dests                           | 目标地址列表            | Output      |
-| dest\_num                       | 目标地址数量            | Input      |
-| src\_inc                        | 源地址是否自增          | Input      |
-| dest\_inc                       | 目标地址是否自增        | Input      |
-| element\_size                   | 元素大小（字节）        | Input      |
-| count                           | 元素数量                | Input      |
-| burst\_size                     | 突发传输数量            | Input      |
-| stage\_completion\_handler      | 阶段完成处理程序        | Input      |
-| stage\_completion\_handler_data | 阶段完成处理程序用户数据 | Input      |
-| completion\_event               | 传输完成事件            | Input      |
-| stop\_signal                    | 停止信号                | Input      |
+|         Parameter name          |                  Description                  | Input or output |
+| ------------------------------- | --------------------------------------------- | --------------- |
+| file                            | DMA device handle                             | Input           |
+| srcs                            | Source address list                           | Input           |
+| src\_num                        | Source address count                          | Input           |
+| dests                           | Destination address list                      | Output          |
+| dest\_num                       | Destination address count                     | Input           |
+| src\_inc                        | Whether the source address is increasing      | Input           |
+| dest\_inc                       | Whether the destination address is increasing | Input           |
+| element\_size                   | Element size (bytes)                          | Input           |
+| count                           | Element count                                 | Input           |
+| burst\_size                     | Burst transfer size                           | Input           |
+| stage\_completion\_handler      | Stage completion handler [^stage_completion]  | Input           |
+| stage\_completion\_handler_data | Stage completion handler user data            | Input           |
+| completion\_event               | Transfer completion event                     | Input           |
+| stop\_signal                    | Stop signal                                   | Input           |
 
-**注：** 阶段完成是指单次源到目标 count 个元素的传输完成。
+[^stage_completion]: Stage completion refers to the completion of the transfer of a single source to a destination N elements. N is elements count.
 
 #### Return value
 
@@ -199,13 +200,13 @@ dma_close(dma);
 
 The relevant data types and data structures are defined as follows:
 
-- [dma\_stage\_completion\_handler\_t](#dmastagecompletionhandlert)：DMA 阶段完成处理程序。
+- [dma\_stage\_completion\_handler\_t](#dmastagecompletionhandlert)：DMA stage completion handler。
 
 ### dma\_stage\_completion\_handler\_t
 
 #### Description
 
-DMA 阶段完成处理程序。
+DMA stage completion handler。
 
 #### Type definition
 
@@ -215,6 +216,6 @@ typedef void (*dma_stage_completion_handler_t)(void *userdata);
 
 #### Parameter
 
-| Parameter name    |   Description         |  Input or output  |
-| ---------- | -------------- | --------- |
-| userdata   | 用户数据        | Input      |
+| Parameter name | Description | Input or output |
+| -------------- | ----------- | --------------- |
+| userdata       | User data   | Input           |

@@ -13,9 +13,9 @@ DVP 模块具有以下功能：
 
 ## API
 
-对应的头文件 `devices.h`
+Corresponding header file `devices.h`
 
-为用户提供以下接口：
+Provide the following interfaces
 
 - [dvp\_xclk\_set\_clock\_rate](#dvpxclksetclockrate)
 - [dvp\_config](#dvpconfig)
@@ -43,7 +43,7 @@ double dvp_xclk_set_clock_rate(handle_t file, double clock_rate);
 
 | Parameter name            |   Description       |  Input or output  |
 | ------------------ | ------------ | --------- |
-| file               | DVP 设备句柄  | Input      |
+| file               | DVP device handle  | Input      |
 | clock_rate         | 配置XCLK的频率，如OV5640配置为20MHz| Input      |
 
 #### Return value
@@ -66,7 +66,7 @@ void dvp_config(handle_t file, uint32_t width, uint32_t height, bool auto_enable
 
 | Parameter name            |   Description       |  Input or output  |
 | ------------------ | ------------ | --------- |
-| file               | DVP 设备句柄  | Input      |
+| file               | DVP device handle  | Input      |
 | width              | 帧宽度        | Input      |
 | height             | 帧高度        | Input      |
 | auto_enable        | 自动启用帧处理 | Input      |
@@ -91,7 +91,7 @@ void dvp_enable_frame(handle_t file);
 
 | Parameter name             |   Description             |  Input or output  |
 | ------------------- | ------------------ | --------- |
-| file                | DVP 设备句柄        | Input      |
+| file                | DVP device handle        | Input      |
 
 #### Return value
 
@@ -113,7 +113,7 @@ uint32_t dvp_get_output_num(handle_t file);
 
 | Parameter name          |   Description        |  Input or output  |
 | ---------------- | ------------- | --------- |
-| file             | DVP 设备句柄   | Input       |
+| file             | DVP device handle   | Input       |
 
 #### Return value
 
@@ -135,7 +135,7 @@ void dvp_set_signal(handle_t file, dvp_signal_type_t type, bool value);
 
 | Parameter name |   Description         |  Input or output  |
 | ------- | -------------- | --------- |
-| file    | DVP 设备句柄    | Input      |
+| file    | DVP device handle    | Input      |
 | type    | 信号类型        | Input      |
 | value   | 状态值          | Input      |
 
@@ -159,7 +159,7 @@ void dvp_set_output_enable(handle_t file, uint32_t index, bool enable);
 
 | Parameter name |   Description         |  Input or output  |
 | ------- | -------------- | --------- |
-| file    | DVP 设备句柄    | Input      |
+| file    | DVP device handle    | Input      |
 | index   | Output索引        | Input      |
 | enable  | 是否启用        | Input      |
 
@@ -183,7 +183,7 @@ void dvp_set_output_attributes(handle_t file, uint32_t index, video_format_t for
 
 | Parameter name          |   Description      |  Input or output  |
 | ---------------- | ----------- | --------- |
-| file             | DVP 设备句柄 | Input      |
+| file             | DVP device handle | Input      |
 | index            | Output索引     | Input      |
 | format           | 视频格式     | Input      |
 | output\_buffer   | Output缓冲     | Output      |
@@ -208,7 +208,7 @@ void dvp_set_frame_event_enable(handle_t file, dvp_frame_event_t event, bool ena
 
 | Parameter name          |   Description      |  Input or output  |
 | ---------------- | ----------- | --------- |
-| file             | DVP 设备句柄 | Input      |
+| file             | DVP device handle | Input      |
 | event            | 帧事件       | Input      |
 | enable           | 是否启用     | Input      |
 
@@ -232,7 +232,7 @@ void dvp_set_on_frame_event(handle_t file, dvp_on_frame_event_t handler, void *u
 
 | Parameter name          |   Description         |  Input or output  |
 | ---------------- | -------------- | --------- |
-| file             | DVP 设备句柄    | Input      |
+| file             | DVP device handle    | Input      |
 | handler          | 处理程序        | Input      |
 | userdata         | 处理程序用户数据 | Input      |
 

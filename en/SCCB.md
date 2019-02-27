@@ -13,9 +13,9 @@ SCCB 模块具有以下功能：
 
 ## API
 
-对应的头文件 `devices.h`
+Corresponding header file `devices.h`
 
-为用户提供以下接口：
+Provide the following interfaces
 
 - [sccb\_get\_device](#sccbgetdevice)
 - [sccb\_dev\_read\_byte](#sccbdevreadbyte)
@@ -62,7 +62,7 @@ uint8_t sccb_dev_read_byte(handle_t file, uint16_t reg_address);
 
 | Parameter name       |   Description         |  Input or output  |
 | ------------- | -------------- | --------- |
-| file          | SCCB 设备句柄   | Input      |
+| file          | SCCB device handle   | Input      |
 | reg\_address  | 寄存器地址      | Input      |
 
 #### Return value
@@ -85,7 +85,7 @@ void sccb_dev_write_byte(handle_t file, uint16_t reg_address, uint8_t value);
 
 | Parameter name          |   Description         |  Input or output  |
 | ---------------- | -------------- | --------- |
-| file             | SCCB 设备句柄   | Input       |
+| file             | SCCB device handle   | Input       |
 | reg\_address     | 寄存器地址      | Input       |
 | value            | 要写入的字节    | Input       |
 

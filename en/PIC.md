@@ -14,9 +14,9 @@ PIC 模块具有以下功能：
 
 ## API
 
-对应的头文件 `hal.h`
+Corresponding header file `hal.h`
 
-为用户提供以下接口：
+Provide the following interfaces
 
 - [pic\_set\_irq\_enable](#picsetirqenable)
 - [pic\_set\_irq\_handler](#picsetirqhandler)

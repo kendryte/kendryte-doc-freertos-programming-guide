@@ -13,9 +13,9 @@
 
 ## API
 
-对应的头文件 `hal.h`
+Corresponding header file `hal.h`
 
-为用户提供以下接口：
+Provide the following interfaces
 
 - [system\_set\_cpu\_frequency](#systemsetcpufrequency)
 - [system\_install\_custom\_driver](#systeminstallcustomdriver)

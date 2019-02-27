@@ -10,9 +10,9 @@ FFT 模块是用硬件的方式来实现 FFT 的基 2 时分运算加速。
 
 ## API
 
-对应的头文件 `fft.h`
+Corresponding header file `fft.h`
 
-为用户提供以下接口：
+Provide the following interfaces
 
 - [fft\_complex\_uint16](#fftcomplexuint16)
 

@@ -14,9 +14,9 @@ I2C 模块具有以下功能：
 
 ## API
 
-对应的头文件 `devices.h`
+Corresponding header file `devices.h`
 
-为用户提供以下接口：
+Provide the following interfaces
 
 - [i2c\_get\_device](#i2cgetdevice)
 - [i2c\_dev\_set\_clock\_rate](#i2cdevsetclockrate)
@@ -65,7 +65,7 @@ double i2c_dev_set_clock_rate(handle_t file, double clock_rate);
 
 | Parameter name          |   Description        |  Input or output  |
 | ---------------- | ------------- | --------- |
-| file             | I2C 设备句柄   | Input       |
+| file             | I2C device handle   | Input       |
 | clock\_rate      | 期望的时钟速率 | Input       |
 
 #### Return value
@@ -88,7 +88,7 @@ int i2c_dev_transfer_sequential(handle_t file, const uint8_t *write_buffer, size
 
 | Parameter name       |   Description         |  Input or output  |
 | ------------- | -------------- | --------- |
-| file          | I2C 设备句柄    | Input      |
+| file          | I2C device handle    | Input      |
 | write\_buffer | 源缓冲区        | Input      |
 | write\_len    | 要写入的字节数   | Input      |
 | read\_buffer  | 目标缓冲区      | Output      |

@@ -13,9 +13,9 @@
 
 ## API
 
-对应的头文件 `devices.h`
+Corresponding header file `devices.h`
 
-为用户提供以下接口：
+Provide the following interfaces
 
 - [io\_open](#ioopen)
 - [io\_close](#ioclose)
@@ -46,7 +46,7 @@ handle_t io_open(const char *name);
 | 返回值 |  Description   |
 | ----- | ------- |
 | 0     | 失败    |
-| 其他  | 设备句柄 |
+| 其他  | device handle |
 
 ### io\_close
 
@@ -64,7 +64,7 @@ int io_close(handle_t file);
 
 | Parameter name   |   Description     |  Input or output  |
 | --------- | ---------- | --------- |
-| file      | 设备句柄    | Input      |
+| file      | device handle    | Input      |
 
 #### Return value
 
@@ -89,7 +89,7 @@ int io_read(handle_t file, uint8_t *buffer, size_t len);
 
 | Parameter name   |   Description         |  Input or output  |
 | --------- | -------------- | --------- |
-| file      | 设备句柄        | Input      |
+| file      | device handle        | Input      |
 | buffer    | 目标缓冲区      | Output      |
 | len       | 最多读取的字节数 | Input      |
 
@@ -113,7 +113,7 @@ int io_write(handle_t file, const uint8_t *buffer, size_t len);
 
 | Parameter name   |   Description       |  Input or output  |
 | --------- | ------------ | --------- |
-| file      | 设备句柄      | Input      |
+| file      | device handle      | Input      |
 | buffer    | 源缓冲区      | Input      |
 | len       | 要写入的字节数 | Input      |
 
@@ -140,7 +140,7 @@ int io_control(handle_t file, uint32_t control_code, const uint8_t *write_buffer
 
 | Parameter name       |   Description         |  Input or output  |
 | ------------- | -------------- | --------- |
-| file          | 设备句柄        | Input      |
+| file          | device handle        | Input      |
 | control\_code | 控制码          | Input      |
 | write\_buffer | 源缓冲区        | Input      |
 | write\_len    | 要写入的字节数   | Input      |

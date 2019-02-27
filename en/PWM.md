@@ -13,9 +13,9 @@ PWM 模块具有以下功能：
 
 ## API
 
-对应的头文件 `devices.h`
+Corresponding header file `devices.h`
 
-为用户提供以下接口：
+Provide the following interfaces
 
 - [pwm\_get\_pin\_count](#pwmgetpincount)
 - [pwm\_set\_frequency](#pwmsetfrequency)
@@ -38,7 +38,7 @@ uint32_t pwm_get_pin_count(handle_t file);
 
 | Parameter name     |   Description         |  Input or output  |
 | ----------- | -------------- | --------- |
-| file        | PWM 设备句柄    | Input      |
+| file        | PWM device handle    | Input      |
 
 #### Return value
 
@@ -60,7 +60,7 @@ double pwm_set_frequency(handle_t file, double frequency);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | PWM 设备句柄    | Input      |
+| file       | PWM device handle    | Input      |
 | frequency  | 期望的频率（Hz） | Input      |
 
 #### Return value
@@ -83,7 +83,7 @@ double pwm_set_active_duty_cycle_percentage(handle_t file, uint32_t pin, double 
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | PWM 设备句柄    | Input      |
+| file       | PWM device handle    | Input      |
 | pin        | 管脚编号        | Input      |
 | duty\_cycle\_percentage  | 期望的占空比 | Input      |
 
@@ -107,7 +107,7 @@ void pwm_set_enable(handle_t file, uint32_t pin, bool enable);
 
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
-| file       | PWM 设备句柄    | Input      |
+| file       | PWM device handle    | Input      |
 | pin        | 管脚编号        | Input      |
 | enable     | 是否启用        | Input      |
 

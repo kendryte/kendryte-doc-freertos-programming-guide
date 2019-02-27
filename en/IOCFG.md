@@ -11,7 +11,7 @@
 
 ## Data type
 
-对应的头文件 `pin_cfg.h`
+Corresponding header file `pin_cfg.h`
 
 The relevant data types and data structures are defined as follows:
 

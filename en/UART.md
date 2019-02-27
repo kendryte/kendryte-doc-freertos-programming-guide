@@ -13,9 +13,9 @@ UART 模块具有以下功能：
 
 ## API
 
-对应的头文件 `devices.h`
+Corresponding header file `devices.h`
 
-为用户提供以下接口：
+Provide the following interfaces
 
 - [uart\_config](#uartconfig)
 
@@ -35,7 +35,7 @@ void uart_config(handle_t file, uint32_t baud_rate, uint32_t databits, uart_stop
 
 | Parameter name    |   Description       |  Input or output  |
 | ---------- | ------------ | --------- |
-| file       | UART 设备句柄 | Input      |
+| file       | UART device handle | Input      |
 | baud\_rate | 波特率        | Input      |
 | databits   | 数据位 (5-8)  | Input      |
 | stopbits   | 停止位        | Input      |

@@ -13,9 +13,9 @@ RTC 模块具有以下功能：
 
 ## API
 
-对应的头文件 `devices.h`
+Corresponding header file `devices.h`
 
-为用户提供以下接口：
+Provide the following interfaces
 
 - [rtc\_get\_datetime](#rtcgetdatetime)
 - [rtc\_set\_datetime](#rtcsetdatetime)
@@ -36,7 +36,7 @@ void rtc_get_datetime(handle_t file, struct tm *datetime);
 
 | Parameter name     |   Description         |  Input or output  |
 | ----------- | -------------- | --------- |
-| file        | RTC 设备句柄    | Input      |
+| file        | RTC device handle    | Input      |
 | datetime    | 日期时刻        | Output      |
 
 #### Return value
@@ -59,7 +59,7 @@ void rtc_set_datetime(handle_t file, const struct tm *datetime);
 
 | Parameter name     |   Description           |  Input or output  |
 | ----------- | ---------------- | --------- |
-| file        | RTC 设备句柄      | Input      |
+| file        | RTC device handle      | Input      |
 | datetime    | 日期时刻          | Input      |
 
 #### Return value
