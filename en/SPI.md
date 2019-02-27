@@ -6,7 +6,7 @@ SPI 是一种高速的，全双工，同步的通信总线。
 
 ## Features
 
-SPI 模块具有以下功能: 
+SPI 模块具有以下功能:
 
 - 独立的 SPI 设备封装外设相关参数
 - 自动处理多设备总线争用
@@ -109,7 +109,7 @@ double spi_dev_set_clock_rate(handle_t file, double clock_rate);
 
 对 SPI 设备进行全双工传输。
 
-**注: ** 仅支持标准帧格式。
+**Note:** 仅支持标准帧格式。
 
 #### Function prototype
 
@@ -137,7 +137,7 @@ int spi_dev_transfer_full_duplex(handle_t file, const uint8_t *write_buffer, siz
 
 对 SPI 设备进行先写后读。
 
-**注: ** 仅支持标准帧格式。
+**Note:** 仅支持标准帧格式。
 
 #### Function prototype
 
@@ -165,7 +165,7 @@ int spi_dev_transfer_sequential(handle_t file, const uint8_t *write_buffer, size
 
 对 SPI 设备填充一串相同的帧。
 
-**注: ** 仅支持标准帧格式。
+**Note:** 仅支持标准帧格式。
 
 #### Function prototype
 
