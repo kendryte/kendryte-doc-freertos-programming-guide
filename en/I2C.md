@@ -117,7 +117,7 @@ void i2c_config_as_slave(handle_t file, uint32_t slave_address, uint32_t address
 | file             | I2C 控制器句柄 | Input       |
 | slave\_address   | 从设备地址     | Input       |
 | address\_width   | 从设备地址宽度 | Input       |
-| handler          | 从设备处理程序 | Input       |
+| handler          | 从设备Handler | Input       |
 
 #### Return value
 
@@ -168,7 +168,7 @@ i2c_dev_transfer_sequential(dev0, &reg, 1, data_buf, 1);
 The relevant data types and data structures are defined as follows:
 
 - [i2c\_event\_t](#i2ceventt)：I2C 事件。
-- [i2c\_slave\_handler\_t](#i2cslavehandlert)：I2C 从设备处理程序。
+- [i2c\_slave\_handler\_t](#i2cslavehandlert)：I2C 从设备Handler。
 
 ### i2c\_event\_t
 
@@ -199,7 +199,7 @@ typedef enum _i2c_event
 
 #### Description
 
-I2C 从设备处理程序。
+I2C 从设备Handler。
 
 #### Type definition
 

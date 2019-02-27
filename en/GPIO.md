@@ -1,15 +1,16 @@
-# 通用输入/Output (GPIO)
+# GPIO
 
 ## Overview
 
-芯片有 32 个高速 GPIO 和 8 个通用 GPIO。
+GPIO stands for General Purpose Input Output.
+The chip has 32 high-speed GPIOs and 8 general-purpose GPIOs.
 
 ## Features
 
-GPIO 模块具有以下功能：
+The GPIO unit has the following features:
 
-- 可配置上下拉驱动模式
-- 支持上升沿、下降沿和双沿触发
+- Configurable up and down drive mode
+- Support for rising edge, falling edge and double edge trigger
 
 ## API
 
@@ -28,7 +29,7 @@ Provide the following interfaces
 
 #### Description
 
-获取 GPIO 管脚数量。
+Get the GPIO pin count.
 
 #### Function prototype
 
@@ -38,19 +39,19 @@ uint32_t gpio_get_pin_count(handle_t file);
 
 #### Parameter
 
-| Parameter name    |   Description         |  Input or output  |
-| ---------- | -------------- | --------- |
-| file       | GPIO 控制器句柄 | Input      |
+| Parameter name |      Description       | Input or output |
+| -------------- | ---------------------- | --------------- |
+| file           | GPIO controller handle | Input           |
 
 #### Return value
 
-管脚数量。
+Pin count.
 
 ### gpio\_set\_drive\_mode
 
 #### Description
 
-设置 GPIO 管脚驱动模式。
+Set the GPIO pin drive mode.
 
 #### Function prototype
 
@@ -60,11 +61,11 @@ void gpio_set_drive_mode(handle_t file, uint32_t pin, gpio_drive_mode_t mode);
 
 #### Parameter
 
-| Parameter name    |   Description         |  Input or output  |
-| ---------- | -------------- | --------- |
-| file       | GPIO 控制器句柄 | Input      |
-| pin        | 管脚编号        | Input      |
-| mode       | 驱动模式        | Input      |
+| Parameter name |      Description       | Input or output |
+| -------------- | ---------------------- | --------------- |
+| file           | GPIO controller handle | Input           |
+| pin            | Pin number             | Input           |
+| mode           | Drive mode             | Input           |
 
 #### Return value
 
@@ -74,9 +75,9 @@ None.
 
 #### Description
 
-设置 GPIO 管脚边沿触发模式。
+Set the GPIO pin edge trigger mode.
 
-**注：**`/dev/gpio1` 暂不支持。
+**Note: **`/dev/gpio1` is not supported this function.
 
 #### Function prototype
 
@@ -86,11 +87,11 @@ void gpio_set_pin_edge(handle_t file, uint32_t pin, gpio_pin_edge_t edge);
 
 #### Parameter
 
-| Parameter name    |   Description         |  Input or output  |
-| ---------- | -------------- | --------- |
-| file       | GPIO 控制器句柄 | Input      |
-| pin        | 管脚编号        | Input      |
-| edge       | 边沿触发模式    | Input      |
+| Parameter name |      Description       | Input or output |
+| -------------- | ---------------------- | --------------- |
+| file           | GPIO controller handle | Input           |
+| pin            | Pin number             | Input           |
+| edge           | Edge trigger mode      | Input           |
 
 #### Return value
 
@@ -100,9 +101,9 @@ None.
 
 #### Description
 
-设置 GPIO 管脚边沿触发处理程序。
+Set the GPIO pin edge trigger handler.
 
-**注：**`/dev/gpio1` 暂不支持。
+**Note: **`/dev/gpio1` is not supported this function.
 
 #### Function prototype
 
@@ -112,12 +113,12 @@ void gpio_set_on_changed(handle_t file, uint32_t pin, gpio_on_changed_t callback
 
 #### Parameter
 
-| Parameter name    |   Description         |  Input or output  |
-| ---------- | -------------- | --------- |
-| file       | GPIO 控制器句柄 | Input      |
-| pin        | 管脚编号        | Input      |
-| callback   | 处理程序        | Input      |
-| userdata   | 处理程序用户数据 | Input      |
+| Parameter name |      Description       | Input or output |
+| -------------- | ---------------------- | --------------- |
+| file           | GPIO controller handle | Input           |
+| pin            | Pin number             | Input           |
+| callback       | Handler                | Input           |
+| userdata       | Handler user data      | Input           |
 
 #### Return value
 
@@ -127,7 +128,7 @@ None.
 
 #### Description
 
-获取 GPIO 管脚的值。
+Get the value of the GPIO pin.
 
 #### Function prototype
 
@@ -137,20 +138,20 @@ gpio_pin_value_t gpio_get_pin_value(handle_t file, uint32_t pin);
 
 #### Parameter
 
-| Parameter name    |   Description         |  Input or output  |
-| ---------- | -------------- | --------- |
-| file       | GPIO 控制器句柄 | Input      |
-| pin        | 管脚编号        | Input      |
+| Parameter name |      Description       | Input or output |
+| -------------- | ---------------------- | --------------- |
+| file           | GPIO controller handle | Input           |
+| pin            | Pin number             | Input           |
 
 #### Return value
 
-GPIO 管脚的值。
+The value of the GPIO pin.
 
 ### gpio\_set\_pin\_value
 
 #### Description
 
-设置 GPIO 管脚的值。
+Set the value of the GPIO pin.
 
 #### Function prototype
 
@@ -160,11 +161,11 @@ void gpio_set_pin_value(handle_t file, uint32_t pin, gpio_pin_value_t value);
 
 #### Parameter
 
-| Parameter name    |   Description         |  Input or output  |
-| ---------- | -------------- | --------- |
-| file       | GPIO 控制器句柄 | Input      |
-| pin        | 管脚编号        | Input      |
-| value      | 要设置的值      | Input      |
+| Parameter name |      Description       | Input or output |
+| -------------- | ---------------------- | --------------- |
+| file           | GPIO controller handle | Input           |
+| pin            | Pin number             | Input           |
+| value          | The value to set       | Input           |
 
 #### Return value
 
@@ -183,16 +184,16 @@ gpio_set_pin_value(gpio, 0, GPIO_PV_LOW);
 
 The relevant data types and data structures are defined as follows:
 
-- [gpio\_drive\_mode\_t](#gpiodrivemodet)：GPIO 驱动模式。
-- [gpio\_pin\_edge\_t](#gpiopinedget)：GPIO 边沿触发模式。
-- [gpio\_pin\_value\_t](#gpiopinvaluet)：GPIO 值。
-- [gpio\_on\_changed\_t](#gpioonchangedt)：GPIO 边沿触发处理程序。
+- [gpio\_drive\_mode\_t](#gpiodrivemodet)：GPIO drive mode.
+- [gpio\_pin\_edge\_t](#gpiopinedget)：GPIO edge trigger mode.
+- [gpio\_pin\_value\_t](#gpiopinvaluet)：GPIO value.
+- [gpio\_on\_changed\_t](#gpioonchangedt)：GPIO edge trigger handler。
 
 ### gpio\_drive\_mode\_t
 
 #### Description
 
-GPIO 驱动模式。
+GPIO drive mode.
 
 #### Type definition
 
@@ -208,18 +209,18 @@ typedef enum _gpio_drive_mode
 
 #### Enumeration element
 
-| Element name                     | Description        |
-| --------------------------- | ----------- |
-| GPIO\_DM\_INPUT             | Input        |
-| GPIO\_DM\_INPUT\_PULL\_DOWN | Input下拉     |
-| GPIO\_DM\_INPUT\_PULL\_UP   | Input上拉     |
-| GPIO\_DM\_OUTPUT            | Output         |
+|        Element name         |   Description   |
+| --------------------------- | --------------- |
+| GPIO\_DM\_INPUT             | Input           |
+| GPIO\_DM\_INPUT\_PULL\_DOWN | Input pull down |
+| GPIO\_DM\_INPUT\_PULL\_UP   | Input pull up   |
+| GPIO\_DM\_OUTPUT            | Output          |
 
 ### gpio\_pin\_edge\_t
 
 #### Description
 
-GPIO 边沿触发模式。
+GPIO edge trigger mode.
 
 #### Type definition
 
@@ -235,18 +236,18 @@ typedef enum _gpio_pin_edge
 
 #### Enumeration element
 
-| Element name            | Description        |
-| ------------------ | ----------- |
-| GPIO\_PE\_NONE     | 不触发      |
-| GPIO\_PE\_FALLING  | 下降沿触发  |
-| GPIO\_PE\_RISING   | 上升沿触发  |
-| GPIO\_PE\_BOTH     | 双沿触发    |
+|   Element name    |     Description      |
+| ----------------- | -------------------- |
+| GPIO\_PE\_NONE    | Do not trigger       |
+| GPIO\_PE\_FALLING | Falling edge trigger |
+| GPIO\_PE\_RISING  | Rising edge trigger  |
+| GPIO\_PE\_BOTH    | Double edge trigger  |
 
 ### gpio\_pin\_value\_t
 
 #### Description
 
-GPIO 值。
+GPIO value.
 
 #### Type definition
 
@@ -260,16 +261,16 @@ typedef enum _gpio_pin_value
 
 #### Enumeration element
 
-| Element name            | Description        |
-| ------------------ | ----------- |
-| GPIO\_PV\_LOW      | 低          |
-| GPIO\_PV\_HIGH     | 高          |
+|  Element name  | Description |
+| -------------- | ----------- |
+| GPIO\_PV\_LOW  | Low         |
+| GPIO\_PV\_HIGH | High        |
 
 ### gpio\_on_changed\_t
 
 #### Description
 
-GPIO 边沿触发处理程序。
+GPIO edge trigger handler。
 
 #### Type definition
 
@@ -279,7 +280,7 @@ typedef void (*gpio_on_changed_t)(uint32_t pin, void *userdata);
 
 #### Parameter
 
-| Parameter name    |   Description         |  Input or output  |
-| ---------- | -------------- | --------- |
-| pin        | 管脚编号        | Input      |
-| userdata   | 用户数据        | Input      |
+| Parameter name | Description | Input or output |
+| -------------- | ----------- | --------------- |
+| pin            | Pin number  | Input           |
+| userdata       | User data   | Input           |

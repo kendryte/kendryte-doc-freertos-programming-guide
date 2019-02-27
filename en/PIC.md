@@ -49,7 +49,7 @@ None.
 
 #### Description
 
-设置 IRQ 处理程序。
+设置 IRQ Handler。
 
 #### Function prototype
 
@@ -62,8 +62,8 @@ void pic_set_irq_handler(uint32_t irq, pic_irq_handler_t handler, void *userdata
 | Parameter name     |   Description         |  Input or output  |
 | ----------- | -------------- | --------- |
 | irq         | IRQ 编号       | Input      |
-| handler     | 处理程序        | Input      |
-| userdata    | 处理程序用户数据 | Input      |
+| handler     | Handler        | Input      |
+| userdata    | Handler user data | Input      |
 
 #### Return value
 
@@ -96,13 +96,13 @@ None.
 
 The relevant data types and data structures are defined as follows:
 
-- [pic\_irq\_handler\_t](#picirqhandlert)：IRQ 处理程序。
+- [pic\_irq\_handler\_t](#picirqhandlert)：IRQ Handler。
 
 ### pic\_irq\_handler\_t
 
 #### Description
 
-IRQ 处理程序。
+IRQ Handler。
 
 #### Type definition
 

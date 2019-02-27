@@ -49,7 +49,7 @@ size_t timer_set_interval(handle_t file, size_t nanoseconds);
 
 #### Description
 
-设置 TIMER 触发时的处理程序。
+设置 TIMER 触发时的Handler。
 
 #### Function prototype
 
@@ -62,8 +62,8 @@ void timer_set_on_tick(handle_t file, timer_on_tick_t on_tick, void *userdata);
 | Parameter name    |   Description         |  Input or output  |
 | ---------- | -------------- | --------- |
 | file       | TIMER device handle  | Input      |
-| on_tick    | 处理程序        | Input      |
-| userdata   | 处理程序用户数据 | Input      |
+| on_tick    | Handler        | Input      |
+| userdata   | Handler user data | Input      |
 
 #### Return value
 
@@ -112,13 +112,13 @@ timer_set_enable(timer, true);
 
 The relevant data types and data structures are defined as follows:
 
-- [timer\_on\_tick\_t](#timerontickt)：TIMER 触发时的处理程序。
+- [timer\_on\_tick\_t](#timerontickt)：TIMER 触发时的Handler。
 
 ### timer\_on\_tick\_t
 
 #### Description
 
-TIMER 触发时的处理程序。
+TIMER 触发时的Handler。
 
 #### Type definition
 

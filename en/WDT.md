@@ -88,8 +88,8 @@ void wdt_set_on_timeout(handle_t file, wdt_on_timeout_t handler, void *userdata)
 | Parameter name  |   Description         |  Input or output  |
 | -------- | -------------- | --------- |
 | file     | WDT device handle    | Input      |
-| handler  | 处理程序        | Input      |
-| userdata | 处理程序用户数据 | Input      |
+| handler  | Handler        | Input      |
+| userdata | Handler user data | Input      |
 
 #### Return value
 
@@ -162,7 +162,7 @@ wdt_set_enable(wdt, true);
 The relevant data types and data structures are defined as follows:
 
 - [wdt\_response\_mode\_t](#wdtresponsemodet)：WDT 响应模式。
-- [wdt\_on\_timeout\_t](#wdtontimeoutt)：WDT 超时处理程序。
+- [wdt\_on\_timeout\_t](#wdtontimeoutt)：WDT 超时Handler。
 
 ### wdt\_response\_mode\_t
 
@@ -191,7 +191,7 @@ typedef enum _wdt_response_mode
 
 #### Description
 
-WDT 超时处理程序。
+WDT 超时Handler。
 
 #### Type definition
 
