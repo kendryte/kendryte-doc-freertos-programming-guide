@@ -530,7 +530,7 @@ aes_cbc128_hard_decrypt(&cbc_context, aes_input_data, 16L, aes_output_data);
 
 The relevant data types and data structures are defined as follows:
 
-- [aes\_cipher\_mode\_t](#aesciphermodet)：AES encryption and decryption mode
+- [aes\_cipher\_mode\_t](#aesciphermodet): AES encryption and decryption mode
 
 ### aes\_cipher\_mode\_t
 

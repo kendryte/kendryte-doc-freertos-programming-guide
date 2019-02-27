@@ -15,14 +15,14 @@ Corresponding header file `pin_cfg.h`
 
 The relevant data types and data structures are defined as follows:
 
-- [fpioa\_function\_t](#fpioafunctiont)：管脚的功能编号。
-- [fpioa\_cfg\_item\_t](#fpioacfgitemt)：FPIOA 管脚配置。
-- [fpioa\_cfg\_t](#fpioacfgt)：FPIOA 配置。
-- [sysctl\_power\_bank\_t](#sysctlpowerbankt)：电源域编号。
-- [sysctl\_io\_power\_mode\_t](#sysctlpowerbankt)：IO 输出电压值。
-- [power\_bank\_item\_t](#powerbankitemt)：单个电源域配置。
-- [power\_bank\_cfg\_t](#powerbankcfgt)：电源域配置。
-- [pin\_cfg\_t](#pincfgt)：管脚配置。
+- [fpioa\_function\_t](#fpioafunctiont): 管脚的功能编号。
+- [fpioa\_cfg\_item\_t](#fpioacfgitemt): FPIOA 管脚配置。
+- [fpioa\_cfg\_t](#fpioacfgt): FPIOA 配置。
+- [sysctl\_power\_bank\_t](#sysctlpowerbankt): 电源域编号。
+- [sysctl\_io\_power\_mode\_t](#sysctlpowerbankt): IO 输出电压值。
+- [power\_bank\_item\_t](#powerbankitemt): 单个电源域配置。
+- [power\_bank\_cfg\_t](#powerbankcfgt): 电源域配置。
+- [pin\_cfg\_t](#pincfgt): 管脚配置。
 
 ### fpioa\_function\_t
 

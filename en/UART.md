@@ -6,7 +6,7 @@
 
 ## Features
 
-UART 模块具有以下功能：
+UART 模块具有以下功能: 
 
 - 配置 UART 参数
 - 自动收取数据到缓冲区
@@ -61,8 +61,8 @@ while (io_read(uart, &b, 1) != 1);
 
 The relevant data types and data structures are defined as follows:
 
-- [uart\_stopbits\_t](#uartstopbitst)：UART 停止位。
-- [uart\_parity\_t](#uartparityt)：UART 校验位。
+- [uart\_stopbits\_t](#uartstopbitst): UART 停止位。
+- [uart\_parity\_t](#uartparityt): UART 校验位。
 
 ### uart\_stopbits\_t
 

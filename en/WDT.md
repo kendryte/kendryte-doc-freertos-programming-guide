@@ -6,7 +6,7 @@ WDT 提供系统出错或无响应时的恢复功能。
 
 ## Features
 
-WDT 模块具有以下功能：
+WDT 模块具有以下功能: 
 
 - 配置超时时间
 - 手动重启计时
@@ -161,8 +161,8 @@ wdt_set_enable(wdt, true);
 
 The relevant data types and data structures are defined as follows:
 
-- [wdt\_response\_mode\_t](#wdtresponsemodet)：WDT 响应模式。
-- [wdt\_on\_timeout\_t](#wdtontimeoutt)：WDT 超时Handler。
+- [wdt\_response\_mode\_t](#wdtresponsemodet): WDT 响应模式。
+- [wdt\_on\_timeout\_t](#wdtontimeoutt): WDT 超时Handler。
 
 ### wdt\_response\_mode\_t
 

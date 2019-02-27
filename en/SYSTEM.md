@@ -6,7 +6,7 @@
 
 ## Features
 
-系统控制模块具有以下功能：
+系统控制模块具有以下功能: 
 
 - 设置 CPU 频率
 - 安装自定义驱动
@@ -76,8 +76,8 @@ system_set_cpu_frequency(400000000);
 
 The relevant data types and data structures are defined as follows:
 
-- [driver\_base\_t](#driverbaset)：驱动实现基类。
-- [custom\_driver\_t](#customdrivert)：自定义驱动实现。
+- [driver\_base\_t](#driverbaset): 驱动实现基类。
+- [custom\_driver\_t](#customdrivert): 自定义驱动实现。
 
 ### driver\_base\_t
 

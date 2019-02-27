@@ -6,7 +6,7 @@ PWM 用于控制脉冲输出的占空比。
 
 ## Features
 
-PWM 模块具有以下功能：
+PWM 模块具有以下功能: 
 
 - 配置 PWM Output频率
 - 配置 PWM 每个管脚的Output占空比

@@ -260,10 +260,10 @@ dvp_set_output_enable(dvp, 0, true);
 
 The relevant data types and data structures are defined as follows:
 
-- [video\_format\_t](#videoformatt)：Video format.
-- [dvp\_frame\_event_t](#dvpframeeventt)：DVP frame event.
-- [dvp\_signal\_type\_t](#dvpsignaltypet)：DVP signal type.
-- [dvp\_on\_frame\_event\_t](#dvponframeeventt)：The handler when the frame event is triggered.
+- [video\_format\_t](#videoformatt): Video format.
+- [dvp\_frame\_event_t](#dvpframeeventt): DVP frame event.
+- [dvp\_signal\_type\_t](#dvpsignaltypet): DVP signal type.
+- [dvp\_on\_frame\_event\_t](#dvponframeeventt): The handler when the frame event is triggered.
 
 ### video\_format\_t
 

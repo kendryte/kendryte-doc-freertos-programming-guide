@@ -2,11 +2,11 @@
 
 ## Overview
 
-I2S 标准总线定义了三种信号：时钟信号 BCK、声道选择信号 WS 和串行数据信号 SD。一个基本的I2S 数据总线有一个主机和一个从机。主机和从机的角色在通信过程中保持不变。I2S 模块包含独立的发送和接收声道，能够保证优良的通信性能。
+I2S 标准总线定义了三种信号: 时钟信号 BCK、声道选择信号 WS 和串行数据信号 SD。一个基本的I2S 数据总线有一个主机和一个从机。主机和从机的角色在通信过程中保持不变。I2S 模块包含独立的发送和接收声道，能够保证优良的通信性能。
 
 ## Features
 
-I2S 模块具有以下功能：
+I2S 模块具有以下功能: 
 
 - 根据音频格式自动配置设备（支持 16、24、32 位深，44100 采样率，1 - 4 声道）
 - 可配置为播放或录音模式
@@ -194,9 +194,9 @@ while (1)
 
 The relevant data types and data structures are defined as follows:
 
-- [audio\_format\_type\_t](#audioformattypet)：音频格式类型。
-- [audio\_format\_t](#[audioformatt)：音频格式。
-- [i2s\_align\_mode\_t](#i2salignmodet)：I2S 对齐模式。
+- [audio\_format\_type\_t](#audioformattypet): 音频格式类型。
+- [audio\_format\_t](#[audioformatt): 音频格式。
+- [i2s\_align\_mode\_t](#i2salignmodet): I2S 对齐模式。
 
 ### audio\_format\_type\_t
 

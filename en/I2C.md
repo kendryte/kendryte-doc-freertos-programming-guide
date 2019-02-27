@@ -6,7 +6,7 @@ I2C 总线用于和多个外部设备进行通信。多个外部设备可以共�
 
 ## Features
 
-I2C 模块具有以下功能：
+I2C 模块具有以下功能: 
 
 - 独立的 I2C 设备封装外设相关参数
 - 自动处理多设备总线争用
@@ -167,8 +167,8 @@ i2c_dev_transfer_sequential(dev0, &reg, 1, data_buf, 1);
 
 The relevant data types and data structures are defined as follows:
 
-- [i2c\_event\_t](#i2ceventt)：I2C 事件。
-- [i2c\_slave\_handler\_t](#i2cslavehandlert)：I2C 从设备Handler。
+- [i2c\_event\_t](#i2ceventt): I2C 事件。
+- [i2c\_slave\_handler\_t](#i2cslavehandlert): I2C 从设备Handler。
 
 ### i2c\_event\_t
 

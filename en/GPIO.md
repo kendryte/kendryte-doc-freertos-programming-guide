@@ -184,10 +184,10 @@ gpio_set_pin_value(gpio, 0, GPIO_PV_LOW);
 
 The relevant data types and data structures are defined as follows:
 
-- [gpio\_drive\_mode\_t](#gpiodrivemodet)：GPIO drive mode.
-- [gpio\_pin\_edge\_t](#gpiopinedget)：GPIO edge trigger mode.
-- [gpio\_pin\_value\_t](#gpiopinvaluet)：GPIO value.
-- [gpio\_on\_changed\_t](#gpioonchangedt)：GPIO edge trigger handler。
+- [gpio\_drive\_mode\_t](#gpiodrivemodet): GPIO drive mode.
+- [gpio\_pin\_edge\_t](#gpiopinedget): GPIO edge trigger mode.
+- [gpio\_pin\_value\_t](#gpiopinvaluet): GPIO value.
+- [gpio\_on\_changed\_t](#gpioonchangedt): GPIO edge trigger handler。
 
 ### gpio\_drive\_mode\_t
 

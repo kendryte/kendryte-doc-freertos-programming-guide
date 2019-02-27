@@ -6,7 +6,7 @@ TIMER 提供高精度定时功能。
 
 ## Features
 
-TIMER 模块具有以下功能：
+TIMER 模块具有以下功能: 
 
 - 启用或禁用定时器
 - 配置定时器触发间隔
@@ -112,7 +112,7 @@ timer_set_enable(timer, true);
 
 The relevant data types and data structures are defined as follows:
 
-- [timer\_on\_tick\_t](#timerontickt)：TIMER 触发时的Handler。
+- [timer\_on\_tick\_t](#timerontickt): TIMER 触发时的Handler。
 
 ### timer\_on\_tick\_t
 

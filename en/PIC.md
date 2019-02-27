@@ -6,7 +6,7 @@
 
 ## Features
 
-PIC 模块具有以下功能：
+PIC 模块具有以下功能: 
 
 - 启用或禁用中断
 - 设置中断处理程序
@@ -96,7 +96,7 @@ None.
 
 The relevant data types and data structures are defined as follows:
 
-- [pic\_irq\_handler\_t](#picirqhandlert)：IRQ Handler。
+- [pic\_irq\_handler\_t](#picirqhandlert): IRQ Handler。
 
 ### pic\_irq\_handler\_t
 

@@ -200,7 +200,7 @@ dma_close(dma);
 
 The relevant data types and data structures are defined as follows:
 
-- [dma\_stage\_completion\_handler\_t](#dmastagecompletionhandlert)：DMA stage completion handler。
+- [dma\_stage\_completion\_handler\_t](#dmastagecompletionhandlert): DMA stage completion handler。
 
 ### dma\_stage\_completion\_handler\_t
 
