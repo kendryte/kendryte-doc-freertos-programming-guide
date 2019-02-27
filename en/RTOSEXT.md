@@ -1,17 +1,17 @@
-# FreeRTOS 扩展
+# FreeRTOS Extension
 
 ## Overview
 
-FreeRTOS 是一个轻量级的实时操作系统。本 SDK 在其基础上新增了一些适用于 K210 的功能。
+FreeRTOS is a lightweight real-time operating system. This SDK adds some features for the K210.
 
 ## Features
 
-FreeRTOS 扩展模块具有以下功能：
+The FreeRTOS extension has the following features:
 
-- 获取当前任务所在的逻辑处理器 Id
-- 在指定逻辑处理器创建任务
+- Get the logical processor Id where the current task is located
+- Create tasks on the specified logical processor
 
-K210 包含 2 个逻辑处理器，Id 分别为 0 和 1。
+The K210 contains 2 logical processors with IDs of 0 and 1 respectively.
 
 ## API
 
@@ -26,7 +26,7 @@ Provide the following interfaces
 
 #### Description
 
-获取当前逻辑处理器 Id。
+Get the current logical processor ID.
 
 #### Function prototype
 
@@ -36,13 +36,13 @@ UBaseType_t uxTaskGetProcessorId(void);
 
 #### Return value
 
-当前逻辑处理器 Id。
+Current logical processor ID.
 
 ### xTaskCreateAtProcessor
 
 #### Description
 
-在指定逻辑处理器创建任务。
+Create a task at the specified logical processor.
 
 #### Function prototype
 
@@ -52,19 +52,19 @@ BaseType_t xTaskCreateAtProcessor(UBaseType_t uxProcessor, TaskFunction_t pxTask
 
 #### Parameter
 
-| Parameter name       |   Description       |  Input or output  |
-| ------------- | ------------ | --------- |
-| uxProcessor   | 逻辑处理器 Id | Input      |
-| pxTaskCode    | 任务入口点    | Input      |
-| pcName        | 任务名称      | Input      |
-| usStackDepth  | 栈空间        | Input      |
-| pvParameters  | 参数          | Input      |
-| uxPriority    | 优先级        | Input      |
-| pxCreatedTask | 创建的任务句柄 | Input      |
+| Parameter name |     Description      | Input or output |
+| -------------- | -------------------- | --------------- |
+| uxProcessor    | Logical processor ID | Input           |
+| pxTaskCode     | Task entry point     | Input           |
+| pcName         | Task name            | Input           |
+| usStackDepth   | Stack depth          | Input           |
+| pvParameters   | Parameters           | Input           |
+| uxPriority     | Priority             | Input           |
+| pxCreatedTask  | Created task handle  | Input           |
 
 #### Return value
 
-| 返回值  |  Description   |
-| ------ | ------- |
-| pdPASS | 成功 |
-| 其他   | 失败 |
+| 返回值 | Description |
+| ------ | ----------- |
+| pdPASS | Success     |
+| Others | Fail        |

@@ -45,7 +45,7 @@ handle_t io_open(const char *name);
 
 | 返回值 |  Description   |
 | ----- | ------- |
-| 0     | 失败    |
+| 0     | Fail    |
 | 其他  | device handle |
 
 ### io\_close
@@ -70,8 +70,8 @@ int io_close(handle_t file);
 
 | 返回值 |  Description   |
 | ----- | ------- |
-| 0     | 成功    |
-| 其他  | 失败    |
+| 0     | Success    |
+| 其他  | Fail    |
 
 ### io\_read
 
@@ -121,8 +121,8 @@ int io_write(handle_t file, const uint8_t *buffer, size_t len);
 
 | 返回值 |  Description   |
 | ----- | ------- |
-| len   | 成功    |
-| 其他  | 失败    |
+| len   | Success    |
+| 其他  | Fail    |
 
 ### io\_control
 
