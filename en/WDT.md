@@ -207,7 +207,7 @@ typedef int (*wdt_on_timeout_t)(void *userdata);
 
 #### Return value
 
-| 返回值 |  Description   |
+| Return value |  Description   |
 | ----- | ------- |
 | 0     | 不清除中断，系统将复位 |
 | 1     | 清除中断，系统不复位   |

@@ -64,7 +64,7 @@ BaseType_t xTaskCreateAtProcessor(UBaseType_t uxProcessor, TaskFunction_t pxTask
 
 #### Return value
 
-| 返回值 | Description |
+| Return value | Description |
 | ------ | ----------- |
 | pdPASS | Success     |
 | Others | Fail        |
