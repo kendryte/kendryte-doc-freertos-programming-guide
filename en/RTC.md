@@ -1,15 +1,20 @@
-# 实时时钟 (RTC)
+# RTC
 
 ## Overview
 
-RTC 是用来计时的单元，在设置时间后具备计时功能。
+The Real Time Clock (RTC) is a unit for timing and has a timing function after
+the set time.
+
+**Note** The RTC unit is only used when PLL0 is enabled and the CPU frequency is greater than 30MHz.
 
 ## Features
 
-RTC 模块具有以下功能：
+The RTC unit has the following features:
 
-- 获取当前日期时刻
-- 设置当前日期时刻
+- Get current date and time
+- Set the current date and time
+- Set timing interrupt
+- Set alarm interrupt
 
 ## API
 
@@ -24,7 +29,7 @@ Provide the following interfaces
 
 #### Description
 
-获取 RTC 日期时刻。
+Get the RTC date and time.
 
 #### Function prototype
 
@@ -34,10 +39,10 @@ void rtc_get_datetime(handle_t file, struct tm *datetime);
 
 #### Parameter
 
-| Parameter name     |   Description         |  Input or output  |
-| ----------- | -------------- | --------- |
-| file        | RTC device handle    | Input      |
-| datetime    | 日期时刻        | Output      |
+| Parameter name |    Description    | Input or output |
+| -------------- | ----------------- | --------------- |
+| file           | RTC device handle | Input           |
+| datetime       | Date time         | Output          |
 
 #### Return value
 
@@ -47,7 +52,7 @@ None.
 
 #### Description
 
-设置 RTC 日期时刻。
+Set the RTC date and time.
 
 #### Function prototype
 
@@ -57,10 +62,10 @@ void rtc_set_datetime(handle_t file, const struct tm *datetime);
 
 #### Parameter
 
-| Parameter name     |   Description           |  Input or output  |
-| ----------- | ---------------- | --------- |
-| file        | RTC device handle      | Input      |
-| datetime    | 日期时刻          | Input      |
+| Parameter name |    Description    | Input or output |
+| -------------- | ----------------- | --------------- |
+| file           | RTC device handle | Input           |
+| datetime       | Date time         | Input           |
 
 #### Return value
 
@@ -69,7 +74,7 @@ None.
 ### Example
 
 ```c
-/* 设置日期时间，然后读取日期时间 */
+/* Set the date and time, then read the date and time */
 handle_t rtc = io_open("/dev/rtc0");
 
 struct tm time =
