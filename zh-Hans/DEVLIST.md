@@ -7,9 +7,9 @@
 | /dev/uart3   | UART     | |
 | /dev/gpio0   | GPIO     | 高速 GPIO |
 | /dev/gpio1   | GPIO     | |
-| /dev/i2c0    | I2C      | |
-| /dev/i2c1    | I2C      | |
-| /dev/i2c2    | I2C      | |
+| /dev/i2c0    | I²C      | |
+| /dev/i2c1    | I²C      | |
+| /dev/i2c2    | I²C      | |
 | /dev/i2s0    | I2S      | |
 | /dev/i2s1    | I2S      | |
 | /dev/i2s2    | I2S      | |

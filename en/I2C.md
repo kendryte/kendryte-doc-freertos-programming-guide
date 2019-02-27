@@ -1,14 +1,14 @@
-# 集成电路内置总线 (I2C)
+# 集成电路内置总线 (I²C)
 
 ## Overview
 
-I2C 总线用于和多个外部设备进行通信。多个外部设备可以共用一个 I2C 总线。
+I²C 总线用于和多个外部设备进行通信。多个外部设备可以共用一个 I²C 总线。
 
 ## Features
 
-I2C 模块具有以下功能:
+I²C 模块具有以下功能:
 
-- 独立的 I2C 设备封装外设相关参数
+- 独立的 I²C 设备封装外设相关参数
 - 自动处理多设备总线争用
 - 支持从模式
 
@@ -28,7 +28,7 @@ Provide the following interfaces
 
 #### Description
 
-注册并打开一个 I2C 设备。
+注册并打开一个 I²C 设备。
 
 #### Function prototype
 
@@ -40,20 +40,20 @@ handle_t i2c_get_device(handle_t file, const char *name, uint32_t slave_address,
 
 | Parameter name          |   Description             |  Input or output  |
 | ---------------- | ------------------ | --------- |
-| file             | I2C 控制器句柄      | Input      |
+| file             | I²C 控制器句柄      | Input      |
 | name             | 指定访问该设备的路径 | Input      |
 | slave\_address   | 从设备地址          | Input      |
 | address\_width   | 从设备地址宽度      | Input      |
 
 #### Return value
 
-I2C 设备句柄。
+I²C 设备句柄。
 
 ### i2c\_dev\_set\_clock\_rate
 
 #### Description
 
-配置 I2C 设备的时钟速率。
+配置 I²C 设备的时钟速率。
 
 #### Function prototype
 
@@ -65,7 +65,7 @@ double i2c_dev_set_clock_rate(handle_t file, double clock_rate);
 
 | Parameter name          |   Description        |  Input or output  |
 | ---------------- | ------------- | --------- |
-| file             | I2C device handle   | Input       |
+| file             | I²C device handle   | Input       |
 | clock\_rate      | 期望的时钟速率 | Input       |
 
 #### Return value
@@ -76,7 +76,7 @@ double i2c_dev_set_clock_rate(handle_t file, double clock_rate);
 
 #### Description
 
-对 I2C 设备先读后写。
+对 I²C 设备先读后写。
 
 #### Function prototype
 
@@ -88,7 +88,7 @@ int i2c_dev_transfer_sequential(handle_t file, const uint8_t *write_buffer, size
 
 | Parameter name       |   Description         |  Input or output  |
 | ------------- | -------------- | --------- |
-| file          | I2C device handle    | Input      |
+| file          | I²C device handle    | Input      |
 | write\_buffer | 源缓冲区        | Input      |
 | write\_len    | 要写入的字节数   | Input      |
 | read\_buffer  | 目标缓冲区      | Output      |
@@ -102,7 +102,7 @@ int i2c_dev_transfer_sequential(handle_t file, const uint8_t *write_buffer, size
 
 #### Description
 
-配置 I2C 控制器为从模式。
+配置 I²C 控制器为从模式。
 
 #### Function prototype
 
@@ -114,7 +114,7 @@ void i2c_config_as_slave(handle_t file, uint32_t slave_address, uint32_t address
 
 | Parameter name          |   Description        |  Input or output  |
 | ---------------- | ------------- | --------- |
-| file             | I2C 控制器句柄 | Input       |
+| file             | I²C 控制器句柄 | Input       |
 | slave\_address   | 从设备地址     | Input       |
 | address\_width   | 从设备地址宽度 | Input       |
 | handler          | 从设备Handler | Input       |
@@ -127,7 +127,7 @@ None.
 
 #### Description
 
-配置 I2C 从模式的时钟速率。
+配置 I²C 从模式的时钟速率。
 
 #### Function prototype
 
@@ -139,7 +139,7 @@ double i2c_slave_set_clock_rate(handle_t file, double clock_rate);
 
 | Parameter name          |   Description        |  Input or output  |
 | ---------------- | ------------- | --------- |
-| file             | I2C 控制器句柄 | Input       |
+| file             | I²C 控制器句柄 | Input       |
 | clock\_rate      | 期望的时钟速率 | Input       |
 
 #### Return value
@@ -167,14 +167,14 @@ i2c_dev_transfer_sequential(dev0, &reg, 1, data_buf, 1);
 
 The relevant data types and data structures are defined as follows:
 
-- [i2c\_event\_t](#i2ceventt): I2C 事件。
-- [i2c\_slave\_handler\_t](#i2cslavehandlert): I2C 从设备Handler。
+- [i2c\_event\_t](#i2ceventt): I²C 事件。
+- [i2c\_slave\_handler\_t](#i2cslavehandlert): I²C 从设备Handler。
 
 ### i2c\_event\_t
 
 #### Description
 
-I2C 事件。
+I²C 事件。
 
 #### Type definition
 
@@ -199,7 +199,7 @@ typedef enum _i2c_event
 
 #### Description
 
-I2C 从设备Handler。
+I²C 从设备Handler。
 
 #### Type definition
 
