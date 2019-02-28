@@ -101,7 +101,7 @@ typedef struct _driver_base
 
 | Element name   | Description        |
 | --------- | ----------- |
-| userdata  | 用户数据     |
+| userdata  | User data     |
 | install   | 安装时被调用 |
 | open      | 打开时被调用 |
 | close     | 关闭时被调用 |

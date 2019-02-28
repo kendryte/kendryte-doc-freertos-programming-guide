@@ -1,16 +1,17 @@
-# 定时器 (TIMER)
+# TIMER
 
 ## Overview
 
-TIMER 提供高精度定时功能。
+The timer peripheral provides high-precision timing.
+The chip has 3 timers, each with 4 channels. Can be configured as PWM, see PWM description for details.
 
 ## Features
 
-TIMER 模块具有以下功能:
+The TIMER module has the following features:
 
-- 启用或禁用定时器
-- 配置定时器触发间隔
-- 配置定时器触发处理程序
+- Enable or disable the timer
+- Configure timer trigger interval
+- Configure timer trigger handler
 
 ## API
 
@@ -26,7 +27,7 @@ Provide the following interfaces
 
 #### Description
 
-设置 TIMER 触发间隔。
+Set the timer trigger interval.
 
 #### Function prototype
 
@@ -36,20 +37,20 @@ size_t timer_set_interval(handle_t file, size_t nanoseconds);
 
 #### Parameter
 
-| Parameter name     |   Description         |  Input or output  |
-| ----------- | -------------- | --------- |
-| file        | TIMER device handle  | Input      |
-| nanoseconds | 间隔（纳秒）    | Input       |
+| Parameter name |      Description       | Input or output |
+| -------------- | ---------------------- | --------------- |
+| file           | TIMER device handle    | Input           |
+| nanoseconds    | Interval (nanoseconds) | Input           |
 
 #### Return value
 
-实际的触发间隔（纳秒）。
+Actual trigger interval (nanoseconds).
 
 ### timer\_set\_on\_tick
 
 #### Description
 
-设置 TIMER 触发时的Handler。
+Set the handler when the timer is triggered.
 
 #### Function prototype
 
@@ -59,11 +60,11 @@ void timer_set_on_tick(handle_t file, timer_on_tick_t on_tick, void *userdata);
 
 #### Parameter
 
-| Parameter name    |   Description         |  Input or output  |
-| ---------- | -------------- | --------- |
-| file       | TIMER device handle  | Input      |
-| on_tick    | Handler        | Input      |
-| userdata   | Handler user data | Input      |
+| Parameter name |     Description     | Input or output |
+| -------------- | ------------------- | --------------- |
+| file           | TIMER device handle | Input           |
+| on_tick        | Handler             | Input           |
+| userdata       | Handler user data   | Input           |
 
 #### Return value
 
@@ -73,7 +74,7 @@ None.
 
 #### Description
 
-设置 TIMER 是否启用。
+Enable or disable the timer.
 
 #### Function prototype
 
@@ -83,10 +84,10 @@ void timer_set_enable(handle_t file, bool enable);
 
 #### Parameter
 
-| Parameter name    |   Description         |  Input or output  |
-| ---------- | -------------- | --------- |
-| file       | TIMER device handle | Input      |
-| enable     | 是否启用        | Input      |
+| Parameter name |     Description     | Input or output |
+| -------------- | ------------------- | --------------- |
+| file           | TIMER device handle | Input           |
+| enable         | Whether to enable   | Input           |
 
 #### Return value
 
@@ -95,7 +96,7 @@ None.
 ### Example
 
 ```c
-/* 定时器0  定时 1 秒打印 Time OK! */
+/* Timer 0 Channel 0 timed 1 second print "Time OK!" */
 void on_tick(void *unused)
 {
     printf("Time OK!\n");
@@ -112,13 +113,13 @@ timer_set_enable(timer, true);
 
 The relevant data types and data structures are defined as follows:
 
-- [timer\_on\_tick\_t](#timerontickt): TIMER 触发时的Handler。
+- [timer\_on\_tick\_t](#timerontickt): The handler when the timer is triggered.
 
 ### timer\_on\_tick\_t
 
 #### Description
 
-TIMER 触发时的Handler。
+The handler when the timer is triggered.
 
 #### Type definition
 
@@ -128,6 +129,6 @@ typedef void (*timer_on_tick_t)(void *userdata);
 
 #### Parameter
 
-| Parameter name    |   Description         |  Input or output  |
-| ---------- | -------------- | --------- |
-| userdata   | 用户数据        | Input      |
+| Parameter name | Description | Input or output |
+| -------------- | ----------- | --------------- |
+| userdata       | User data   | Input           |
