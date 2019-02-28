@@ -1,16 +1,18 @@
-# 集成电路内置音频总线 (I2S)
+# I2S
 
 ## Overview
 
-I2S 标准总线定义了三种信号: 时钟信号 BCK、声道选择信号 WS 和串行数据信号 SD。一个基本的I2S 数据总线有一个主机和一个从机。主机和从机的角色在通信过程中保持不变。I2S 模块包含独立的发送和接收声道，能够保证优良的通信性能。
+The Integrated Inter-IC Sound Bus (I2S) is a serial bus interface standard used for connecting digital audio devices together.
+
+The I2S bus defines three types of signals: the clock signal BCK, the channel selection signal WS, and the serial data signal SD. A basic I2S bus has one master and one slave. The roles of the master and slave remain unchanged during the communication process. The I2S unit includes separate transmit and receive channels for excellent communication performance.
 
 ## Features
 
-I2S 模块具有以下功能:
+The I2S module has the following features:
 
-- 根据音频格式自动配置设备（支持 16、24、32 位深，44100 采样率，1 - 4 声道）
-- 可配置为播放或录音模式
-- 自动管理音频缓冲区
+- Automatically configure the device according to the audio format (supports 16, 24, 32 bit depth, 44100 sample rate, 1 - 4 channels)
+- Configurable for playback or recording mode
+- Automatic management of audio buffers
 
 ## API
 
@@ -29,7 +31,7 @@ Provide the following interfaces
 
 #### Description
 
-配置 I2S 控制器为输出模式。
+Configure the I2S controller to be in output mode.
 
 #### Function prototype
 
@@ -39,13 +41,13 @@ void i2s_config_as_render(handle_t file, const audio_format_t *format, size_t de
 
 #### Parameter
 
-| Parameter name          |   Description             |  Input or output  |
-| ---------------- | ------------------ | --------- |
-| file             | I2S 控制器句柄      | Input      |
-| format           | 音频格式            | Input      |
-| delay\_ms        | 缓冲区长度          | Input      |
-| align\_mode      | 对齐模式            | Input      |
-| channels\_mask   | 通道掩码            | Input      |
+| Parameter name |      Description      | Input or output |
+| -------------- | --------------------- | --------------- |
+| file           | I2S controller handle | Input           |
+| format         | Audio format          | Input           |
+| delay\_ms      | Buffer delay time     | Input           |
+| align\_mode    | Align mode            | Input           |
+| channels\_mask | Channel mask          | Input           |
 
 #### Return value
 
@@ -55,7 +57,7 @@ None.
 
 #### Description
 
-配置 I2S 控制器为捕获模式。
+Configure the I2S controller to capture mode.
 
 #### Function prototype
 
@@ -65,13 +67,13 @@ void i2s_config_as_capture(handle_t file, const audio_format_t *format, size_t d
 
 #### Parameter
 
-| Parameter name          |   Description             |  Input or output  |
-| ---------------- | ------------------ | --------- |
-| file             | I2S 控制器句柄      | Input      |
-| format           | 音频格式            | Input      |
-| delay\_ms        | 缓冲区长度          | Input      |
-| align\_mode      | 对齐模式            | Input      |
-| channels\_mask   | 通道掩码            | Input      |
+| Parameter name |      Description      | Input or output |
+| -------------- | --------------------- | --------------- |
+| file           | I2S controller handle | Input           |
+| format         | Audio format          | Input           |
+| delay\_ms      | Buffer delay time     | Input           |
+| align\_mode    | Align mode            | Input           |
+| channels\_mask | Channel mask          | Input           |
 
 #### Return value
 
@@ -81,7 +83,7 @@ None.
 
 #### Description
 
-获取音频缓冲区。
+Get the audio buffer.
 
 #### Function prototype
 
@@ -91,11 +93,11 @@ void i2s_get_buffer(handle_t file, uint8_t **buffer, size_t *frames);
 
 #### Parameter
 
-| Parameter name    |   Description        |  Input or output  |
-| ---------- | ------------- | --------- |
-| file       | I2S 控制器句柄 | Input       |
-| buffer     | 缓冲区         | Output       |
-| frames     | 缓冲区帧数     | Output       |
+| Parameter name |       Description       | Input or output |
+| -------------- | ----------------------- | --------------- |
+| file           | I2S controller handle   | Input           |
+| buffer         | Buffer                  | Output          |
+| frames         | Number of buffer frames | Output          |
 
 #### Return value
 
@@ -105,7 +107,7 @@ None.
 
 #### Description
 
-释放音频缓冲区。
+Release the audio buffer.
 
 #### Function prototype
 
@@ -115,10 +117,10 @@ void i2s_release_buffer(handle_t file, size_t frames);
 
 #### Parameter
 
-| Parameter name    |   Description               |  Input or output  |
-| ---------- | -------------------- | --------- |
-| file       | I2S 控制器句柄        | Input       |
-| frames     | 确认已读取或写入的帧数 | Input       |
+| Parameter name |                         Description                         | Input or output |
+| -------------- | ----------------------------------------------------------- | --------------- |
+| file           | I2S controller handle                                       | Input           |
+| frames         | Confirm the number of frames that have been read or written | Input           |
 
 #### Return value
 
@@ -128,7 +130,7 @@ None.
 
 #### Description
 
-开始播放或录音。
+Start playing or recording.
 
 #### Function prototype
 
@@ -138,9 +140,9 @@ void i2s_start(handle_t file);
 
 #### Parameter
 
-| Parameter name    |   Description               |  Input or output  |
-| ---------- | -------------------- | --------- |
-| file       | I2S 控制器句柄        | Input       |
+| Parameter name |      Description      | Input or output |
+| -------------- | --------------------- | --------------- |
+| file           | I2S controller handle | Input           |
 
 #### Return value
 
@@ -150,7 +152,7 @@ None.
 
 #### Description
 
-停止播放或录音。
+Stop playing or recording.
 
 #### Function prototype
 
@@ -160,9 +162,9 @@ void i2s_stop(handle_t file);
 
 #### Parameter
 
-| Parameter name    |   Description               |  Input or output  |
-| ---------- | -------------------- | --------- |
-| file       | I2S 控制器句柄        | Input       |
+| Parameter name |      Description      | Input or output |
+| -------------- | --------------------- | --------------- |
+| file           | I2S controller handle | Input           |
 
 #### Return value
 
@@ -171,7 +173,7 @@ None.
 ### Example
 
 ```c
-/* 循环播放 PCM 音频 */
+/* Loop play PCM audio */
 handle_t i2s = io_open("/dev/i2s0");
 audio_format_t audio_fmt = { .type = AUDIO_FMT_PCM, .bits_per_sample = 16, .sample_rate = 44100, .channels = 2 };
 i2s_config_as_render(i2s, &audio_fmt, 100, I2S_AM_RIGHT, 0b11);
@@ -194,15 +196,15 @@ while (1)
 
 The relevant data types and data structures are defined as follows:
 
-- [audio\_format\_type\_t](#audioformattypet): 音频格式类型。
-- [audio\_format\_t](#[audioformatt): 音频格式。
-- [i2s\_align\_mode\_t](#i2salignmodet): I2S 对齐模式。
+- [audio\_format\_type\_t](#audioformattypet): Audio format type.
+- [audio\_format\_t](#[audioformatt): Audio format.
+- [i2s\_align\_mode\_t](#i2salignmodet): I2S align mode.
 
 ### audio\_format\_type\_t
 
 #### Description
 
-音频格式类型。
+Audio format type.
 
 #### Type definition
 
@@ -215,15 +217,15 @@ typedef enum _audio_format_type
 
 #### Enumeration element
 
-| Element name            | Description        |
-| ------------------ | ----------- |
-| AUDIO\_FMT\_PCM    | PCM         |
+|  Element name   | Description |
+| --------------- | ----------- |
+| AUDIO\_FMT\_PCM | PCM         |
 
 ### audio\_format\_t
 
 #### Description
 
-音频格式。
+Audio format.
 
 #### Type definition
 
@@ -239,18 +241,18 @@ typedef struct _audio_format
 
 #### Enumeration element
 
-| Element name           | Description          |
-| ----------------- | ------------- |
-| type              | 音频格式类型   |
-| bits\_per\_sample | 采样深度       |
-| sample\_rate      | 采样率         |
-| channels          | 声道数         |
+|   Element name    |       Description        |
+| ----------------- | ------------------------ |
+| type              | Audio format type        |
+| bits\_per\_sample | Sampling bits per sample |
+| sample\_rate      | Sample rate              |
+| channels          | Number of channels       |
 
 ### i2s\_align\_mode\_t
 
 #### Description
 
-I2S 对齐模式。
+I2S align mode.
 
 #### Type definition
 
@@ -265,8 +267,8 @@ typedef enum _i2s_align_mode
 
 #### Enumeration element
 
-| Element name           | Description        |
-| ----------------- | ----------- |
-| I2S\_AM\_STANDARD | 标准模式     |
-| I2S\_AM\_RIGHT    | 右对齐       |
-| I2S\_AM\_LEFT     | 左对齐       |
+|   Element name    |     Description      |
+| ----------------- | -------------------- |
+| I2S\_AM\_STANDARD | Standard mode        |
+| I2S\_AM\_RIGHT    | Right justified mode |
+| I2S\_AM\_LEFT     | Left justified mode  |
