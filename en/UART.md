@@ -1,15 +1,17 @@
-# 通用异步收发传输器 (UART)
+# UART
 
 ## Overview
 
-嵌入式应用通常要求一个简单的并且占用系统资源少的方法来传输数据。通用异步收发传输器 (UART) 即可以满足这些要求，它能够灵活地与外部设备进行全双工数据交换。
+Universal Asynchronous Receiver/Transmitter (UART).
+
+Embedded applications typically require a simple method that consumes less system resources to transfer data. The Universal Asynchronous Receiver/Transmitter (UART) meets these requirements with the flexibility to perform full-duplex data exchange with external devices.
 
 ## Features
 
-UART 模块具有以下功能:
+The UART module has the following features:
 
-- 配置 UART 参数
-- 自动收取数据到缓冲区
+- Configuring UART parameters
+- Automatically charge data to the buffer
 
 ## API
 
@@ -23,7 +25,7 @@ Provide the following interfaces
 
 #### Description
 
-配置 UART 设备。
+Configure the UART device.
 
 #### Function prototype
 
@@ -33,13 +35,13 @@ void uart_config(handle_t file, uint32_t baud_rate, uint32_t databits, uart_stop
 
 #### Parameter
 
-| Parameter name    |   Description       |  Input or output  |
-| ---------- | ------------ | --------- |
-| file       | UART device handle | Input      |
-| baud\_rate | 波特率        | Input      |
-| databits   | 数据位 (5-8)  | Input      |
-| stopbits   | 停止位        | Input      |
-| parity     | 校验位        | Input      |
+| Parameter name |    Description     | Input or output |
+| -------------- | ------------------ | --------------- |
+| file           | UART device handle | Input           |
+| baud\_rate     | Baud rate          | Input           |
+| databits       | Data bits (5-8)    | Input           |
+| stopbits       | Stop bit           | Input           |
+| parity         | Parity bit         | Input           |
 
 #### Return value
 
@@ -51,9 +53,9 @@ None.
 handle_t uart = io_open("/dev/uart1");
 
 uint8_t b = 1;
-/* 写入 1 个字节 */
+/* Write 1 byte */
 io_write(uart, &b, 1);
-/* 读取 1 个字节 */
+/* Read 1 byte */
 while (io_read(uart, &b, 1) != 1);
 ```
 
@@ -61,14 +63,14 @@ while (io_read(uart, &b, 1) != 1);
 
 The relevant data types and data structures are defined as follows:
 
-- [uart\_stopbits\_t](#uartstopbitst): UART 停止位。
-- [uart\_parity\_t](#uartparityt): UART 校验位。
+- [uart\_stopbits\_t](#uartstopbitst): UART stop bits.
+- [uart\_parity\_t](#uartparityt): UART parity bit.
 
 ### uart\_stopbits\_t
 
 #### Description
 
-UART 停止位。
+UART stop bits.
 
 #### Type definition
 
@@ -78,22 +80,22 @@ typedef enum _uart_stopbits
     UART_STOP_1,
     UART_STOP_1_5,
     UART_STOP_2
-} uart_stopbits_t;  
+} uart_stopbits_t;
 ```
 
 #### Enumeration element
 
-| Element name          | Description        |
-| ---------------- | ----------- |
-| UART\_STOP\_1    | 1 个停止位   |
-| UART\_STOP\_1\_5 | 1.5 个停止位 |
-| UART\_STOP\_2    | 2 个停止位   |
+|   Element name   |  Description  |
+| ---------------- | ------------- |
+| UART\_STOP\_1    | 1 stop bit    |
+| UART\_STOP\_1\_5 | 1.5 stop bits |
+| UART\_STOP\_2    | 2 stop bits   |
 
 ### uart\_parity\_t
 
 #### Description
 
-UART 校验位。
+UART parity bit.
 
 #### Type definition
 
@@ -108,8 +110,8 @@ typedef enum _uart_parity
 
 #### Enumeration element
 
-| Element name            | Description        |
-| ------------------ | ----------- |
-| UART\_PARITY\_NONE | 无校验位    |
-| UART\_PARITY\_ODD  | 奇校验      |
-| UART\_PARITY\_EVEN | 偶校验      |
+|    Element name    |  Description  |
+| ------------------ | ------------- |
+| UART\_PARITY\_NONE | No parity bit |
+| UART\_PARITY\_ODD  | Odd parity    |
+| UART\_PARITY\_EVEN | Even parity   |
