@@ -1,15 +1,16 @@
-# 脉冲宽度调制器 (PWM)
+# PWM
 
 ## Overview
 
-PWM 用于控制脉冲输出的占空比。
+A pulse width modulator (PWM) is used to control the duty cycle of the pulse output.
+It is essentially a timer, so be careful not to conflict with the timer when setting the PWM number and channel.
 
 ## Features
 
-PWM 模块具有以下功能:
+The PWM module has the following features:
 
-- 配置 PWM Output频率
-- 配置 PWM 每个管脚的Output占空比
+- Configure the PWM output frequency
+- Configure the output duty cycle of each pin of the PWM
 
 ## API
 
@@ -26,7 +27,7 @@ Provide the following interfaces
 
 #### Description
 
-获取 PWM 管脚数量。
+Get the number of PWM pins.
 
 #### Function prototype
 
@@ -36,19 +37,19 @@ uint32_t pwm_get_pin_count(handle_t file);
 
 #### Parameter
 
-| Parameter name     |   Description         |  Input or output  |
-| ----------- | -------------- | --------- |
-| file        | PWM device handle    | Input      |
+| Parameter name |    Description    | Input or output |
+| -------------- | ----------------- | --------------- |
+| file           | PWM device handle | Input           |
 
 #### Return value
 
-PWM 管脚数量。
+The number of PWM pins.
 
 ### pwm\_set\_frequency
 
 #### Description
 
-设置 PWM 频率。
+Set the PWM frequency.
 
 #### Function prototype
 
@@ -58,20 +59,20 @@ double pwm_set_frequency(handle_t file, double frequency);
 
 #### Parameter
 
-| Parameter name    |   Description         |  Input or output  |
-| ---------- | -------------- | --------- |
-| file       | PWM device handle    | Input      |
-| frequency  | 期望的频率（Hz） | Input      |
+| Parameter name |       Description       | Input or output |
+| -------------- | ----------------------- | --------------- |
+| file           | PWM device handle       | Input           |
+| frequency      | Expected frequency (Hz) | Input           |
 
 #### Return value
 
-设置后实际的频率（Hz）。
+The actual frequency (Hz) after setting.
 
 ### pwm\_set\_active\_duty\_cycle\_percentage
 
 #### Description
 
-设置 PWM 管脚占空比。
+Set the PWM pin duty cycle.
 
 #### Function prototype
 
@@ -81,21 +82,21 @@ double pwm_set_active_duty_cycle_percentage(handle_t file, uint32_t pin, double 
 
 #### Parameter
 
-| Parameter name    |   Description         |  Input or output  |
-| ---------- | -------------- | --------- |
-| file       | PWM device handle    | Input      |
-| pin        | 管脚编号        | Input      |
-| duty\_cycle\_percentage  | 期望的占空比 | Input      |
+|     Parameter name      |     Description     | Input or output |
+| ----------------------- | ------------------- | --------------- |
+| file                    | PWM device handle   | Input           |
+| pin                     | Pin number          | Input           |
+| duty\_cycle\_percentage | Expected duty cycle | Input           |
 
 #### Return value
 
-设置后实际的占空比。
+The actual duty cycle after setting.
 
 ### pwm\_set\_enable
 
 #### Description
 
-设置 PWM 管脚是否启用。
+Set whether the PWM pin is enabled.
 
 #### Function prototype
 
@@ -105,20 +106,20 @@ void pwm_set_enable(handle_t file, uint32_t pin, bool enable);
 
 #### Parameter
 
-| Parameter name    |   Description         |  Input or output  |
-| ---------- | -------------- | --------- |
-| file       | PWM device handle    | Input      |
-| pin        | 管脚编号        | Input      |
-| enable     | 是否启用        | Input      |
+| Parameter name |    Description    | Input or output |
+| -------------- | ----------------- | --------------- |
+| file           | PWM device handle | Input           |
+| pin            | Pin number        | Input           |
+| enable         | Whether to enable | Input           |
 
 #### Return value
 
-设置后实际的占空比。
+The actual duty cycle after setting.
 
 ### Example
 
 ```c
-/* pwm0 pin0 Output 200KHZ 占空比为 0.5 的方波 */
+/* pwm0 pin0 output 200KHz square wave with duty cycle of 0.5 */
 handle_t pwm = io_open("/dev/pwm0");
 pwm_set_frequency(pwm, 200000);
 pwm_set_active_duty_cycle_percentage(pwm, 0, 0.5);
