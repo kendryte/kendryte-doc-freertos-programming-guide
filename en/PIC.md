@@ -1,16 +1,18 @@
-# 可编程中断控制器 (PIC)
+# PIC
 
 ## Overview
 
-可以将任一外部中断源单独分配到每个 CPU 的外部中断上。这提供了强大的灵活性，能适应不同的应用需求。
+Programmable Interrupt Controller (PIC).
+
+Any external interrupt source can be individually assigned to an external interrupt on each CPU. This provides great flexibility to adapt to different application needs.
 
 ## Features
 
-PIC 模块具有以下功能:
+The PIC module has the following features:
 
-- 启用或禁用中断
-- 设置中断处理程序
-- 配置中断优先级
+- Enable or disable interrupts
+- Set the interrupt handler
+- Configure interrupt priority
 
 ## API
 
@@ -26,7 +28,7 @@ Provide the following interfaces
 
 #### Description
 
-设置 IRQ 是否启用。
+Set whether IRQ is enabled.
 
 #### Function prototype
 
@@ -36,10 +38,10 @@ void pic_set_irq_enable(uint32_t irq, bool enable);
 
 #### Parameter
 
-| Parameter name     |   Description         |  Input or output  |
-| ----------- | -------------- | --------- |
-| irq         | IRQ 编号       | Input      |
-| enable      | 是否启用        | Input      |
+| Parameter name |    Description    | Input or output |
+| -------------- | ----------------- | --------------- |
+| irq            | IRQ number        | Input           |
+| enable         | Whether to enable | Input           |
 
 #### Return value
 
@@ -49,7 +51,7 @@ None.
 
 #### Description
 
-设置 IRQ Handler。
+Set the IRQ Handler.
 
 #### Function prototype
 
@@ -59,11 +61,11 @@ void pic_set_irq_handler(uint32_t irq, pic_irq_handler_t handler, void *userdata
 
 #### Parameter
 
-| Parameter name     |   Description         |  Input or output  |
-| ----------- | -------------- | --------- |
-| irq         | IRQ 编号       | Input      |
-| handler     | Handler        | Input      |
-| userdata    | Handler user data | Input      |
+| Parameter name |    Description    | Input or output |
+| -------------- | ----------------- | --------------- |
+| irq            | IRQ number        | Input           |
+| handler        | Handler           | Input           |
+| userdata       | Handler user data | Input           |
 
 #### Return value
 
@@ -73,7 +75,7 @@ None.
 
 #### Description
 
-设置 IRQ 优先级。
+Set the IRQ priority.
 
 #### Function prototype
 
@@ -83,10 +85,10 @@ void pic_set_irq_priority(uint32_t irq, uint32_t priority);
 
 #### Parameter
 
-| Parameter name  |   Description         |  Input or output  |
-| -------- | -------------- | --------- |
-| irq      | IRQ 编号       | Input      |
-| priority | 优先级         | Input      |
+| Parameter name | Description | Input or output |
+| -------------- | ----------- | --------------- |
+| irq            | IRQ number  | Input           |
+| priority       | Priority    | Input           |
 
 #### Return value
 
@@ -112,6 +114,6 @@ typedef void (*pic_irq_handler_t)(void *userdata);
 
 #### Parameter
 
-| Parameter name    |   Description         |  Input or output  |
-| ---------- | -------------- | --------- |
-| userdata   | 用户数据        | Input      |
+| Parameter name | Description | Input or output |
+| -------------- | ----------- | --------------- |
+| userdata       | User data   | Input           |
