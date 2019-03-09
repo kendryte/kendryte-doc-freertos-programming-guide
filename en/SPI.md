@@ -1,18 +1,19 @@
-# 串行外设接口 (SPI)
+# SPI
 
 ## Overview
 
-SPI 是一种高速的，全双工，同步的通信总线。
+The Serial Peripheral Interface (SPI) is a synchronous serial communication interface.
+It is a high speed, full duplex, synchronous communication interface.
 
 ## Features
 
-SPI 模块具有以下功能:
+The SPI module has the following features:
 
-- 独立的 SPI 设备封装外设相关参数
-- 自动处理多设备总线争用
-- 支持标准、双线、四线、八线模式
-- 支持先写后读和全双工读写
-- 支持发送一串相同的数据帧，常用于清屏、填充存储扇区等场景
+- Independent SPI device interface with peripheral related parameters
+- Automatic processing of multi-device bus contention
+- Support standard, two-wire, four-wire, eight-wire mode
+- Supports write-before-read and full-duplex read and write
+- Supports sending a series of identical data frames, often used for clearing screens, filling storage sectors, etc.
 
 ## API
 
@@ -31,7 +32,7 @@ Provide the following interfaces
 
 #### Description
 
-注册并打开一个 SPI 设备。
+Register and open an SPI device.
 
 #### Function prototype
 
@@ -41,24 +42,24 @@ handle_t spi_get_device(handle_t file, const char *name, spi_mode mode, spi_fram
 
 #### Parameter
 
-| Parameter name            |   Description             |  Input or output  |
-| ------------------ | ------------------ | --------- |
-| file               | SPI 控制器句柄      | Input       |
-| name               | 指定访问该设备的路径 | Input       |
-| mode               | SPI 模式            | Input       |
-| frame\_format      | 帧格式              | Input       |
-| chip\_select\_mask | 片选掩码            | Input       |
-| data\_bit\_length  | 数据位长度          | Input       |
+|   Parameter name   |              Description              | Input or output |
+| ------------------ | ------------------------------------- | --------------- |
+| file               | SPI controller handle                 | Input           |
+| name               | Specify the path to access the device | Input           |
+| mode               | SPI mode                              | Input           |
+| frame\_format      | Frame format                          | Input           |
+| chip\_select\_mask | Chip select mask                      | Input           |
+| data\_bit\_length  | Data bit length                       | Input           |
 
 #### Return value
 
-SPI 设备句柄。
+SPI device handle.
 
 ### spi\_dev\_config\_non\_standard
 
 #### Description
 
-配置 SPI 设备的非标准帧格式参数。
+Configure non-standard frame format parameters for the SPI device.
 
 #### Function prototype
 
@@ -68,13 +69,13 @@ void spi_dev_config_non_standard(handle_t file, uint32_t instruction_length, uin
 
 #### Parameter
 
-| Parameter name             |   Description             |  Input or output  |
-| ------------------- | ------------------ | --------- |
-| file                | SPI device handle        | Input      |
-| instruction\_length | 指令长度            | Input      |
-| address\_length     | 地址长度            | Input      |
-| wait\_cycles        | 等待周期数          | Input      |
-| trans\_mode         | 指令和地址的传输模式 | Input      |
+|   Parameter name    |            Description            | Input or output |
+| ------------------- | --------------------------------- | --------------- |
+| file                | SPI device handle                 | Input           |
+| instruction\_length | Instruction length                | Input           |
+| address\_length     | Address length                    | Input           |
+| wait\_cycles        | Number of waiting cycles          | Input           |
+| trans\_mode         | Command and address transfer mode | Input           |
 
 #### Return value
 
@@ -84,7 +85,7 @@ None.
 
 #### Description
 
-配置 SPI 设备的时钟速率。
+Configure the clock rate of the SPI device.
 
 #### Function prototype
 
@@ -94,22 +95,22 @@ double spi_dev_set_clock_rate(handle_t file, double clock_rate);
 
 #### Parameter
 
-| Parameter name          |   Description        |  Input or output  |
-| ---------------- | ------------- | --------- |
-| file             | SPI device handle   | Input       |
-| clock\_rate      | 期望的时钟速率 | Input       |
+| Parameter name |     Description     | Input or output |
+| -------------- | ------------------- | --------------- |
+| file           | SPI device handle   | Input           |
+| clock\_rate    | Expected clock rate | Input           |
 
 #### Return value
 
-设置后的实际速率。
+The actual rate after setting.
 
 ### spi\_dev\_transfer\_full\_duplex
 
 #### Description
 
-对 SPI 设备进行全双工传输。
+Full-duplex transmission of SPI devices.
 
-**Note:** 仅支持标准帧格式。
+**Note:** Only standard frame formats are supported.
 
 #### Function prototype
 
@@ -119,25 +120,25 @@ int spi_dev_transfer_full_duplex(handle_t file, const uint8_t *write_buffer, siz
 
 #### Parameter
 
-| Parameter name          |   Description         |  Input or output  |
-| ---------------- | -------------- | --------- |
-| file             | SPI device handle    | Input      |
-| write\_buffer    | 源缓冲区        | Input      |
-| write\_len       | 要写入的字节数   | Input      |
-| read\_buffer     | 目标缓冲区       | Output      |
-| read\_len        | 最多读取的字节数 | Input      |
+| Parameter name |         Description          | Input or output |
+| -------------- | ---------------------------- | --------------- |
+| file           | SPI device handle            | Input           |
+| write\_buffer  | Source buffer                | Input           |
+| write\_len     | The number of bytes to write | Input           |
+| read\_buffer   | Target buffer                | Output          |
+| read\_len      | Maximum number of bytes read | Input           |
 
 #### Return value
 
-实际读取的字节数。
+The number of bytes actually read.
 
 ### spi\_dev\_transfer\_sequential
 
 #### Description
 
-对 SPI 设备进行先写后读。
+Write the SPI device first and then read it.
 
-**Note:** 仅支持标准帧格式。
+**Note:** Only standard frame formats are supported.
 
 #### Function prototype
 
@@ -147,25 +148,25 @@ int spi_dev_transfer_sequential(handle_t file, const uint8_t *write_buffer, size
 
 #### Parameter
 
-| Parameter name          |   Description         |  Input or output  |
-| ---------------- | -------------- | --------- |
-| file             | SPI device handle    | Input      |
-| write\_buffer    | 源缓冲区        | Input      |
-| write\_len       | 要写入的字节数   | Input      |
-| read\_buffer     | 目标缓冲区       | Output      |
-| read\_len        | 最多读取的字节数 | Input      |
+| Parameter name |         Description          | Input or output |
+| -------------- | ---------------------------- | --------------- |
+| file           | SPI device handle            | Input           |
+| write\_buffer  | Source buffer                | Input           |
+| write\_len     | The number of bytes to write | Input           |
+| read\_buffer   | Target buffer                | Output          |
+| read\_len      | Maximum number of bytes read | Input           |
 
 #### Return value
 
-实际读取的字节数。
+The number of bytes actually read.
 
 ### spi\_dev\_fill
 
 #### Description
 
-对 SPI 设备填充一串相同的帧。
+Fill the SPI device with a sequence of identical frames.
 
-**Note:** 仅支持标准帧格式。
+**Note:** Only standard frame formats are supported.
 
 #### Function prototype
 
@@ -175,13 +176,13 @@ void spi_dev_fill(handle_t file, uint32_t instruction, uint32_t address, uint32_
 
 #### Parameter
 
-| Parameter name          |   Description                 |  Input or output  |
-| ---------------- | ---------------------- | --------- |
-| file             | SPI device handle            | Input      |
-| instruction      | 指令（标准帧格式下忽略） | Input      |
-| address          | 地址（标准帧格式下忽略） | Input      |
-| value            | 帧数据                 | Output      |
-| count            | 帧数                   | Input      |
+| Parameter name |                  Description                   | Input or output |
+| -------------- | ---------------------------------------------- | --------------- |
+| file           | SPI device handle                              | Input           |
+| instruction    | Instruction (ignored in standard frame format) | Input           |
+| address        | Address (ignored in standard frame format)     | Input           |
+| value          | Frame data                                     | Output          |
+| count          | Number of frames                               | Input           |
 
 #### Return value
 
@@ -191,12 +192,12 @@ None.
 
 ```c
 handle_t spi = io_open("/dev/spi0");
-/* dev0 工作在 MODE0 模式 标准 SPI 模式 单次发送 8 位数据 使用片选 0 */
+/* dev0 works in MODE0 (Standard SPI mode), single transmission, 8-bit data and using chip select 0 */
 handle_t dev0 = spi_get_device(spi, "/dev/spi0/dev0", SPI_MODE_0, SPI_FF_STANDARD, 0b1, 8);
 uint8_t data_buf[] = { 0x06, 0x01, 0x02, 0x04, 0, 1, 2, 3 };
-/* 发送指令 0x06 向地址 0x010204 发送 0，1，2，3 四个字节数据 */
+/* Send instruction 0x06. Send 0,1,2,3 four bytes of data to address 0x010204 */
 io_write(dev0, data_buf, sizeof(data_buf));
-/* 发送指令 0x06 地址 0x010204 接收四个字节的数据 */
+/* Send instruction 0x06. Receive four bytes of data from address 0x010204 */
 spi_dev_transfer_sequential(dev0, data_buf, 4, data_buf, 4);
 ```
 
@@ -204,15 +205,15 @@ spi_dev_transfer_sequential(dev0, data_buf, 4, data_buf, 4);
 
 The relevant data types and data structures are defined as follows:
 
-- [spi\_mode\_t](#spimodet): SPI 模式。
-- [spi\_frame\_format\_t](#spiframeformatt): SPI 帧格式。
-- [spi\_inst\_addr\_trans\_mode\_t](#spiinstaddrtransmodet): SPI 指令和地址的传输模式。
+- [spi\_mode\_t](#spimodet): SPI mode.
+- [spi\_frame\_format\_t](#spiframeformatt): SPI frame format.
+- [spi\_inst\_addr\_trans\_mode\_t](#spiinstaddrtransmodet): The transfer mode of the SPI instruction and address.
 
 ### spi\_mode\_t
 
 #### Description
 
-SPI 模式。
+SPI mode.
 
 #### Type definition
 
@@ -228,18 +229,18 @@ typedef enum _spi_mode
 
 #### Enumeration element
 
-| Element name       | Description        |
-| ------------- | ----------- |
-| SPI\_MODE\_0  | SPI 模式 0  |
-| SPI\_MODE\_1  | SPI 模式 1  |
-| SPI\_MODE\_2  | SPI 模式 2  |
-| SPI\_MODE\_3  | SPI 模式 3  |
+| Element name | Description |
+| ------------ | ----------- |
+| SPI\_MODE\_0 | SPI mode 0  |
+| SPI\_MODE\_1 | SPI mode 1  |
+| SPI\_MODE\_2 | SPI mode 2  |
+| SPI\_MODE\_3 | SPI mode 3  |
 
 ### spi\_frame\_format\_t
 
 #### Description
 
-SPI 帧格式。
+SPI frame format.
 
 #### Type definition
 
@@ -255,18 +256,18 @@ typedef enum _spi_frame_format
 
 #### Enumeration element
 
-| Element name            | Description                      |
-| ------------------ | ------------------------- |
-| SPI\_FF\_STANDARD  | 标准                      |
-| SPI\_FF\_DUAL      | 双线                      |
-| SPI\_FF\_QUAD      | 四线                      |
-| SPI\_FF\_OCTAL     | 八线（`/dev/spi3` 不支持） |
+|   Element name    |                    Description                     |
+| ----------------- | -------------------------------------------------- |
+| SPI\_FF\_STANDARD | Standard                                           |
+| SPI\_FF\_DUAL     | Dual wire (2 wires)                                |
+| SPI\_FF\_QUAD     | Duad wire (4 wires)                                |
+| SPI\_FF\_OCTAL    | Octal wire (8 wires, `/dev/spi3` is not supported) |
 
 ### spi\_inst\_addr\_trans\_mode\_t
 
 #### Description
 
-SPI 指令和地址的传输模式。
+The transfer mode of the SPI instruction and address.
 
 #### Type definition
 
@@ -281,8 +282,8 @@ typedef enum _spi_inst_addr_trans_mode
 
 #### Enumeration element
 
-| Element name                      | Description               |
-| ---------------------------- | ------------------ |
-| SPI\_AITM\_STANDARD          | 均使用标准帧格式     |
-| SPI\_AITM\_ADDR\_STANDARD    | 指令使用配置的值，地址使用标准帧格式 |
-| SPI\_AITM\_AS\_FRAME\_FORMAT | 均使用配置的值     |
+|         Element name         |                                       Description                                        |
+| ---------------------------- | ---------------------------------------------------------------------------------------- |
+| SPI\_AITM\_STANDARD          | All use the standard frame format                                                        |
+| SPI\_AITM\_ADDR\_STANDARD    | The instruction uses the configured value and the address uses the standard frame format |
+| SPI\_AITM\_AS\_FRAME\_FORMAT | All use the configured values                                                            |
