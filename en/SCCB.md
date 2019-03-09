@@ -1,15 +1,16 @@
-# 串行摄像机控制总线 (SCCB)
+# SCCB
 
 ## Overview
 
-SCCB 是一种串行摄像机控制总线。
+Serial Camera Control Bus (SCCB) interface.
+The SCCB protocol is very similar to the I²C protocol.
 
 ## Features
 
-SCCB 模块具有以下功能:
+The SCCB module has the following features:
 
-- 独立的 SCCB 设备封装外设相关参数
-- 自动处理多设备总线争用
+- Independently packaged peripheral related parameters
+- Automatic processing of multi-device bus contention
 
 ## API
 
@@ -25,7 +26,7 @@ Provide the following interfaces
 
 #### Description
 
-注册并打开一个 SCCB 设备。
+Register and open an SCCB device.
 
 #### Function prototype
 
@@ -35,22 +36,22 @@ handle_t sccb_get_device(handle_t file, const char *name, size_t slave_address, 
 
 #### Parameter
 
-| Parameter name            |   Description             |  Input or output  |
-| ------------------ | ------------------ | --------- |
-| file               | SCCB 控制器句柄      | Input      |
-| name               | 指定访问该设备的路径 | Input      |
-| slave\_address     | 从设备地址          | Input      |
-| reg_address\_width | 寄存器地址宽度      | Input      |
+|   Parameter name   |              Description              | Input or output |
+| ------------------ | ------------------------------------- | --------------- |
+| file               | SCCB controller handle                | Input           |
+| name               | Specify the path to access the device | Input           |
+| slave\_address     | Slave address                         | Input           |
+| reg_address\_width | Register address width                | Input           |
 
 #### Return value
 
-SCCB 设备句柄。
+SCCB device handle.
 
 ### sccb\_dev\_read\_byte
 
 #### Description
 
-从 SCCB 设备读取一个字节。
+Read a byte from the SCCB device.
 
 #### Function prototype
 
@@ -60,20 +61,20 @@ uint8_t sccb_dev_read_byte(handle_t file, uint16_t reg_address);
 
 #### Parameter
 
-| Parameter name       |   Description         |  Input or output  |
-| ------------- | -------------- | --------- |
-| file          | SCCB device handle   | Input      |
-| reg\_address  | 寄存器地址      | Input      |
+| Parameter name |    Description     | Input or output |
+| -------------- | ------------------ | --------------- |
+| file           | SCCB device handle | Input           |
+| reg\_address   | Register address   | Input           |
 
 #### Return value
 
-读取的字节。
+The byte read.
 
 ### sccb\_dev\_write\_byte
 
 #### Description
 
-向 SCCB 设备写入一个字节。
+Write a byte to the SCCB device.
 
 #### Function prototype
 
@@ -83,11 +84,11 @@ void sccb_dev_write_byte(handle_t file, uint16_t reg_address, uint8_t value);
 
 #### Parameter
 
-| Parameter name          |   Description         |  Input or output  |
-| ---------------- | -------------- | --------- |
-| file             | SCCB device handle   | Input       |
-| reg\_address     | 寄存器地址      | Input       |
-| value            | 要写入的字节    | Input       |
+| Parameter name |      Description       | Input or output |
+| -------------- | ---------------------- | --------------- |
+| file           | SCCB device handle     | Input           |
+| reg\_address   | Register address       | Input           |
+| value          | The byte to be written | Input           |
 
 #### Return value
 
