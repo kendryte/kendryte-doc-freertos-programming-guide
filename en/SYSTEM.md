@@ -1,4 +1,4 @@
-# SYSCTL
+# System control (SYSCTL)
 
 ## Overview
 
