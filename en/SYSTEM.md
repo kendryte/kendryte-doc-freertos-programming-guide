@@ -1,15 +1,15 @@
-# 系统控制
+# SYSCTL
 
 ## Overview
 
-系统控制模块提供对操作系统的配置功能。
+The system control (SYSCTL) unit can provide configuration functions for the SoC (system on chip).
 
 ## Features
 
-系统控制模块具有以下功能:
+The system control module has the following features:
 
-- 设置 CPU 频率
-- 安装自定义驱动
+- Set the CPU frequency
+- Install custom drivers
 
 ## API
 
@@ -24,7 +24,7 @@ Provide the following interfaces
 
 #### Description
 
-设置 CPU 频率。
+Set the CPU frequency.
 
 #### Function prototype
 
@@ -34,19 +34,19 @@ uint32_t system_set_cpu_frequency(uint32_t frequency);
 
 #### Parameter
 
-| Parameter name     |   Description           |  Input or output  |
-| ----------- | ---------------- | --------- |
-| frequency   | 要设置的频率（Hz） | Input      |
+| Parameter name |       Description        | Input or output |
+| -------------- | ------------------------ | --------------- |
+| frequency      | Frequency to be set (Hz) | Input           |
 
 #### Return value
 
-设置后的实际频率（Hz）。
+The actual frequency (Hz) after setting.
 
 ### system\_install\_custom\_driver
 
 #### Description
 
-安装自定义驱动。
+Install a custom driver.
 
 #### Function prototype
 
@@ -56,10 +56,10 @@ void system_install_custom_driver(const char *name, const custom_driver_t *drive
 
 #### Parameter
 
-| Parameter name     |   Description             |  Input or output  |
-| ----------- | ------------------ | --------- |
-| name        | 指定访问该设备的路径 | Input      |
-| driver      | 自定义驱动实现      | Input      |
+| Parameter name |              Description              | Input or output |
+| -------------- | ------------------------------------- | --------------- |
+| name           | Specify the path to access the device | Input           |
+| driver         | Custom driver implementation          | Input           |
 
 #### Return value
 
@@ -68,7 +68,7 @@ None.
 ### Example
 
 ```c
-/* 设置 CPU 频率为 400MHz */
+/* Set the CPU frequency to 400MHz */
 system_set_cpu_frequency(400000000);
 ```
 
@@ -76,14 +76,14 @@ system_set_cpu_frequency(400000000);
 
 The relevant data types and data structures are defined as follows:
 
-- [driver\_base\_t](#driverbaset): 驱动实现基类。
-- [custom\_driver\_t](#customdrivert): 自定义驱动实现。
+- [driver\_base\_t](#driverbaset): The base class for the driver implementation.
+- [custom\_driver\_t](#customdrivert): Custom drive implementation.
 
 ### driver\_base\_t
 
 #### Description
 
-驱动实现基类。
+The base class for the driver implementation.
 
 #### Type definition
 
@@ -99,18 +99,18 @@ typedef struct _driver_base
 
 #### Enumeration element
 
-| Element name   | Description        |
-| --------- | ----------- |
-| userdata  | User data     |
-| install   | 安装时被调用 |
-| open      | 打开时被调用 |
-| close     | 关闭时被调用 |
+| Element name |        Description         |
+| ------------ | -------------------------- |
+| userdata     | User data                  |
+| install      | Called during installation |
+| open         | Called when opened         |
+| close        | Called when closed         |
 
 ### custom\_driver\_t
 
 #### Description
 
-自定义驱动实现。
+Custom drive implementation.
 
 #### Type definition
 
@@ -124,7 +124,7 @@ typedef struct _custom_driver
 
 #### Enumeration element
 
-| Element name     | Description               |
-| ----------- | ------------------ |
-| base        | 驱动实现基类        |
-| io\_control | 收到控制信息时被调用 |
+| Element name |                 Description                 |
+| ------------ | ------------------------------------------- |
+| base         | Driver implementation base class            |
+| io\_control  | Called when control information is received |
