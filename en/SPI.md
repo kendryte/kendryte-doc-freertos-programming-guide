@@ -136,7 +136,7 @@ The number of bytes actually read.
 
 #### Description
 
-Write the SPI device first and then read it.
+Write the SPI device first and then read it (write-before-read).
 
 **Note:** Only standard frame formats are supported.
 
