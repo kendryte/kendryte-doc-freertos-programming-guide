@@ -1,21 +1,21 @@
-# 系统控制
+# 系統控制
 
 ## 概述
 
-系统控制模块提供对操作系统的配置功能。
+系統控制模組提供對操作系統的配置功能。
 
 ## 功能描述
 
-系统控制模块具有以下功能：
+系統控制模組具有以下功能：
 
-- 设置 CPU 频率
-- 安装自定义驱动
+- 設置 CPU 頻率
+- 安裝自定義驅動
 
-## API 参考
+## API 參考
 
-对应的头文件 `hal.h`
+對應的頭文件 `hal.h`
 
-为用户提供以下接口：
+為用戶提供以下介面：
 
 - [system\_set\_cpu\_frequency](#systemsetcpufrequency)
 - [system\_install\_custom\_driver](#systeminstallcustomdriver)
@@ -24,68 +24,68 @@
 
 #### 描述
 
-设置 CPU 频率。
+設置 CPU 頻率。
 
-#### 函数原型
+#### 函數原型
 
 ```c
 uint32_t system_set_cpu_frequency(uint32_t frequency);
 ```
 
-#### 参数
+#### 參數
 
-| 参数名称     |   描述           |  输入输出  |
+| 參數名稱     |   描述           |  輸入輸出  |
 | ----------- | ---------------- | --------- |
-| frequency   | 要设置的频率（Hz） | 输入      |
+| frequency   | 要設置的頻率（Hz） | 輸入      |
 
 #### 返回值
 
-设置后的实际频率（Hz）。
+設置後的實際頻率（Hz）。
 
 ### system\_install\_custom\_driver
 
 #### 描述
 
-安装自定义驱动。
+安裝自定義驅動。
 
-#### 函数原型
+#### 函數原型
 
 ```c
 void system_install_custom_driver(const char *name, const custom_driver_t *driver);
 ```
 
-#### 参数
+#### 參數
 
-| 参数名称     |   描述             |  输入输出  |
+| 參數名稱     |   描述             |  輸入輸出  |
 | ----------- | ------------------ | --------- |
-| name        | 指定访问该设备的路径 | 输入      |
-| driver      | 自定义驱动实现      | 输入      |
+| name        | 指定訪問該裝置的路徑 | 輸入      |
+| driver      | 自定義驅動實現      | 輸入      |
 
 #### 返回值
 
-无。
+無。
 
-### 举例
+### 舉例
 
 ```c
-/* 设置 CPU 频率为 400MHz */
+/* 設置 CPU 頻率為 400MHz */
 system_set_cpu_frequency(400000000);
 ```
 
-## 数据类型
+## 資料類型
 
-相关数据类型、数据结构定义如下：
+相關資料類型、資料結構定義如下：
 
-- [driver\_base\_t](#driverbaset)：驱动实现基类。
-- [custom\_driver\_t](#customdrivert)：自定义驱动实现。
+- [driver\_base\_t](#driverbaset)：驅動實現基類。
+- [custom\_driver\_t](#customdrivert)：自定義驅動實現。
 
 ### driver\_base\_t
 
 #### 描述
 
-驱动实现基类。
+驅動實現基類。
 
-#### 定义
+#### 定義
 
 ```c
 typedef struct _driver_base
@@ -97,22 +97,22 @@ typedef struct _driver_base
 } driver_base_t;
 ```
 
-#### 成员
+#### 成員
 
-| 成员名称   | 描述        |
+| 成員名稱   | 描述        |
 | --------- | ----------- |
-| userdata  | 用户数据     |
-| install   | 安装时被调用 |
-| open      | 打开时被调用 |
-| close     | 关闭时被调用 |
+| userdata  | 用戶資料     |
+| install   | 安裝時被調用 |
+| open      | 打開時被調用 |
+| close     | 關閉時被調用 |
 
 ### custom\_driver\_t
 
 #### 描述
 
-自定义驱动实现。
+自定義驅動實現。
 
-#### 定义
+#### 定義
 
 ```c
 typedef struct _custom_driver
@@ -122,9 +122,9 @@ typedef struct _custom_driver
 } custom_driver_t;
 ```
 
-#### 成员
+#### 成員
 
-| 成员名称     | 描述               |
+| 成員名稱     | 描述               |
 | ----------- | ------------------ |
-| base        | 驱动实现基类        |
-| io\_control | 收到控制信息时被调用 |
+| base        | 驅動實現基類        |
+| io\_control | 收到控制資訊時被調用 |

@@ -1,21 +1,21 @@
-# 通用异步收发传输器 (UART)
+# 通用非同步收發傳輸器 (UART)
 
 ## 概述
 
-嵌入式应用通常要求一个简单的并且占用系统资源少的方法来传输数据。通用异步收发传输器 (UART) 即可以满足这些要求，它能够灵活地与外部设备进行全双工数据交换。
+嵌入式應用通常要求一個簡單的並且占用系統資源少的方法來傳輸資料。通用非同步收發傳輸器 (UART) 即可以滿足這些要求，它能夠靈活地與外部裝置進行全雙工資料交換。
 
 ## 功能描述
 
-UART 模块具有以下功能：
+UART 模組具有以下功能：
 
-- 配置 UART 参数
-- 自动收取数据到缓冲区
+- 配置 UART 參數
+- 自動收取資料到緩衝區
 
-## API 参考
+## API 參考
 
-对应的头文件 `devices.h`
+對應的頭文件 `devices.h`
 
-为用户提供以下接口：
+為用戶提供以下介面：
 
 - [uart\_config](#uartconfig)
 
@@ -23,46 +23,46 @@ UART 模块具有以下功能：
 
 #### 描述
 
-配置 UART 设备。
+配置 UART 裝置。
 
-#### 函数原型
+#### 函數原型
 
 ```c
 void uart_config(handle_t file, uint32_t baud_rate, uint32_t databits, uart_stopbits_t stopbits, uart_parity_t parity);
 ```
 
-#### 参数
+#### 參數
 
-| 参数名称    |   描述       |  输入输出  |
+| 參數名稱    |   描述       |  輸入輸出  |
 | ---------- | ------------ | --------- |
-| file       | UART 设备句柄 | 输入      |
-| baud\_rate | 波特率        | 输入      |
-| databits   | 数据位 (5-8)  | 输入      |
-| stopbits   | 停止位        | 输入      |
-| parity     | 校验位        | 输入      |
+| file       | UART 裝置句柄 | 輸入      |
+| baud\_rate | 波特率        | 輸入      |
+| databits   | 資料位 (5-8)  | 輸入      |
+| stopbits   | 停止位        | 輸入      |
+| parity     | 校驗位        | 輸入      |
 
 #### 返回值
 
-无。
+無。
 
-### 举例
+### 舉例
 
 ```c
 handle_t uart = io_open("/dev/uart1");
 
 uint8_t b = 1;
-/* 写入 1 个字节 */
+/* 寫入 1 個位元組 */
 io_write(uart, &b, 1);
-/* 读取 1 个字节 */
+/* 讀取 1 個位元組 */
 while (io_read(uart, &b, 1) != 1);
 ```
 
-## 数据类型
+## 資料類型
 
-相关数据类型、数据结构定义如下：
+相關資料類型、資料結構定義如下：
 
 - [uart\_stopbits\_t](#uartstopbitst)：UART 停止位。
-- [uart\_parity\_t](#uartparityt)：UART 校验位。
+- [uart\_parity\_t](#uartparityt)：UART 校驗位。
 
 ### uart\_stopbits\_t
 
@@ -70,7 +70,7 @@ while (io_read(uart, &b, 1) != 1);
 
 UART 停止位。
 
-#### 定义
+#### 定義
 
 ```c
 typedef enum _uart_stopbits
@@ -81,21 +81,21 @@ typedef enum _uart_stopbits
 } uart_stopbits_t;  
 ```
 
-#### 成员
+#### 成員
 
-| 成员名称          | 描述        |
+| 成員名稱          | 描述        |
 | ---------------- | ----------- |
-| UART\_STOP\_1    | 1 个停止位   |
-| UART\_STOP\_1\_5 | 1.5 个停止位 |
-| UART\_STOP\_2    | 2 个停止位   |
+| UART\_STOP\_1    | 1 個停止位   |
+| UART\_STOP\_1\_5 | 1.5 個停止位 |
+| UART\_STOP\_2    | 2 個停止位   |
 
 ### uart\_parity\_t
 
 #### 描述
 
-UART 校验位。
+UART 校驗位。
 
-#### 定义
+#### 定義
 
 ```c
 typedef enum _uart_parity
@@ -106,10 +106,10 @@ typedef enum _uart_parity
 } uart_parity_t;
 ```
 
-#### 成员
+#### 成員
 
-| 成员名称            | 描述        |
+| 成員名稱            | 描述        |
 | ------------------ | ----------- |
-| UART\_PARITY\_NONE | 无校验位    |
-| UART\_PARITY\_ODD  | 奇校验      |
-| UART\_PARITY\_EVEN | 偶校验      |
+| UART\_PARITY\_NONE | 無校驗位    |
+| UART\_PARITY\_ODD  | 奇校驗      |
+| UART\_PARITY\_EVEN | 偶校驗      |

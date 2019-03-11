@@ -1,21 +1,21 @@
-# 串行摄像机控制总线 (SCCB)
+# 串列攝像機控制匯流排 (SCCB)
 
 ## 概述
 
-SCCB 是一种串行摄像机控制总线。
+SCCB 是一種串列攝像機控制匯流排。
 
 ## 功能描述
 
-SCCB 模块具有以下功能：
+SCCB 模組具有以下功能：
 
-- 独立的 SCCB 设备封装外设相关参数
-- 自动处理多设备总线争用
+- 獨立的 SCCB 裝置封裝外部裝置相關參數
+- 自動處理多裝置匯流排爭用
 
-## API 参考
+## API 參考
 
-对应的头文件 `devices.h`
+對應的頭文件 `devices.h`
 
-为用户提供以下接口：
+為用戶提供以下介面：
 
 - [sccb\_get\_device](#sccbgetdevice)
 - [sccb\_dev\_read\_byte](#sccbdevreadbyte)
@@ -25,75 +25,75 @@ SCCB 模块具有以下功能：
 
 #### 描述
 
-注册并打开一个 SCCB 设备。
+註冊並打開一個 SCCB 裝置。
 
-#### 函数原型
+#### 函數原型
 
 ```c
 handle_t sccb_get_device(handle_t file, const char *name, size_t slave_address, size_t reg_address_width);
 ```
 
-#### 参数
+#### 參數
 
-| 参数名称            |   描述             |  输入输出  |
+| 參數名稱            |   描述             |  輸入輸出  |
 | ------------------ | ------------------ | --------- |
-| file               | SCCB 控制器句柄      | 输入      |
-| name               | 指定访问该设备的路径 | 输入      |
-| slave\_address     | 从设备地址          | 输入      |
-| reg_address\_width | 寄存器地址宽度      | 输入      |
+| file               | SCCB 控制器句柄      | 輸入      |
+| name               | 指定訪問該裝置的路徑 | 輸入      |
+| slave\_address     | 從裝置地址          | 輸入      |
+| reg_address\_width | 寄存器地址寬度      | 輸入      |
 
 #### 返回值
 
-SCCB 设备句柄。
+SCCB 裝置句柄。
 
 ### sccb\_dev\_read\_byte
 
 #### 描述
 
-从 SCCB 设备读取一个字节。
+從 SCCB 裝置讀取一個位元組。
 
-#### 函数原型
+#### 函數原型
 
 ```c
 uint8_t sccb_dev_read_byte(handle_t file, uint16_t reg_address);
 ```
 
-#### 参数
+#### 參數
 
-| 参数名称       |   描述         |  输入输出  |
+| 參數名稱       |   描述         |  輸入輸出  |
 | ------------- | -------------- | --------- |
-| file          | SCCB 设备句柄   | 输入      |
-| reg\_address  | 寄存器地址      | 输入      |
+| file          | SCCB 裝置句柄   | 輸入      |
+| reg\_address  | 寄存器地址      | 輸入      |
 
 #### 返回值
 
-读取的字节。
+讀取的位元組。
 
 ### sccb\_dev\_write\_byte
 
 #### 描述
 
-向 SCCB 设备写入一个字节。
+向 SCCB 裝置寫入一個位元組。
 
-#### 函数原型
+#### 函數原型
 
 ```c
 void sccb_dev_write_byte(handle_t file, uint16_t reg_address, uint8_t value);
 ```
 
-#### 参数
+#### 參數
 
-| 参数名称          |   描述         |  输入输出  |
+| 參數名稱          |   描述         |  輸入輸出  |
 | ---------------- | -------------- | --------- |
-| file             | SCCB 设备句柄   | 输入       |
-| reg\_address     | 寄存器地址      | 输入       |
-| value            | 要写入的字节    | 输入       |
+| file             | SCCB 裝置句柄   | 輸入       |
+| reg\_address     | 寄存器地址      | 輸入       |
+| value            | 要寫入的位元組    | 輸入       |
 
 #### 返回值
 
-无。
+無。
 
-### 举例
+### 舉例
 
 ```c
 handle_t sccb = io_open("/dev/sccb0");
