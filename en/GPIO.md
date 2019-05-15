@@ -77,7 +77,7 @@ None.
 
 Set the GPIO pin edge trigger mode.
 
-**Note: **`/dev/gpio1` is not supported this function.
+**Note:**`/dev/gpio1` is not supported this function.
 
 #### Function prototype
 
@@ -103,7 +103,7 @@ None.
 
 Set the GPIO pin edge trigger handler.
 
-**Note: **`/dev/gpio1` is not supported this function.
+**Note:**`/dev/gpio1` is not supported this function.
 
 #### Function prototype
 
